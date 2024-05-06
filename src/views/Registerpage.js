@@ -50,7 +50,7 @@ function Registerpage() {
                               style={{ color: "#ff6219" }}
                             />
                             <span className="h2 fw-bold mb-0">
-                              Welcome to <b>Desphixs👋</b>
+                              Welcome to Qartelz 👋
                             </span>
                           </div>
                           <h5
@@ -136,9 +136,9 @@ function Registerpage() {
             className="text-center p-3"
             style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
           >
-            © 2019 - till date Copyright:
-            <a className="text-dark" href="https://mdbootstrap.com/">
-              desphixs.com
+           © 2024 - till date Copyright :
+           <a className="text-dark" href="https://qartelz.com/">
+           <> </>Qartelz FinTech.com
             </a>
           </div>
           {/* Copyright */}

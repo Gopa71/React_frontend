@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import useAxios from "../utils/useAxios"
 import jwtDecode from 'jwt-decode'
+import { Link } from 'react-router-dom'
 function Dashboard() {
 
     const [res, setRes] = useState("")
@@ -59,33 +60,36 @@ function Dashboard() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <span data-feather="file" />
-                Orders
-              </a>
+            <Link class="nav-link" to="/opstmt"><b>Opstmt</b></Link>            
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
                 <span data-feather="shopping-cart" />
-                Products
+                ASSET&LIAB
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
                 <span data-feather="users" />
-                Customers
+                OCA&OCL
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
                 <span data-feather="bar-chart-2" />
-                Reports
+                WC TL ASSMT
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
                 <span data-feather="layers" />
-                Integrations
+                FF
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                <span data-feather="layers" />
+                KFI
               </a>
             </li>
           </ul>
@@ -146,7 +150,7 @@ function Dashboard() {
           <strong>{res}</strong>
         </div>
         <h2>Section title</h2>
-        <div className="table-responsive">
+        {/* <div className="table-responsive">
           <table className="table table-striped table-sm">
             <thead>
               <tr>
@@ -272,7 +276,7 @@ function Dashboard() {
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> */}
       </main>
     </div>
   </div>

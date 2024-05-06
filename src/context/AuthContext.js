@@ -40,10 +40,13 @@ export const AuthProvider = ({ children }) => {
         console.log(data);
 
         if(response.status === 200){
+            console.log(data);
             console.log("Logged In");
             setAuthTokens(data)
             setUser(jwt_decode(data.access))
             localStorage.setItem("authTokens", JSON.stringify(data))
+            localStorage.setItem("user_id", email)
+            
             history.push("/")
             swal.fire({
                 title: "Login Successful",

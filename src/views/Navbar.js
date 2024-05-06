@@ -28,7 +28,7 @@ function Navbar() {
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"><b>Home</b></a>
+                <a class="nav-link active" aria-current="page" href="home"><b>Home</b></a>
               </li>
               {token === null && 
               <>

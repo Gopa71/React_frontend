@@ -4,7 +4,7 @@ function Homepage() {
   return (
     <div>
       <>
-  <main role="madin" style={{ marginTop: 50 }}>
+  <main role="madin" style={{ marginTop: 100 }}>
     {/* Main jumbotron for a primary marketing message or call to action */}
     <div className="jumbotron">
       <div className="container">
@@ -73,7 +73,7 @@ function Homepage() {
     {/* /container */}
   </main>
   <footer className="container">
-    <p>© Company 2017-2018</p>
+    <p>© Company </p>
   </footer>
 </>
 
