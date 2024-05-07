@@ -1,13 +1,15 @@
 // Opstmt.js
-import React, { useState, useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import { debounce } from 'lodash';
+
+
 function Opstmt() {
   
     const [inputValues, setInputValues] = useState({
         B1_7: '',
         C1_7: ''
     });
+    let [tot2020,setTot2020]=useState(0)
 
     // const handleInputChange = (e) => {
     //     const { id, value } = e.target;
@@ -28,29 +30,43 @@ function Opstmt() {
     //             console.error('Error saving data:', error);
     //         });
     // };
-    const debouncedChangeData = _.debounce(async (data) => {
+    const changeData = async (e) => {
       try {
-          const res = await axios.post("http://127.0.0.1:8000/api/save_opstmt/", data);
-          console.log(res.data);
-          // Optionally, update UI or handle success response
+          const { name, value } = e.target;
+          
+          console.log(value); // Log the value being set
+          setInputValues(prev => ({ ...prev, [name]: value }));
+          const user_id = localStorage.getItem("user_id");
+
+          let da= JSON.stringify({
+            cell_id:name, cell_value:value,user_id:user_id
+        })
+
+          console.log(da); // Log the name being set
+          // const res = await axios.post("http://127.0.0.1:8000/api/save_opstmt/", { cell_id: name, cell_value: value, user_id: user_id });
+         if(value!=""){
+          setTot2020(tot2020+=parseInt(value))
+          const res = await fetch("http://127.0.0.1:8000/api/save_opstmt/", {
+            method: "POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify( {
+              cell_id:name, cell_value:value,user_id:user_id
+          })
+        })
+        console.log('Response:', res); // Log the response data
+         }
+          // const res=await fetch('http://127.0.0.1:8000/api/save_opstmt/',{method:"post",body:JSON.stringify( { cell_id: name, cell_value: value, user_id: user_id }),headers:{"Content-Type":"application/json"}})
       } catch (error) {
-          console.error("Error while updating data:", error);
-          // Optionally, handle error response
+        console.log("hai");
+          console.error('Error:', error); // Log any errors that occur during the request
       }
-  }, 500); // Adjust debounce delay as needed (e.g., 500ms)
+  };
+ useEffect(()=>{
+  console.log(tot2020);
   
-  // Modified changeData function to debounce API call
-  const changeData = (e) => {
-      console.log(e.target.value);
-      setInputValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  
-      console.log(e.target.name);
-      const user_id = localStorage.getItem("user_id");
-      const data = { cell_id: e.target.name, cell_value: e.target.value, user_id: user_id };
-  
-      // Call the debounced function with the data
-      debouncedChangeData(data);
-  }
+ },[tot2020])
   return (
 <div style={{ marginTop: 100 }}>
       <div className="container-fluid border d-flex justify-content-center div_1">
@@ -117,14 +133,15 @@ function Opstmt() {
             <div className="row g-3">
               <div className="col">
               <input
-            type="number"
-            className="form-control"
-            placeholder="Rs."
-            aria-label="First name"
-            name="B1_7"
-            value={inputValues.B1_7}
-            onChange={changeData} // Use the debounced version of changeData
-        />
+                        type="number"
+                        className="form-control"
+                        placeholder="Rs."
+                        aria-label="First name"
+                        name="B1_7"
+                        value={inputValues.B1_7}
+                        onChange={changeData}
+                    />
+                    {/* <!--//AAAAAAAA --> */}
               </div>
             </div>
           </div>
@@ -141,7 +158,7 @@ function Opstmt() {
                         name="c1_7"
                         // onChange={handleInputChange}
                         // onBlur={(e) => handleInputBlur(e, 'C1_7')}
-                        
+                        onChange={changeData}
                     />
               </div>
             </div>
