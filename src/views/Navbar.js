@@ -16,7 +16,7 @@ function Navbar() {
 
   return (
     <div>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top ">
+        <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img style={{width:"180px", padding:"6px"}} src={img} alt="" />
@@ -53,6 +53,7 @@ function Navbar() {
               }   
               
             </ul>
+            
           </div>
         </div>
       </nav>
