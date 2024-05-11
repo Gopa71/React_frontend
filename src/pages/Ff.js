@@ -3,44 +3,25 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 
 
-function Opstmt({inputValues, setInputValues}) {
+function Opstmt() {
   
-    
+    const [inputValues, setInputValues] = useState({
+        B1_7: '',
+        B1_8: '',
+        B1_9: '',
+        B1_10: '',
+        
+        C1_7: '',
+        C1_8: '',
+        C1_9: '',
+        C1_10: '',
+        
+    });
 
 
 
 
-    let [tot2020,setTot2020]=useState({});
-    let [prefix, setPrefix] = useState("");
-
-    const uploadSum = async (data) => {
-      try {
-          const { name, namePrefix } = data;
-          const user_id = localStorage.getItem("user_id");
-
-        let sum = parseFloat(inputValues[namePrefix + "_7"] || 0) + parseFloat(inputValues[namePrefix + "_8"] || 0) + parseFloat(inputValues[namePrefix + "_9"] || 0);
-        console.log(`>>>>>>${sum}`);
-         if(sum!=""){
-          // setTot2020(tot2020+=parseInt(value))
-          const res = await fetch("http://127.0.0.1:8000/api/save_opstmt/", {
-            method: "POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify( {
-              cell_id:name, cell_value:sum,user_id:user_id
-          })
-        })
-        console.log('Response:', res); // Log the response data
-         }
-          
-      } catch (error) {
-
-          console.error('Error:', error); // Log any errors that occur during the request
-      }
-  };
-
-
+    let [tot2020,setTot2020]=useState(0)
 
     
     const changeData = async (e) => {
@@ -56,15 +37,9 @@ function Opstmt({inputValues, setInputValues}) {
         })
 
           console.log(da); // Log the name being set
-
-
-          if(name.includes("_7") || name.includes("_8") || name.includes("_9")) {
-            setPrefix(name.split("_")[0]);
-          }
-
           
          if(value!=""){
-          // setTot2020(tot2020+=parseInt(value))
+          setTot2020(tot2020+=parseInt(value))
           const res = await fetch("http://127.0.0.1:8000/api/save_opstmt/", {
             method: "POST",
             headers:{
@@ -86,19 +61,13 @@ function Opstmt({inputValues, setInputValues}) {
 
  useEffect(()=>{
   console.log(tot2020);
-    const total = parseFloat(inputValues[prefix + "_7"] || 0) + parseFloat(inputValues[prefix + "_8"] || 0) + parseFloat(inputValues[prefix + "_9"] || 0);
-    setTot2020(total);
-    setTot2020({
-      ...tot2020,
-      [[prefix + "_10"]]: total.toString()
-    });
-    uploadSum({ name: prefix + "_10", namePrefix: prefix});
- },[prefix, inputValues])
+  
+  
+ },[tot2020])
  
 
   return (
 <div style={{ marginTop: 25 }}>
-  
       <div className="container-fluid border d-flex justify-content-center div_1">
         <h2 className="navbar-brand">Astral India Ltd</h2>
       </div>
@@ -586,7 +555,7 @@ function Opstmt({inputValues, setInputValues}) {
                 className="form-control" 
                 aria-label="First name" 
                 name="B1_10"
-                value={tot2020.B1_10}
+                value={inputValues.B1_10}
                 onChange={changeData}  
                 />
 
@@ -601,7 +570,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="C1_10"  
-                value={tot2020.C1_10}
+                value={inputValues.C1_10}
                 onChange={changeData}
                 />
 
@@ -4100,7 +4069,7 @@ function Opstmt({inputValues, setInputValues}) {
     <div className="container-fluid border mt-3 div_main4">
       <div className="row" >
         <div className="col-lg-4 border-end d-flex justify-content-center"style={{backgroundColor: "rgb(247, 197, 237)"}}>
-          <h5><b>Net Cash Accrual</b></h5>
+          <h5><b>Nettttttttttt Cash Accrualllllllllll</b></h5>
         </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
             <div className="row g-3">

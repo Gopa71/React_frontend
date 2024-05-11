@@ -63,70 +63,27 @@ function Dashboard() {
             <Link class="nav-link" to="/opstmt"><b>Opstmt</b></Link>            
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <span data-feather="shopping-cart" />
-                ASSET&LIAB
-              </a>
+            <Link class="nav-link" to="/assetLiab"><b>Asset&Liab</b></Link>            
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <span data-feather="users" />
-                OCA&OCL
-              </a>
+            <Link class="nav-link" to="/ocaocl"><b>Oca&Ocl</b></Link>            
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <span data-feather="bar-chart-2" />
-                WC TL ASSMT
-              </a>
+            <Link class="nav-link" to="/ratio"><b>Ratios</b></Link>            
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <span data-feather="layers" />
-                FF
-              </a>
+            <Link class="nav-link" to="/wc"><b>Wc Tl Assmt</b></Link>            
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <span data-feather="layers" />
-                KFI
-              </a>
-            </li>
-          </ul>
-          <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Saved reports</span>
-            <a className="d-flex align-items-center text-muted" href="#">
-              <span data-feather="plus-circle" />
-            </a>
-          </h6>
-          <ul className="nav flex-column mb-2">
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                <span data-feather="file-text" />
-                Current month
-              </a>
+            <Link class="nav-link" to="/ff"><b>FF</b></Link>            
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <span data-feather="file-text" />
-                Last quarter
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                <span data-feather="file-text" />
-                Social engagement
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                <span data-feather="file-text" />
-                Year-end sale
-              </a>
+            <Link class="nav-link" to="/kfi"><b>KFI</b></Link>            
             </li>
           </ul>
         </div>
       </nav>
+      
       <main role="main" className="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
         <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
           <h1 className="h2">My Dashboard</h1>

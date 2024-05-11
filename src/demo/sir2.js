@@ -4,13 +4,13 @@ import axios from 'axios'
 
 
 function Opstmt() {
-  
+  let id;
     const [inputValues, setInputValues] = useState({
-        
+      
         
     });
     const [tot2020, setTot2020] = useState(0);
-
+    let [count,setCount]=useState(0)
 
   useEffect(() => {
     const total = parseFloat(inputValues.B1_7 || 0) + parseFloat(inputValues.B1_8 || 0) + parseFloat(inputValues.B1_9 || 0);
@@ -19,19 +19,23 @@ function Opstmt() {
       ...inputValues,
       B1_10: total.toString()
     });
-  }, [inputValues.B1_7, inputValues.B1_8, inputValues.B1_9]); // Exclude tot2020 from dependency array
+  }, [count]); // Exclude tot2020 from dependency array
 
-  useEffect(() => {
-    console.log(tot2020);
-    // Save tot2020 to the database here if needed
-  }, [tot2020]);
+  // useEffect(() => {
+  //   console.log(tot2020);
+  //   // Save tot2020 to the database here if needed
+  // }, [tot2020]);
   const changeData = async (e) => {
     try {
+      
       const { name, value } = e.target;
+      const sd=name.split("_")[1]
+      console.log(sd);
       setInputValues(prev => ({ ...prev, [name]: value }));
       const user_id = localStorage.getItem("user_id");
-  
+      
       if (value !== "") {
+        
         const res = await fetch("http://127.0.0.1:8000/api/save_opstmt/", {
           method: "POST",
           headers: {
@@ -64,8 +68,12 @@ function Opstmt() {
     } catch (error) {
       console.error('Error:', error);
     }
+    setCount(count+=1)
   };
-  
+  const changeOutput=(e)=>{
+    id = e.target.name;
+    console.log(`out is${e.target.value}`);
+  }
 
 
   return (
@@ -558,7 +566,7 @@ function Opstmt() {
                 aria-label="First name" 
                 name="B1_10"
                 value={inputValues.B1_10}
-                onChange={changeData}  
+                onChange={changeOutput}  
                 />
 
               </div>

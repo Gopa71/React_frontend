@@ -16,47 +16,72 @@ function Navbar() {
 
   return (
     <div>
-        <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img style={{width:"180px", padding:"6px"}} src={img} alt="" />
+     <nav className="navbar navbar-expand-lg navbar-light">
+  <div className="container-fluid">
+    <a className="navbar-brand" href="#">
+      <img style={{width:"180px", padding:"6px"}} src={img} alt="" />
+    </a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarNav">
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href="home"><b>Home</b></a>
+        </li>
+        {token === null && 
+        <>
+          <li className="nav-item">
+            <Link className="nav-link" to="/login"><b>Login</b></Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/register"><b>Register</b></Link>
+          </li>
+        </>
+        }
 
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="home"><b>Home</b></a>
-              </li>
-              {token === null && 
-              <>
-                <li class="nav-item">
-                  <Link class="nav-link" to="/login"><b>Login</b></Link>
-                </li>
-                <li class="nav-item">
-                  <Link class="nav-link" to="/register"><b>Register</b></Link>
-                </li>
-              </>
-              }
+        {token !== null && 
+        <>
+          <li className="nav-item">
+            <Link className="nav-link" to="/opstmt"><b>Opstmt</b></Link>            
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/assetLiab"><b>Asset&Liab</b></Link>            
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/ocaocl"><b>Oca&Ocl</b></Link>            
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/ratios"><b>Ratios</b></Link>            
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/wc"><b>Wc Tl Assmt</b></Link>            
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/ff"><b>FF</b></Link>            
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/kfi"><b>KFI</b></Link>            
+          </li>
+        </>
+        }   
+      </ul>
+    </div>
+    {/* Move the Logout and Dashboard links outside the collapse div */}
+    <div>
+      {token !== null && 
+      <>
+      
+        <a className="nav-link" onClick={logoutUser} style={{cursor:"pointer"}}>Logout</a>
+        {/* <a className="nav-link" href="/dashboard">Dashboard</a> */}
+      </>
+      }
+    </div>
+  </div>
+</nav>
 
-            {token !== null && 
-              <>
-                <li class="nav-item">
-                  <a class="nav-link" href="/dashboard">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" onClick={logoutUser} style={{cursor:"pointer"}}>Logout</a>
-                </li>
-              </>
-              }   
-              
-            </ul>
-            
-          </div>
-        </div>
-      </nav>
+
+
     </div>
   )
 }
