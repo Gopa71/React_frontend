@@ -3,90 +3,178 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 
 
-function Opstmt() {
-  const [inputValues, setInputValues] = useState({});
-  const [count, setCount] = useState(0);
+function Opstmt({inputValues, setInputValues}) {
+  
+    
 
-  useEffect(() => {
-    // Calculate sum dynamically based on input field names
-    const calculateSum = () => {
-      let sum = 0;
-      for (const key in inputValues) {
-        if (key.includes('_7') || key.includes('_8') || key.includes('_9')) {
-          sum += parseFloat(inputValues[key] || 0);
-        }
-      }
-      return sum;
-    };
 
-    const total = calculateSum();
-    setInputValues(prev => ({
-      ...prev,
-      B1_10: total.toString(),
-      C1_10: total.toString(), // Example for another output field
-      // Add more output fields here if needed
-    }));
 
-    // Save to database
-    const saveToDatabase = async () => {
-      try {
-        const user_id = localStorage.getItem("user_id");
+
+  const [prefix, setPrefix] = useState("");
+  const [tot2020, setTot2020] = useState({});
+  const [Cost26, setCost26] = useState({});
+
+// -------------------------------------------------TOTAL SALES ( START ) ----------------------------------------
+
+
+  const uploadSum = async (data) => {
+    try {
+      const { name, namePrefix } = data;
+      const user_id = localStorage.getItem("user_id");
+
+      let sum = parseFloat(inputValues[namePrefix + "_7"] || 0) + parseFloat(inputValues[namePrefix + "_8"] || 0) + parseFloat(inputValues[namePrefix + "_9"] || 0);
+
+      console.log(`>>>>>>${sum}`);
+
+      if (sum !== 0) {
         const res = await fetch("http://127.0.0.1:8000/api/save_opstmt/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({
-            cell_id: 'B1_10', // Assuming always save B1_10
-            cell_value: total.toString(),
-            user_id: user_id
-          })
+          body: JSON.stringify({ cell_id: name, cell_value: sum, user_id: user_id })
         });
-        console.log('Response:', res);
-        
-        // Add logic to save to other output fields if needed
-      } catch (error) {
-        console.error('Error:', error);
+        console.log('Response:', res); // Log the response data
       }
-    };
 
-    saveToDatabase();
-  }, [count, inputValues]);
+    } catch (error) {
+      console.error('Error:', error); // Log any errors that occur during the request
+    }
+  };
+
+  // -------------------------------------------------TOTAL SALES ( END ) ----------------------------------------
+
+// -------------------------------------------------COST OF SALES ( START ) ----------------------------------------
+
+  const uploadSum26 = async (data) => {
+    try {
+      const { name, namePrefix } = data;
+      const user_id = localStorage.getItem("user_id");
+
+      let sum26 = (
+        parseFloat(inputValues[namePrefix + "_13"] || 0) +
+        parseFloat(inputValues[namePrefix + "_14"] || 0) +
+        parseFloat(inputValues[namePrefix + "_15"] || 0) +
+        parseFloat(inputValues[namePrefix + "_16"] || 0) +
+        parseFloat(inputValues[namePrefix + "_17"] || 0) +
+        parseFloat(inputValues[namePrefix + "_18"] || 0) +
+        parseFloat(inputValues[namePrefix + "_19"] || 0) +
+        parseFloat(inputValues[namePrefix + "_20"] || 0) +
+        parseFloat(inputValues[namePrefix + "_21"] || 0) -
+        (
+          parseFloat(inputValues[namePrefix + "_23"] || 0) +
+          parseFloat(inputValues[namePrefix + "_24"] || 0) +
+          parseFloat(inputValues[namePrefix + "_25"] || 0)
+        )
+      );
+
+      console.log(`>>>>>>${sum26}`);
+
+      if (sum26 !== 0) {
+        const res = await fetch("http://127.0.0.1:8000/api/save_opstmt/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ cell_id: name, cell_value: sum26, user_id: user_id })
+        });
+        console.log('Response:', res); // Log the response data
+      }
+
+    } catch (error) {
+      console.error('Error:', error); // Log any errors that occur during the request
+    }
+  };
+
+  // -------------------------------------------------COST OF SALES ( END ) ----------------------------------------
+
 
   const changeData = async (e) => {
     try {
       const { name, value } = e.target;
-      setInputValues(prev => ({ ...prev, [name]: value }));
 
-      // Save input value to database
+      console.log(value); // Log the value being set
+      setInputValues(prev => ({ ...prev, [name]: value }));
       const user_id = localStorage.getItem("user_id");
+
+      let da = JSON.stringify({
+        cell_id: name, cell_value: value, user_id: user_id
+      });
+
+      console.log(da); // Log the name being set
+
+      if (name.includes("_7") || name.includes("_8") || name.includes("_9") || name.includes("_13") || name.includes("_14") || name.includes("_15") || name.includes("_16") || name.includes("_17") || name.includes("_18") || name.includes("_19") || name.includes("_20") || name.includes("_21") || name.includes("_23") || name.includes("_24") || name.includes("_15")) {
+        setPrefix(name.split("_")[0]);
+      }
+
       if (value !== "") {
         const res = await fetch("http://127.0.0.1:8000/api/save_opstmt/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({
-            cell_id: name,
-            cell_value: value,
-            user_id: user_id
-          })
+          body: JSON.stringify({ cell_id: name, cell_value: value, user_id: user_id })
         });
-        console.log('Response:', res);
+        console.log('Response:', res); // Log the response data
       }
+
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error:', error); // Log any errors that occur during the request
     }
-    setCount(prevCount => prevCount + 1);
   };
 
-  const changeOutput = (e) => {
-    const id = e.target.name;
-    console.log(`Output field name: ${id}, Value: ${e.target.value}`);
-  };
+
+  // -------------------------------------------------TOTAL SALES ( START ) ----------------------------------------
+
+  useEffect(() => {
+    console.log(tot2020);
+    const total = parseFloat(inputValues[prefix + "_7"] || 0) + parseFloat(inputValues[prefix + "_8"] || 0) + parseFloat(inputValues[prefix + "_9"] || 0);
+    setTot2020(total);
+    setTot2020({
+      ...tot2020,
+      [[prefix + "_10"]]: total.toString()
+    });
+    uploadSum({ name: prefix + "_10", namePrefix: prefix });
+  }, [prefix, inputValues])
+
+  // -------------------------------------------------TOTAL SALES ( END ) ----------------------------------------
+
+
+  // -------------------------------------------------COST OF SALES ( START ) ----------------------------------------
+
+  useEffect(() => {
+    console.log(Cost26);
+    const total26 = (
+      parseFloat(inputValues[prefix + "_13"] || 0) +
+      parseFloat(inputValues[prefix + "_14"] || 0) +
+      parseFloat(inputValues[prefix + "_15"] || 0) +
+      parseFloat(inputValues[prefix + "_16"] || 0) +
+      parseFloat(inputValues[prefix + "_17"] || 0) +
+      parseFloat(inputValues[prefix + "_18"] || 0) +
+      parseFloat(inputValues[prefix + "_19"] || 0) +
+      parseFloat(inputValues[prefix + "_20"] || 0) +
+      parseFloat(inputValues[prefix + "_21"] || 0) )-
+      (
+        parseFloat(inputValues[prefix + "_23"] || 0) +
+        parseFloat(inputValues[prefix + "_24"] || 0) +
+        parseFloat(inputValues[prefix + "_25"] || 0)
+      );
+    
+
+    setCost26(total26);
+    setCost26({
+      ...Cost26,
+      [[prefix + "_26"]]: total26.toString()
+    });
+    uploadSum26({ name: prefix + "_26", namePrefix: prefix });
+  }, [prefix, inputValues]);
+
+  // -------------------------------------------------COST OF SALES ( END ) ----------------------------------------
+
 
   return (
 <div style={{ marginTop: 25 }}>
+  
       <div className="container-fluid border d-flex justify-content-center div_1">
         <h2 className="navbar-brand">Astral India Ltd</h2>
       </div>
@@ -180,14 +268,15 @@ function Opstmt() {
             <div className="row g-3">
               <div className="col">
               <input
-                  type="text"
-                  className="form-control"
-                  style={{ backgroundColor: "rgb(169, 255, 251)" }}
-                  aria-label="First name"
-                  name="B1_7"
-                  value={inputValues.B1_7 || ''}
-                  onChange={changeData}
-                />
+                        type="number"
+                        className="form-control"
+                        placeholder="Rs."
+                        aria-label="First name"
+                        name="B1_7"
+                        value={inputValues.B1_7}
+                        onChange={changeData}
+                    />
+                    {/* <!--//AAAAAAAA --> */}
               </div>
             </div>
           </div>
@@ -308,14 +397,13 @@ function Opstmt() {
           <div className="col-lg-1 border-start d-flex justify-content-center">
             <div className="row g-3">
               <div className="col">
-              <input
-                  type="text"
-                  className="form-control"
-                  style={{ backgroundColor: "rgb(169, 255, 251)" }}
-                  aria-label="First name"
-                  name="B1_8"
-                  value={inputValues.B1_8 || ''}
-                  onChange={changeData}
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="B1_8"  
+                value={inputValues.B1_8}
+                onChange={changeData}
                 />
                 
                 {/* <!--//AAAAAAAA --> */}
@@ -438,14 +526,13 @@ function Opstmt() {
           <div className="col-lg-1 border-start d-flex justify-content-center">
             <div className="row g-3">
               <div className="col">
-              <input
-                  type="text"
-                  className="form-control"
-                  style={{ backgroundColor: "rgb(169, 255, 251)" }}
-                  aria-label="First name"
-                  name="B1_9"
-                  value={inputValues.B1_9 || ''}
-                  onChange={changeData}
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="B1_9"
+                value={inputValues.B1_9}
+                onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
               </div>
@@ -569,15 +656,15 @@ function Opstmt() {
           <div className="col-lg-1 border-start d-flex justify-content-center">
             <div className="row g-3">
               <div className="col">
-              <input
-                   type="text"
-                   className="form-control"
-                   style={{ backgroundColor: "rgb(169, 255, 251)", fontWeight: "bold" }}
-                   aria-label="First name"
-                   name="B1_10"
-                   value={inputValues.B1_10 || ''}
-                   onChange={changeOutput}
-                 />
+                <input 
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight: "bold"}}
+                type="text" 
+                className="form-control" 
+                aria-label="First name" 
+                name="B1_10"
+                value={tot2020.B1_10}
+                onChange={changeData}  
+                />
 
               </div>
             </div>
@@ -587,11 +674,11 @@ function Opstmt() {
               <div className="col">
                 <input type="text"
                 className="form-control" 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight: "bold"}}
                 aria-label="First name" 
                 name="C1_10"  
-                value={inputValues.C1_10}
-                onChange={changeOutput}
+                value={tot2020.C1_10}
+                onChange={changeData}
                 />
 
               </div>
@@ -601,12 +688,12 @@ function Opstmt() {
             <div className="row g-3">
               <div className="col">
                 <input 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight: "bold"}}
                 type="text" 
                 className="form-control" 
                aria-label="First name" 
                 name="D1_10"  
-                value={inputValues.D1_10}
+                value={tot2020.D1_10}
                 onChange={changeData}
                 />
 
@@ -618,10 +705,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight: "bold"}}
                 aria-label="First name" 
                 name="E1_10"  
-                value={inputValues.E1_10}
+                value={tot2020.E1_10}
                 onChange={changeData} 
                 />
 
@@ -633,10 +720,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+               style={{backgroundColor: "rgb(169, 255, 251)",fontWeight: "bold"}}
                 aria-label="First name" 
                 name="F1_10" 
-                value={inputValues.F1_10}
+                value={tot2020.F1_10}
                 onChange={changeData}
 
                 />
@@ -649,10 +736,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight: "bold"}}
                 aria-label="First name" 
                 name="G1_10"  
-                value={inputValues.G1_10}
+                value={tot2020.G1_10}
                 onChange={changeData} 
                 />
 
@@ -664,10 +751,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight: "bold"}}
                 aria-label="First name" 
                 name="H1_10"  
-                value={inputValues.H1_10}
+                value={tot2020.H1_10}
                 onChange={changeData} 
                 />
               </div>
@@ -678,10 +765,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight: "bold"}}
                 aria-label="First name" 
                 name="I1_10"  
-                value={inputValues.I1_10}
+                value={tot2020.I1_10}
                 onChange={changeData} 
                 />
               </div>
@@ -2153,7 +2240,7 @@ function Opstmt() {
                 className="form-control" 
                 aria-label="First name" 
                 name="B1_26"
-                value={inputValues.B1_26}
+                value={Cost26.B1_26}
                 onChange={changeData}  
                 />
 
@@ -2168,7 +2255,7 @@ function Opstmt() {
                 style={{backgroundColor: "rgb(159, 252, 204)"}}
                 aria-label="First name" 
                 name="C1_26"  
-                value={inputValues.C1_26}
+                value={Cost26.C1_26}
                 onChange={changeData}
                 />
 
@@ -2184,7 +2271,7 @@ function Opstmt() {
                 className="form-control" 
                aria-label="First name" 
                 name="D1_26"  
-                value={inputValues.D1_26}
+                value={Cost26.D1_26}
                 onChange={changeData}
                 />
 
@@ -2199,7 +2286,7 @@ function Opstmt() {
                 style={{backgroundColor: "rgb(159, 252, 204)"}}
                 aria-label="First name" 
                 name="E1_26"  
-                value={inputValues.E1_26}
+                value={Cost26.E1_26}
                 onChange={changeData} 
                 />
 
@@ -2214,7 +2301,7 @@ function Opstmt() {
                 style={{backgroundColor: "rgb(159, 252, 204)"}}
                 aria-label="First name" 
                 name="F1_26" 
-                value={inputValues.F1_26}
+                value={Cost26.F1_26}
                 onChange={changeData}
 
                 />
@@ -2230,7 +2317,7 @@ function Opstmt() {
                 style={{backgroundColor: "rgb(159, 252, 204)"}}
                 aria-label="First name" 
                 name="G1_26"  
-                value={inputValues.G1_26}
+                value={Cost26.G1_26}
                 onChange={changeData} 
                 />
 
@@ -2245,7 +2332,7 @@ function Opstmt() {
                 style={{backgroundColor: "rgb(159, 252, 204)"}}
                 aria-label="First name" 
                 name="H1_26"  
-                value={inputValues.H1_26}
+                value={Cost26.H1_26}
                 onChange={changeData} 
                 />
               </div>
@@ -2259,7 +2346,7 @@ function Opstmt() {
                 style={{backgroundColor: "rgb(159, 252, 204)"}}
                 aria-label="First name" 
                 name="I1_26"  
-                value={inputValues.I1_26}
+                value={Cost26.I1_26}
                 onChange={changeData} 
                 />
               </div>
@@ -3180,6 +3267,8 @@ function Opstmt() {
           
       </div>
     </div>
+
+
     <div className="container-fluid border mt-3 div_main4">
       <div className="row" >
         <div className="col-lg-4 border-end d-flex justify-content-center"style={{backgroundColor: "rgb(238, 193, 255)"}}>
@@ -3308,6 +3397,912 @@ function Opstmt() {
           </div>
       </div>
     </div>
+    <div className="container-fluid border mt-3">
+      <div className="row">
+          <div className="col-lg-4 border-end d-flex justify-content-center">
+            <h6>Provision for Taxes
+             </h6>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="B1_36"
+                value={inputValues.B1_36}
+                onChange={changeData}  
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="C1_36"  
+                value={inputValues.C1_36}
+                onChange={changeData}
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." aria-label="First name" 
+                name="D1_36"  
+                value={inputValues.D1_36}
+                onChange={changeData}
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="E1_36"  
+                value={inputValues.E1_36}
+                onChange={changeData} 
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="F1_36" 
+                value={inputValues.F1_36}
+                onChange={changeData}
+
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="G1_36"  
+                value={inputValues.G1_36}
+                onChange={changeData} 
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="H1_36"  
+                value={inputValues.H1_36}
+                onChange={changeData} 
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="I1_36"  
+                value={inputValues.I1_36}
+                onChange={changeData} 
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          
+      </div>
+    </div>
+
+
+    {/*-------------------------------------- LINE ( 37 - 39 ) -------------------------------------------------*/}
+
+
+    <div className="container-fluid border mt-3 div_main4">
+      <div className="row" >
+        <div className="col-lg-4 border-end d-flex justify-content-center"style={{backgroundColor: "rgb(246, 230, 178)"}}>
+          <h5><b>Net Profit after Tax / Loss</b></h5>
+        </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input 
+                style={{backgroundColor: "rgb(246, 230, 178)"}}
+                type="text" 
+                className="form-control" 
+                aria-label="First name" 
+                name="B1_37"
+                value={inputValues.B1_37}
+                onChange={changeData}  
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text"
+                className="form-control" 
+                style={{backgroundColor: "rgb(246, 230, 178)"}}
+                aria-label="First name" 
+                name="C1_37"  
+                value={inputValues.C1_37}
+                onChange={changeData}
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input 
+                style={{backgroundColor: "rgb(246, 230, 178)"}}
+                type="text" 
+                className="form-control" 
+               aria-label="First name" 
+                name="D1_37"  
+                value={inputValues.D1_37}
+                onChange={changeData}
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(246, 230, 178)"}}
+                aria-label="First name" 
+                name="E1_37"  
+                value={inputValues.E1_37}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(246, 230, 178)"}}
+                aria-label="First name" 
+                name="F1_37" 
+                value={inputValues.F1_37}
+                onChange={changeData}
+
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(246, 230, 178)"}}
+                aria-label="First name" 
+                name="G1_37"  
+                value={inputValues.G1_37}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(246, 230, 178)"}}
+                aria-label="First name" 
+                name="H1_37"  
+                value={inputValues.H1_37}
+                onChange={changeData} 
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(246, 230, 178)"}}
+                aria-label="First name" 
+                name="I1_37"  
+                value={inputValues.I1_37}
+                onChange={changeData} 
+                />
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div className="container-fluid border mt-3 div_main4">
+      <div className="row" >
+        <div className="col-lg-4 border-end d-flex justify-content-center"style={{backgroundColor: "rgb(238, 193, 255)"}}>
+          <h5><b>P B D I T</b></h5>
+        </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                type="text" 
+                className="form-control" 
+                aria-label="First name" 
+                name="B1_38"
+                value={inputValues.B1_38}
+                onChange={changeData}  
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text"
+                className="form-control" 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                aria-label="First name" 
+                name="C1_38"  
+                value={inputValues.C1_38}
+                onChange={changeData}
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                type="text" 
+                className="form-control" 
+               aria-label="First name" 
+                name="D1_38"  
+                value={inputValues.D1_38}
+                onChange={changeData}
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                aria-label="First name" 
+                name="E1_38"  
+                value={inputValues.E1_38}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                aria-label="First name" 
+                name="F1_38" 
+                value={inputValues.F1_38}
+                onChange={changeData}
+
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                aria-label="First name" 
+                name="G1_38"  
+                value={inputValues.G1_38}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                aria-label="First name" 
+                name="H1_38"  
+                value={inputValues.H1_38}
+                onChange={changeData} 
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                aria-label="First name" 
+                name="I1_38"  
+                value={inputValues.I1_38}
+                onChange={changeData} 
+                />
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div className="container-fluid border mt-3 div_main4">
+      <div className="row" >
+        <div className="col-lg-4 border-end d-flex justify-content-center"style={{backgroundColor: "rgb(188, 245, 185)"}}>
+          <h5><b>Cash Accruals</b></h5>
+        </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input 
+                style={{backgroundColor: "rgb(188, 245, 185)"}}
+                type="text" 
+                className="form-control" 
+                aria-label="First name" 
+                name="B1_39"
+                value={inputValues.B1_39}
+                onChange={changeData}  
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text"
+                className="form-control" 
+                style={{backgroundColor: "rgb(188, 245, 185)"}}
+                aria-label="First name" 
+                name="C1_39"  
+                value={inputValues.C1_39}
+                onChange={changeData}
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input 
+                style={{backgroundColor: "rgb(188, 245, 185)"}}
+                type="text" 
+                className="form-control" 
+               aria-label="First name" 
+                name="D1_39"  
+                value={inputValues.D1_39}
+                onChange={changeData}
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(188, 245, 185)"}}
+                aria-label="First name" 
+                name="E1_39"  
+                value={inputValues.E1_39}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(188, 245, 185)"}}
+                aria-label="First name" 
+                name="F1_39" 
+                value={inputValues.F1_39}
+                onChange={changeData}
+
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(188, 245, 185)"}}
+                aria-label="First name" 
+                name="G1_39"  
+                value={inputValues.G1_39}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(188, 245, 185)"}}
+                aria-label="First name" 
+                name="H1_39"  
+                value={inputValues.H1_39}
+                onChange={changeData} 
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(188, 245, 185)"}}
+                aria-label="First name" 
+                name="I1_39"  
+                value={inputValues.I1_39}
+                onChange={changeData} 
+                />
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div className="container-fluid border mt-3">
+      <div className="row">
+          <div className="col-lg-4 border-end d-flex justify-content-center">
+            <h6>Dividend / Drawings
+             </h6>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="B1_40"
+                value={inputValues.B1_40}
+                onChange={changeData}  
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="C1_40"  
+                value={inputValues.C1_40}
+                onChange={changeData}
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." aria-label="First name" 
+                name="D1_40"  
+                value={inputValues.D1_40}
+                onChange={changeData}
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="E1_40"  
+                value={inputValues.E1_40}
+                onChange={changeData} 
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="F1_40" 
+                value={inputValues.F1_40}
+                onChange={changeData}
+
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="G1_40"  
+                value={inputValues.G1_40}
+                onChange={changeData} 
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="H1_40"  
+                value={inputValues.H1_40}
+                onChange={changeData} 
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="I1_40"  
+                value={inputValues.I1_40}
+                onChange={changeData} 
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>  
+      </div>
+    </div>
+    <div className="container-fluid border mt-3 div_main4">
+      <div className="row" >
+        <div className="col-lg-4 border-end d-flex justify-content-center"style={{backgroundColor: "rgb(238, 193, 255)"}}>
+          <h5><b>Retained Profit</b></h5>
+        </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                type="text" 
+                className="form-control" 
+                aria-label="First name" 
+                name="B1_41"
+                value={inputValues.B1_41}
+                onChange={changeData}  
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text"
+                className="form-control" 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                aria-label="First name" 
+                name="C1_41"  
+                value={inputValues.C1_41}
+                onChange={changeData}
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                type="text" 
+                className="form-control" 
+               aria-label="First name" 
+                name="D1_41"  
+                value={inputValues.D1_41}
+                onChange={changeData}
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                aria-label="First name" 
+                name="E1_41"  
+                value={inputValues.E1_41}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                aria-label="First name" 
+                name="F1_41" 
+                value={inputValues.F1_41}
+                onChange={changeData}
+
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                aria-label="First name" 
+                name="G1_40"  
+                value={inputValues.G1_40}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                aria-label="First name" 
+                name="H1_40"  
+                value={inputValues.H1_40}
+                onChange={changeData} 
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(238, 193, 255)"}}
+                aria-label="First name" 
+                name="I1_40"  
+                value={inputValues.I1_40}
+                onChange={changeData} 
+                />
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div className="container-fluid border mt-3 div_main4">
+      <div className="row" >
+        <div className="col-lg-4 border-end d-flex justify-content-center"style={{backgroundColor: "rgb(247, 197, 237)"}}>
+          <h5><b>Net Cash Accrual</b></h5>
+        </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input 
+                style={{backgroundColor: "rgb(247, 197, 237)"}}
+                type="text" 
+                className="form-control" 
+                aria-label="First name" 
+                name="B1_38"
+                value={inputValues.B1_38}
+                onChange={changeData}  
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text"
+                className="form-control" 
+                style={{backgroundColor: "rgb(247, 197, 237)"}}
+                aria-label="First name" 
+                name="C1_38"  
+                value={inputValues.C1_38}
+                onChange={changeData}
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input 
+                style={{backgroundColor: "rgb(247, 197, 237)"}}
+                type="text" 
+                className="form-control" 
+               aria-label="First name" 
+                name="D1_38"  
+                value={inputValues.D1_38}
+                onChange={changeData}
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(247, 197, 237)"}}
+                aria-label="First name" 
+                name="E1_38"  
+                value={inputValues.E1_38}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(247, 197, 237)"}}
+                aria-label="First name" 
+                name="F1_38" 
+                value={inputValues.F1_38}
+                onChange={changeData}
+
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(247, 197, 237)"}}
+                aria-label="First name" 
+                name="G1_38"  
+                value={inputValues.G1_38}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(247, 197, 237)"}}
+                aria-label="First name" 
+                name="H1_38"  
+                value={inputValues.H1_38}
+                onChange={changeData} 
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                style={{backgroundColor: "rgb(247, 197, 237)"}}
+                aria-label="First name" 
+                name="I1_38"  
+                value={inputValues.I1_38}
+                onChange={changeData} 
+                />
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+
 
 
 

@@ -20,7 +20,7 @@ import Kfi from './pages/Kfi'
 
 function App() {
   const [inputValues, setInputValues] = useState({
-    B1_7: '',B1_8: '',B1_9: '',B1_10: '',C1_7: '',C1_8: '',C1_9: '',C1_10: '',
+    B1_7: '',B1_8: '',B1_9: '',B1_10: '',C1_7: '',C1_8: '',C1_9: '',C1_10: '',B1_23:'',B1_24:'',B1_25:'',C1_23:'',C1_24:'',C1_25:'',
     
 });
   return (

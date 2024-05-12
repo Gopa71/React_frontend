@@ -4,25 +4,34 @@ import axios from 'axios'
 
 
 function Opstmt({inputValues, setInputValues}) {
-  
-    // const [inputValues, setInputValues] = useState({
-    //     B2_7: '',
-    //     B2_8: '',
-    //     B2_9: '',
-    //     B2_10: '',
-        
-    //     C2_7: '',
-    //     C2_8: '',
-    //     C2_9: '',
-    //     C2_10: '',
-        
-    // });
 
+    let [tot2020]=useState();
+    let [tot2021]=useState();
+    let [tot2022]=useState();
+    let [tot2023]=useState();
+    let [tot2024]=useState();
+    let [tot2025]=useState();
+    let [tot2026]=useState();
+    let [tot2027]=useState();
+    let [tot2028]=useState();
+    let [tot2029]=useState();
+    let [tot2030]=useState();
+    let [tot2031]=useState();
+    let [tot2032]=useState();
+    let [tot2033]=useState();
+    let [tot2034]=useState();
+    let [tot2035]=useState();
+    let [tot2036]=useState();
+    let [tot2037]=useState();
+    let [tot2038]=useState();
+    let [tot2039]=useState();
+    let [tot2040]=useState();
+    let [tot2041]=useState();
+    let [tot2042]=useState();
+    let [tot2043]=useState();
+    
 
-
-
-    let [tot2020,setTot2020]=useState(0)
-
+    
     
     const changeData = async (e) => {
       try {
@@ -39,7 +48,7 @@ function Opstmt({inputValues, setInputValues}) {
           console.log(da); // Log the name being set
           
          if(value!=""){
-          setTot2020(tot2020+=parseInt(value))
+          
           const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
             method: "POST",
             headers:{
@@ -70,12 +79,476 @@ function Opstmt({inputValues, setInputValues}) {
         "Content-Type":"application/json"
       },
       body:JSON.stringify( {
-        cell_id: "B2_7", cell_value: inputValues["B1_23"],user_id:user_id
+        cell_id: "B2_7", cell_value: inputValues["B1_25"],user_id:user_id,
       })
     })
   }
   upload();
  },[tot2020])
+
+
+
+ useEffect(()=>{
+  console.log(tot2021);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+        cell_id: "B2_8", cell_value: inputValues["B1_24"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2021])
+
+
+ useEffect(()=>{
+  console.log(tot2022);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+        cell_id: "B2_9", cell_value: inputValues["B1_23"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2022])
+
+
+ useEffect(()=>{
+  console.log(tot2023);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+        cell_id: "C2_7", cell_value: inputValues["C1_25"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2023])
+
+
+
+
+ useEffect(()=>{
+  console.log(tot2024);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+        cell_id: "C2_8", cell_value: inputValues["C1_24"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2024])
+
+
+
+
+ useEffect(()=>{
+  console.log(tot2025);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+        cell_id: "C2_9", cell_value: inputValues["C1_23"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2025])
+
+
+
+ useEffect(()=>{
+  console.log(tot2026);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+        cell_id: "D2_7", cell_value: inputValues["D1_25"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2026])
+
+
+
+
+ useEffect(()=>{
+  console.log(tot2027);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+        cell_id: "D2_8", cell_value: inputValues["D1_24"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2027])
+
+
+
+ 
+ useEffect(()=>{
+  console.log(tot2028);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+        cell_id: "D2_9", cell_value: inputValues["D1_23"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2028])
+
+        
+
+ useEffect(()=>{
+  console.log(tot2029);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+       cell_id: "E2_7", cell_value: inputValues["E1_25"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2029])
+    
+
+
+ useEffect(()=>{
+  console.log(tot2030);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+         cell_id: "E2_8", cell_value: inputValues["E1_24"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2030])
+
+
+
+
+ useEffect(()=>{
+  console.log(tot2031);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+        cell_id: "E2_9", cell_value: inputValues["E1_23"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2031])
+
+
+
+ useEffect(()=>{
+  console.log(tot2032);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+       cell_id: "F2_7", cell_value: inputValues["F1_25"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2032])
+        
+
+
+ useEffect(()=>{
+  console.log(tot2033);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+      cell_id: "F2_8", cell_value: inputValues["F1_24"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2033])
+
+        
+ 
+ useEffect(()=>{
+  console.log(tot2034);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+      cell_id: "F2_9", cell_value: inputValues["F1_23"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2034])
+
+
+
+ useEffect(()=>{
+  console.log(tot2035);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+      cell_id: "G2_7", cell_value: inputValues["G1_25"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2035])
+
+ 
+
+ useEffect(()=>{
+  console.log(tot2036);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+     cell_id: "G2_8", cell_value: inputValues["G1_24"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2036])
+
+
+ useEffect(()=>{
+  console.log(tot2037);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+      cell_id: "G2_9", cell_value: inputValues["G1_23"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2037])
+
+        
+       
+
+ useEffect(()=>{
+  console.log(tot2038);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+        cell_id: "H2_7", cell_value: inputValues["H1_25"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2038])
+
+
+
+ useEffect(()=>{
+  console.log(tot2039);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+      cell_id: "H2_8", cell_value: inputValues["H1_24"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2039])
+        
+
+
+ useEffect(()=>{
+  console.log(tot2040);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+      cell_id: "H2_9", cell_value: inputValues["H1_23"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2040])
+
+
+ useEffect(()=>{
+  console.log(tot2041);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+      cell_id: "I2_7", cell_value: inputValues["I1_25"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2041])
+
+ 
+
+ useEffect(()=>{
+  console.log(tot2042);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+      cell_id: "I2_8", cell_value: inputValues["I1_24"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2042])
+        
+
+
+ useEffect(()=>{
+  console.log(tot2043);
+  console.log(inputValues);
+  async function upload() {
+    const user_id = localStorage.getItem("user_id");
+    const res = await fetch("http://127.0.0.1:8000/api/save_assets/", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify( {
+      cell_id: "I2_9", cell_value: inputValues["I1_23"],user_id:user_id,
+      })
+    })
+  }
+  upload();
+ },[tot2043])
+        
+      
  
 
   return (
@@ -193,7 +666,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="C2_7"  
-                value={inputValues.C2_7}
+                value={inputValues.C1_25}
                 onChange={changeData}
                 />
 
@@ -209,7 +682,7 @@ function Opstmt({inputValues, setInputValues}) {
                 className="form-control" 
                aria-label="First name" 
                 name="D2_7"  
-                value={inputValues.D2_7}
+                value={inputValues.D1_25}
                 onChange={changeData}
                 />
 
@@ -224,7 +697,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="E2_7"  
-                value={inputValues.E2_7}
+                value={inputValues.E1_25}
                 onChange={changeData} 
                 />
 
@@ -239,7 +712,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="F2_7" 
-                value={inputValues.F2_7}
+                value={inputValues.F1_25}
                 onChange={changeData}
 
                 />
@@ -255,7 +728,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="G2_7"  
-                value={inputValues.G2_7}
+                value={inputValues.G1_25}
                 onChange={changeData} 
                 />
 
@@ -270,7 +743,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="H2_7"  
-                value={inputValues.H2_7}
+                value={inputValues.H1_25}
                 onChange={changeData} 
                 />
               </div>
@@ -284,7 +757,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="I2_7"  
-                value={inputValues.I2_7}
+                value={inputValues.I1_25}
                 onChange={changeData} 
                 />
               </div>
@@ -321,7 +794,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="C2_8"  
-                value={inputValues.C2_8}
+                value={inputValues.C1_24}
                 onChange={changeData}
                 />
 
@@ -337,7 +810,7 @@ function Opstmt({inputValues, setInputValues}) {
                 className="form-control" 
                aria-label="First name" 
                 name="D2_8"  
-                value={inputValues.D2_8}
+                value={inputValues.D1_24}
                 onChange={changeData}
                 />
 
@@ -352,7 +825,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="E2_8"  
-                value={inputValues.E2_8}
+                value={inputValues.E1_24}
                 onChange={changeData} 
                 />
 
@@ -367,7 +840,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="F2_8" 
-                value={inputValues.F2_8}
+                value={inputValues.F1_24}
                 onChange={changeData}
 
                 />
@@ -383,7 +856,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="G2_8"  
-                value={inputValues.G2_8}
+                value={inputValues.G1_24}
                 onChange={changeData} 
                 />
 
@@ -398,7 +871,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="H2_8"  
-                value={inputValues.H2_8}
+                value={inputValues.H1_24}
                 onChange={changeData} 
                 />
               </div>
@@ -412,7 +885,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="I2_8"  
-                value={inputValues.I2_8}
+                value={inputValues.I1_24}
                 onChange={changeData} 
                 />
               </div>
@@ -451,7 +924,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="C2_9"  
-                value={inputValues.C2_9}
+                value={inputValues.C1_23}
                 onChange={changeData}
                 />
 
@@ -467,7 +940,7 @@ function Opstmt({inputValues, setInputValues}) {
                 className="form-control" 
                aria-label="First name" 
                 name="D2_9"  
-                value={inputValues.D2_9}
+                value={inputValues.D1_23}
                 onChange={changeData}
                 />
 
@@ -482,7 +955,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="E2_9"  
-                value={inputValues.E2_9}
+                value={inputValues.E1_23}
                 onChange={changeData} 
                 />
 
@@ -497,7 +970,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="F2_9" 
-                value={inputValues.F2_9}
+                value={inputValues.F1_23}
                 onChange={changeData}
 
                 />
@@ -513,7 +986,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="G2_9"  
-                value={inputValues.G2_9}
+                value={inputValues.G1_23}
                 onChange={changeData} 
                 />
 
@@ -528,7 +1001,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="H2_9"  
-                value={inputValues.H2_9}
+                value={inputValues.H1_23}
                 onChange={changeData} 
                 />
               </div>
@@ -542,7 +1015,7 @@ function Opstmt({inputValues, setInputValues}) {
                 style={{backgroundColor: "rgb(169, 255, 251)"}}
                 aria-label="First name" 
                 name="I2_9"  
-                value={inputValues.I2_9}
+                value={inputValues.I1_23}
                 onChange={changeData} 
                 />
               </div>
