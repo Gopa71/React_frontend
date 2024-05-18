@@ -1,19 +1,18 @@
 // Opstmt.js
-import React, { useEffect, useState } from 'react';
+import React, { useContext,useEffect, useState } from 'react';
 import axios from 'axios'
+import { AppContext } from '../AppContext';
 
 
-function Opstmt({inputValues, setInputValues}) {
-  
+function Opstmt() {
+
+  const { inputValues, setInputValues,tot2020, setTot2020,Cost27, setCost27,Cost26, setCost26 } = useContext(AppContext);
     
 
 
 
 
   const [prefix, setPrefix] = useState("");
-  const [tot2020, setTot2020] = useState({});
-  const [Cost26, setCost26] = useState({});
-  const [Cost27, setCost27] = useState({});
   const [Cost28, setCost28] = useState({});
   const [Cost31, setCost31] = useState({});
   const [Cost35, setCost35] = useState({});
@@ -23,7 +22,7 @@ function Opstmt({inputValues, setInputValues}) {
   const [Cost41, setCost41] = useState({});
   const [Cost42, setCost42] = useState({});
 
-
+// const [lessB,setLessB]=useState(0);
 
 
 
@@ -57,6 +56,56 @@ function Opstmt({inputValues, setInputValues}) {
       console.error('Error:', error); // Log any errors that occur during the request
     }
   };
+
+
+// /
+// 
+// 
+// const uploadSum13 = async (data) => {
+//   try {
+//     const { name } = data;
+//     const user_id = localStorage.getItem("user_id");
+
+//     // let sum = parseFloat(inputValues[namePrefix + "_7"] || 0) + parseFloat(inputValues[namePrefix + "_8"] || 0) + parseFloat(inputValues[namePrefix + "_9"] || 0);
+
+//     // console.log(`>>>>>>${sum}`);
+
+//     if (inputValues["B1_23"] !== 0) {
+//       const res = await fetch("http://127.0.0.1:8000/api/save_opstmt/", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({ cell_id: "C1_13", cell_value: inputValues["B1_23"], user_id: user_id })
+//       });
+//       console.log('Response:', res); // Log the response data
+//     }
+
+//   } catch (error) {
+//     console.error('Error:', error); // Log any errors that occur during the request
+//   }
+// };
+// // 
+// // 
+// // 
+
+//   // 
+//   // 
+//   // 
+
+//   useEffect(() => {
+//     uploadSum13({ name: "C1_13" });
+//   }, [prefix, inputValues])
+//   // 
+//   // 
+//   // 
+
+
+
+
+
+
+
 
   // -------------------------------------------------TOTAL SALES ( END1 ) ----------------------------------------
 
@@ -102,6 +151,36 @@ function Opstmt({inputValues, setInputValues}) {
     }
   };
 
+
+
+
+  useEffect(() => {
+    console.log(Cost26);
+    const total26 = (
+      // parseFloat(lessB)+
+      parseFloat(inputValues[prefix + "_13"] || 0) +
+      parseFloat(inputValues[prefix + "_14"] || 0) +
+      parseFloat(inputValues[prefix + "_15"] || 0) +
+      parseFloat(inputValues[prefix + "_16"] || 0) +
+      parseFloat(inputValues[prefix + "_17"] || 0) +
+      parseFloat(inputValues[prefix + "_18"] || 0) +
+      parseFloat(inputValues[prefix + "_19"] || 0) +
+      parseFloat(inputValues[prefix + "_20"] || 0) +
+      parseFloat(inputValues[prefix + "_21"] || 0) )-
+      (
+        parseFloat(inputValues[prefix + "_23"] || 0) +
+        parseFloat(inputValues[prefix + "_24"] || 0) +
+        parseFloat(inputValues[prefix + "_25"] || 0)
+      );
+    
+    setCost26(total26);
+    setCost26({
+      ...Cost26,
+      [[prefix + "_26"]]: total26.toString()
+    });
+    uploadSum26({ name: prefix + "_26", namePrefix: prefix });
+  }, [prefix, inputValues]);
+
   // -------------------------------------------------COST OF SALES ( END1 ) ----------------------------------------
 
   // -------------------------------------------------COST OF PRODUCTION ( START1 ) --------------------------------------
@@ -111,7 +190,7 @@ function Opstmt({inputValues, setInputValues}) {
       const user_id = localStorage.getItem("user_id");
 
       let sum27 = (
-        parseFloat(inputValues[namePrefix + "_13"] || 0) +
+
         parseFloat(inputValues[namePrefix + "_14"] || 0) +
         parseFloat(inputValues[namePrefix + "_15"] || 0) +
         parseFloat(inputValues[namePrefix + "_16"] || 0) +
@@ -168,7 +247,7 @@ function Opstmt({inputValues, setInputValues}) {
     }
   } catch (error) {
     console.error('Error:', error); // Log any errors that occur during the request
-  }
+  } 
 };
   // -------------------------------------------------GROSS PROFIT / LOSS ( END1 ) -------------------------------------
   
@@ -370,8 +449,8 @@ const uploadSum42 = async (data) => {
   const changeData = async (e) => {
     try {
       const { name, value } = e.target;
-
-      console.log(value); // Log the value being set
+      
+      console.log(`name is ${name}`); // Log the value being set
       setInputValues(prev => ({ ...prev, [name]: value }));
       const user_id = localStorage.getItem("user_id");
 
@@ -395,7 +474,9 @@ const uploadSum42 = async (data) => {
         });
         console.log('Response:', res); // Log the response data
       }
-
+      // if(name=='B1_23'||name=='B1_24'||name=='B1_25'){
+      //   setLessB(lessB+=value)
+      // }
     } catch (error) {
       console.error('Error:', error); // Log any errors that occur during the request
     }
@@ -426,32 +507,7 @@ const uploadSum42 = async (data) => {
 
   // -------------------------------------------------COST OF SALES ( START2 ) ----------------------------------------
 
-  useEffect(() => {
-    console.log(Cost26);
-    const total26 = (
-      parseFloat(inputValues[prefix + "_13"] || 0) +
-      parseFloat(inputValues[prefix + "_14"] || 0) +
-      parseFloat(inputValues[prefix + "_15"] || 0) +
-      parseFloat(inputValues[prefix + "_16"] || 0) +
-      parseFloat(inputValues[prefix + "_17"] || 0) +
-      parseFloat(inputValues[prefix + "_18"] || 0) +
-      parseFloat(inputValues[prefix + "_19"] || 0) +
-      parseFloat(inputValues[prefix + "_20"] || 0) +
-      parseFloat(inputValues[prefix + "_21"] || 0) )-
-      (
-        parseFloat(inputValues[prefix + "_23"] || 0) +
-        parseFloat(inputValues[prefix + "_24"] || 0) +
-        parseFloat(inputValues[prefix + "_25"] || 0)
-      );
-    
-
-    setCost26(total26);
-    setCost26({
-      ...Cost26,
-      [[prefix + "_26"]]: total26.toString()
-    });
-    uploadSum26({ name: prefix + "_26", namePrefix: prefix });
-  }, [prefix, inputValues]);
+  
 
   // -------------------------------------------------COST OF SALES ( END2 ) ----------------------------------------
 
@@ -1274,7 +1330,7 @@ useEffect(() => {
                         className="form-control"
                         aria-label="First name"
                         name="C1_13"
-                        value={inputValues.B1_23}
+                        value={inputValues.C1_13 && inputValues.B1_23   }
                         onChange={changeData}
                     />
               </div>
@@ -1289,7 +1345,7 @@ useEffect(() => {
   
                 aria-label="First name" 
                 name="D1_13"  
-                value={inputValues.C1_23}
+                value={ inputValues.D1_13 &&  inputValues.C1_23}
                 onChange={changeData}  
                 />
 
@@ -1304,7 +1360,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="E1_13"  
-                value={inputValues.D1_23}
+                value={inputValues.E1_13 && inputValues.D1_23 }
                 onChange={changeData}  
                 />
 
@@ -1319,7 +1375,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="F1_13"  
-                value={inputValues.E1_23}
+                value={ inputValues.F1_13 && inputValues.E1_23 }
                 onChange={changeData} 
                 />
 
@@ -1334,7 +1390,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="G1_13" 
-                value={inputValues.F1_23}
+                value={inputValues.G1_13 && inputValues.F1_23}
                 onChange={changeData} />
 
               </div>
@@ -1348,7 +1404,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="H1_13"  
-                value={inputValues.G1_23}
+                value={inputValues.H1_13 && inputValues.G1_23}
                 onChange={changeData} 
                 />
 
@@ -1363,7 +1419,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="I1_13"  
-                value={inputValues.H1_23}
+                value={inputValues.I1_13 && inputValues.H1_23}
                 onChange={changeData} 
                 />
 
@@ -1403,7 +1459,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="C1_14"
-                value={inputValues.B1_24}
+                value={  inputValues.C1_14 && inputValues.B1_24}
                 onChange={changeData}  />
 
               </div>
@@ -1417,7 +1473,7 @@ useEffect(() => {
                 
                 aria-label="First name" 
                 name="D1_14"  
-                value={inputValues.C1_24}
+                value={ inputValues.D1_14 && inputValues.C1_24}
                 onChange={changeData} 
                 />
 
@@ -1432,7 +1488,7 @@ useEffect(() => {
                 
                 aria-label="First name" 
                 name="E1_14"  
-                value={inputValues.D1_24}
+                value={inputValues.E1_14 && inputValues.D1_24}
                 onChange={changeData}  
                 />
 
@@ -1447,7 +1503,7 @@ useEffect(() => {
                 
                 aria-label="First name" 
                 name="F1_14" 
-                value={inputValues.E1_24}
+                value={inputValues.F1_14 && inputValues.E1_24}
                 onChange={changeData} 
                 />
 
@@ -1462,7 +1518,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="G1_14"  
-                value={inputValues.F1_24}
+                value={inputValues.G1_14 && inputValues.F1_24}
                 onChange={changeData} 
                 />
 
@@ -1477,7 +1533,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="H1_14"  
-                value={inputValues.G1_24}
+                value={inputValues.H1_14 && inputValues.G1_24}
                 onChange={changeData} 
                 />
 
@@ -1492,7 +1548,7 @@ useEffect(() => {
                 
                 aria-label="First name" 
                 name="I1_14"  
-                value={inputValues.H1_24}
+                value={inputValues.I1_14 && inputValues.H1_24}
                 onChange={changeData} 
                 />
 
@@ -1531,7 +1587,7 @@ useEffect(() => {
                 
                 aria-label="First name" 
                 name="C1_15"  
-                value={inputValues.B1_25}
+                value={ inputValues.C1_15 && inputValues.B1_25 }
                 onChange={changeData}
                 />
 
@@ -1545,7 +1601,7 @@ useEffect(() => {
                 className="form-control" 
                aria-label="First name" 
                 name="D1_15"  
-                value={inputValues.C1_25}
+                value={inputValues.D1_15 && inputValues.C1_25}
                 onChange={changeData}
                 />
 
@@ -1560,7 +1616,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="E1_15"  
-                value={inputValues.D1_25}
+                value={inputValues.E1_15 && inputValues.D1_25}
                 onChange={changeData} 
                 />
 
@@ -1575,7 +1631,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="F1_15" 
-                value={inputValues.E1_25}
+                value={inputValues.F1_15 && inputValues.E1_25}
                 onChange={changeData}
 
                 />
@@ -1591,7 +1647,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="G1_15"  
-                value={inputValues.F1_25}
+                value={inputValues.G1_15 && inputValues.F1_25}
                 onChange={changeData} 
                 />
 
@@ -1606,7 +1662,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="H1_15"  
-                value={inputValues.G1_25}
+                value={inputValues.H1_15 && inputValues.G1_25}
                 onChange={changeData} 
                 />
               </div>
@@ -1620,7 +1676,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="I1_15"  
-                value={inputValues.H1_25}
+                value={inputValues.I1_15 && inputValues.H1_25}
                 onChange={changeData} 
                 />
               </div>

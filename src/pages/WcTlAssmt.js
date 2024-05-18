@@ -38,7 +38,8 @@ function Opstmt() {
 
           console.log(da); // Log the name being set
           
-         if(value!=""){
+         if(value!="")
+          {
           setTot2020(tot2020+=parseInt(value))
           const res = await fetch("http://127.0.0.1:8000/api/save_opstmt/", {
             method: "POST",
@@ -145,12 +146,12 @@ function Opstmt() {
       </div>
 
     
-{/*---------------------------------------- OPERATING DATA -------------------------------------*/}
+{/*---------------------------------------- OPERATING DATA ------------------------------------------------------*/}
 
 <div className="container-fluid border mt-3">
         <div className="row" style={{backgroundColor:"rgb(224, 231, 231)"}}>
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h5 >OPERATING DATA </h5>
+            <h5 >CURRENT ASSETS </h5>
           </div>
         </div>
     </div>
@@ -158,7 +159,7 @@ function Opstmt() {
 <div className="container-fluid border mt-3">
 <div className="row">
     <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Net Sales
+      <h6>Raw Materials
        </h6>
     </div>
     <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -168,8 +169,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="B4_6"
-          value={inputValues.B4_6}
+          name="B5_6"
+          value={inputValues.B5_6}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -183,8 +184,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="C4_6"  
-          value={inputValues.C4_6}
+          name="C5_6"  
+          value={inputValues.C5_6}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -197,8 +198,8 @@ function Opstmt() {
           <input type="text" 
           className="form-control" 
            aria-label="First name" 
-          name="D4_6"  
-          value={inputValues.D4_6}
+          name="D5_6"  
+          value={inputValues.D5_6}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -212,8 +213,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="E4_6"  
-          value={inputValues.E4_6}
+          name="E5_6"  
+          value={inputValues.E5_6}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -227,8 +228,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="F4_6" 
-          value={inputValues.F4_6}
+          name="F5_6" 
+          value={inputValues.F5_6}
           onChange={changeData}
 
           />
@@ -243,8 +244,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="G4_6"  
-          value={inputValues.G4_6}
+          name="G5_6"  
+          value={inputValues.G5_6}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -258,8 +259,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="H4_6"  
-          value={inputValues.H4_6}
+          name="H5_6"  
+          value={inputValues.H5_6}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -273,8 +274,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="I4_6"  
-          value={inputValues.I4_6}
+          name="I5_6"  
+          value={inputValues.I5_6}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -288,7 +289,7 @@ function Opstmt() {
 <div className="container-fluid border mt-3">
 <div className="row">
     <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Consumption of Raw Materials
+      <h6>(Month's Cost Of Production)
        </h6>
     </div>
     <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -298,8 +299,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="B4_7"
-          value={inputValues.B4_7}
+          name="B5_7"
+          value={inputValues.B5_7}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -313,8 +314,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="C4_7"  
-          value={inputValues.C4_7}
+          name="C5_7"  
+          value={inputValues.C5_7}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -327,8 +328,8 @@ function Opstmt() {
           <input type="text" 
           className="form-control" 
            aria-label="First name" 
-          name="D4_7"  
-          value={inputValues.D4_7}
+          name="D5_7"  
+          value={inputValues.D5_7}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -342,8 +343,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="E4_7"  
-          value={inputValues.E4_7}
+          name="E5_7"  
+          value={inputValues.E5_7}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -357,8 +358,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="F4_7" 
-          value={inputValues.F4_7}
+          name="F5_7" 
+          value={inputValues.F5_7}
           onChange={changeData}
 
           />
@@ -373,8 +374,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="G4_7"  
-          value={inputValues.G4_7}
+          name="G5_7"  
+          value={inputValues.G5_7}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -388,8 +389,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="H4_7"  
-          value={inputValues.H4_7}
+          name="H5_7"  
+          value={inputValues.H5_7}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -403,8 +404,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="I4_7"  
-          value={inputValues.I4_7}
+          name="I5_7"  
+          value={inputValues.I5_7}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -417,7 +418,7 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>Cost Of Production
+            <h6>Stock-in-process
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -428,8 +429,8 @@ function Opstmt() {
                         className="form-control"
                         
                         aria-label="First name"
-                        name="B4_8"
-                        value={inputValues.B4_8}
+                        name="B5_8"
+                        value={inputValues.B5_8}
                         onChange={changeData}
                     />
                     {/* <!--//AAAAAAAA --> */}
@@ -444,8 +445,8 @@ function Opstmt() {
                         className="form-control"
                         
                         aria-label="First name"
-                        name="C4_8"
-                        value={inputValues.C4_8}
+                        name="C5_8"
+                        value={inputValues.C5_8}
                         onChange={changeData}
                     />
               </div>
@@ -459,8 +460,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="D4_8"  
-                value={inputValues.D4_8}
+                name="D5_8"  
+                value={inputValues.D5_8}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -474,8 +475,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="E4_8"  
-                value={inputValues.E4_8}
+                name="E5_8"  
+                value={inputValues.E5_8}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -489,8 +490,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="F4_8"  
-                value={inputValues.F4_8}
+                name="F5_8"  
+                value={inputValues.F5_8}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -504,8 +505,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="G4_8" 
-                value={inputValues.G4_8}
+                name="G5_8" 
+                value={inputValues.G5_8}
                 onChange={changeData} />
                 {/* <!--//AAAAAAAA --> */}
               </div>
@@ -518,8 +519,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="H4_8"  
-                value={inputValues.H4_8}
+                name="H5_8"  
+                value={inputValues.H5_8}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -533,8 +534,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="I4_8"  
-                value={inputValues.I4_8}
+                name="I5_8"  
+                value={inputValues.I5_8}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -547,7 +548,7 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>Cost of Sales
+            <h6>(Month's Cost of Production)
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -557,8 +558,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="B4_9"  
-                value={inputValues.B4_9}
+                name="B5_9"  
+                value={inputValues.B5_9}
                 onChange={changeData}
                 />
                 
@@ -573,8 +574,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="C4_9"
-                value={inputValues.C4_9}
+                name="C5_9"
+                value={inputValues.C5_9}
                 onChange={changeData}  />
                 {/* <!--//AAAAAAAA --> */}
               </div>
@@ -587,8 +588,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="D4_9"  
-                value={inputValues.D4_9}
+                name="D5_9"  
+                value={inputValues.D5_9}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -602,8 +603,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="E4_9"  
-                value={inputValues.E4_9}
+                name="E5_9"  
+                value={inputValues.E5_9}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -617,8 +618,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="F4_9" 
-                value={inputValues.F4_9}
+                name="F5_9" 
+                value={inputValues.F5_9}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -632,8 +633,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="G4_9"  
-                value={inputValues.G4_9}
+                name="G5_9"  
+                value={inputValues.G5_9}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -647,8 +648,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="H4_9"  
-                value={inputValues.H4_9}
+                name="H5_9"  
+                value={inputValues.H5_9}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -662,8 +663,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="I4_9"  
-                value={inputValues.I4_9}
+                name="I5_9"  
+                value={inputValues.I5_9}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -676,7 +677,7 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>Production at Sale Value
+            <h6>Finished Goods
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -686,8 +687,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="B4_10"
-                value={inputValues.B4_10}
+                name="B5_10"
+                value={inputValues.B5_10}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -701,8 +702,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="C4_10"  
-                value={inputValues.C4_10}
+                name="C5_10"  
+                value={inputValues.C5_10}
                 onChange={changeData}
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -715,8 +716,8 @@ function Opstmt() {
                 <input type="text" 
                 className="form-control" 
                  aria-label="First name" 
-                name="D4_10"  
-                value={inputValues.D4_10}
+                name="D5_10"  
+                value={inputValues.D5_10}
                 onChange={changeData}
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -730,8 +731,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="E4_10"  
-                value={inputValues.E4_10}
+                name="E5_10"  
+                value={inputValues.E5_10}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -745,8 +746,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="F4_10" 
-                value={inputValues.F4_10}
+                name="F5_10" 
+                value={inputValues.F5_10}
                 onChange={changeData}
 
                 />
@@ -761,8 +762,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="G4_10"  
-                value={inputValues.G4_10}
+                name="G5_10"  
+                value={inputValues.G5_10}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -776,8 +777,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="H4_10"  
-                value={inputValues.H4_10}
+                name="H5_10"  
+                value={inputValues.H5_10}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -791,8 +792,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="I4_10"  
-                value={inputValues.I4_10}
+                name="I5_10"  
+                value={inputValues.I5_10}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -805,7 +806,7 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>Cost of Production -Depn/Sales+inc 
+            <h6>(Month's Cost Of Sales) 
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -816,8 +817,8 @@ function Opstmt() {
                         className="form-control"
                         
                         aria-label="First name"
-                        name="B4_11"
-                        value={inputValues.B4_11}
+                        name="B5_11"
+                        value={inputValues.B5_11}
                         onChange={changeData}
                     />
                     {/* <!--//AAAAAAAA --> */}
@@ -832,8 +833,8 @@ function Opstmt() {
                         className="form-control"
                         
                         aria-label="First name"
-                        name="C4_11"
-                        value={inputValues.C4_11}
+                        name="C5_11"
+                        value={inputValues.C5_11}
                         onChange={changeData}
                     />
               </div>
@@ -847,8 +848,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="D4_11"  
-                value={inputValues.D4_11}
+                name="D5_11"  
+                value={inputValues.D5_11}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -862,8 +863,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="E4_11"  
-                value={inputValues.E4_11}
+                name="E5_11"  
+                value={inputValues.E5_11}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -877,8 +878,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="F4_11"  
-                value={inputValues.F4_11}
+                name="F5_11"  
+                value={inputValues.F5_11}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -892,8 +893,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="G4_11" 
-                value={inputValues.G4_11}
+                name="G5_11" 
+                value={inputValues.G5_11}
                 onChange={changeData} />
                 {/* <!--//AAAAAAAA --> */}
               </div>
@@ -906,8 +907,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="H4_11"  
-                value={inputValues.H4_11}
+                name="H5_11"  
+                value={inputValues.H5_11}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -921,8 +922,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="I4_11"  
-                value={inputValues.I4_11}
+                name="I5_11"  
+                value={inputValues.I5_11}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -935,7 +936,7 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>Cost of sales-Depn/Sales
+            <h6>Other Consumable spares
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -945,8 +946,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="B4_12"  
-                value={inputValues.B4_12}
+                name="B5_12"  
+                value={inputValues.B5_12}
                 onChange={changeData}
                 />
                 
@@ -961,8 +962,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="C4_12"
-                value={inputValues.C4_12}
+                name="C5_12"
+                value={inputValues.C5_12}
                 onChange={changeData}  />
                 {/* <!--//AAAAAAAA --> */}
               </div>
@@ -975,8 +976,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="D4_12"  
-                value={inputValues.D4_12}
+                name="D5_12"  
+                value={inputValues.D5_12}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -990,8 +991,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="E4_12"  
-                value={inputValues.E4_12}
+                name="E5_12"  
+                value={inputValues.E5_12}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -1005,8 +1006,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="F4_12" 
-                value={inputValues.F4_12}
+                name="F5_12" 
+                value={inputValues.F5_12}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -1020,8 +1021,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="G4_12"  
-                value={inputValues.G4_12}
+                name="G5_12"  
+                value={inputValues.G5_12}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -1035,8 +1036,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="H4_12"  
-                value={inputValues.H4_12}
+                name="H5_12"  
+                value={inputValues.H5_12}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -1050,8 +1051,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="I4_12"  
-                value={inputValues.I4_12}
+                name="I5_12"  
+                value={inputValues.I5_12}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -1064,7 +1065,7 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>RM/Production Sales %
+            <h6>(Month's Consumption)
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -1074,8 +1075,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="B4_13"
-                value={inputValues.B4_13}
+                name="B5_13"
+                value={inputValues.B5_13}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -1089,8 +1090,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="C4_13"  
-                value={inputValues.C4_13}
+                name="C5_13"  
+                value={inputValues.C5_13}
                 onChange={changeData}
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -1103,8 +1104,8 @@ function Opstmt() {
                 <input type="text" 
                 className="form-control" 
                  aria-label="First name" 
-                name="D4_13"  
-                value={inputValues.D4_13}
+                name="D5_13"  
+                value={inputValues.D5_13}
                 onChange={changeData}
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -1118,8 +1119,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="E4_13"  
-                value={inputValues.E4_13}
+                name="E5_13"  
+                value={inputValues.E5_13}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -1133,8 +1134,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="F4_13" 
-                value={inputValues.F4_13}
+                name="F5_13" 
+                value={inputValues.F5_13}
                 onChange={changeData}
 
                 />
@@ -1149,8 +1150,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="G4_13"  
-                value={inputValues.G4_13}
+                name="G5_13"  
+                value={inputValues.G5_13}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -1164,8 +1165,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="H4_13"  
-                value={inputValues.H4_13}
+                name="H5_13"  
+                value={inputValues.H5_13}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -1179,8 +1180,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="I4_13"  
-                value={inputValues.I4_13}
+                name="I5_13"  
+                value={inputValues.I5_13}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -1194,7 +1195,7 @@ function Opstmt() {
 <div className="container-fluid border mt-3">
 <div className="row">
     <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Net Profit / Sales %
+      <h6>TOTAL INVENTORY
        </h6>
     </div>
     <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -1204,8 +1205,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="B4_14"
-          value={inputValues.B4_14}
+          name="B5_14"
+          value={inputValues.B5_14}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1219,8 +1220,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="C4_14"  
-          value={inputValues.C4_14}
+          name="C5_14"  
+          value={inputValues.C5_14}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1233,8 +1234,8 @@ function Opstmt() {
           <input type="text" 
           className="form-control" 
            aria-label="First name" 
-          name="D4_14"  
-          value={inputValues.D4_14}
+          name="D5_14"  
+          value={inputValues.D5_14}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1248,8 +1249,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="E4_14"  
-          value={inputValues.E4_14}
+          name="E5_14"  
+          value={inputValues.E5_14}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1263,8 +1264,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="F4_14" 
-          value={inputValues.F4_14}
+          name="F5_14" 
+          value={inputValues.F5_14}
           onChange={changeData}
 
           />
@@ -1279,8 +1280,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="G4_14"  
-          value={inputValues.G4_14}
+          name="G5_14"  
+          value={inputValues.G5_14}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1294,8 +1295,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="H4_14"  
-          value={inputValues.H4_14}
+          name="H5_14"  
+          value={inputValues.H5_14}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1309,8 +1310,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="I4_14"  
-          value={inputValues.I4_14}
+          name="I5_14"  
+          value={inputValues.I5_14}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1324,7 +1325,7 @@ function Opstmt() {
 <div className="container-fluid border mt-3">
 <div className="row">
     <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Operating Cost / Cost of Sales %
+      <h6>RECEIVABLES
        </h6>
     </div>
     <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -1334,8 +1335,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="B4_15"
-          value={inputValues.B4_15}
+          name="B5_15"
+          value={inputValues.B5_15}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1349,8 +1350,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="C4_15"  
-          value={inputValues.C4_15}
+          name="C5_15"  
+          value={inputValues.C5_15}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1363,8 +1364,8 @@ function Opstmt() {
           <input type="text" 
           className="form-control" 
            aria-label="First name" 
-          name="D4_15"  
-          value={inputValues.D4_15}
+          name="D5_15"  
+          value={inputValues.D5_15}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1378,8 +1379,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="E4_15"  
-          value={inputValues.E4_15}
+          name="E5_15"  
+          value={inputValues.E5_15}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1393,8 +1394,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="F4_15" 
-          value={inputValues.F4_15}
+          name="F5_15" 
+          value={inputValues.F5_15}
           onChange={changeData}
 
           />
@@ -1409,8 +1410,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="G4_15"  
-          value={inputValues.G4_15}
+          name="G5_15"  
+          value={inputValues.G5_15}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1424,8 +1425,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="H4_15"  
-          value={inputValues.H4_15}
+          name="H5_15"  
+          value={inputValues.H5_15}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1439,8 +1440,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="I4_15"  
-          value={inputValues.I4_15}
+          name="I5_15"  
+          value={inputValues.I5_15}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1454,7 +1455,7 @@ function Opstmt() {
 <div className="container-fluid border mt-3">
 <div className="row">
     <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Mfg Exp / Cost of Sales %
+      <h6>(Month's gross sales)
        </h6>
     </div>
     <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -1464,8 +1465,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="B4_16"
-          value={inputValues.B4_16}
+          name="B5_16"
+          value={inputValues.B5_16}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1479,8 +1480,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="C4_16"  
-          value={inputValues.C4_16}
+          name="C5_16"  
+          value={inputValues.C5_16}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1493,8 +1494,8 @@ function Opstmt() {
           <input type="text" 
           className="form-control" 
            aria-label="First name" 
-          name="D4_16"  
-          value={inputValues.D4_16}
+          name="D5_16"  
+          value={inputValues.D5_16}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1508,8 +1509,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="E4_16"  
-          value={inputValues.E4_16}
+          name="E5_16"  
+          value={inputValues.E5_16}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1523,8 +1524,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="F4_16" 
-          value={inputValues.F4_16}
+          name="F5_16" 
+          value={inputValues.F5_16}
           onChange={changeData}
 
           />
@@ -1539,8 +1540,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="G4_16"  
-          value={inputValues.G4_16}
+          name="G5_16"  
+          value={inputValues.G5_16}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1554,8 +1555,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="H4_16"  
-          value={inputValues.H4_16}
+          name="H5_16"  
+          value={inputValues.H5_16}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1569,8 +1570,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="I4_16"  
-          value={inputValues.I4_16}
+          name="I5_16"  
+          value={inputValues.I5_16}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1584,7 +1585,7 @@ function Opstmt() {
 <div className="container-fluid border mt-3">
 <div className="row">
     <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Selling/Admn Exp/Cost of Sales %
+      <h6>Other Current Assets
        </h6>
     </div>
     <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -1594,8 +1595,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="B4_17"
-          value={inputValues.B4_17}
+          name="B5_17"
+          value={inputValues.B5_17}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1609,8 +1610,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="C4_17"  
-          value={inputValues.C4_17}
+          name="C5_17"  
+          value={inputValues.C5_17}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1623,8 +1624,8 @@ function Opstmt() {
           <input type="text" 
           className="form-control" 
            aria-label="First name" 
-          name="D4_17"  
-          value={inputValues.D4_17}
+          name="D5_17"  
+          value={inputValues.D5_17}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1638,8 +1639,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="E4_17"  
-          value={inputValues.E4_17}
+          name="E5_17"  
+          value={inputValues.E5_17}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1653,8 +1654,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="F4_17" 
-          value={inputValues.F4_17}
+          name="F5_17" 
+          value={inputValues.F5_17}
           onChange={changeData}
 
           />
@@ -1669,8 +1670,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="G4_17"  
-          value={inputValues.G4_17}
+          name="G5_17"  
+          value={inputValues.G5_17}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1684,8 +1685,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="H4_17"  
-          value={inputValues.H4_17}
+          name="H5_17"  
+          value={inputValues.H5_17}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1699,8 +1700,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="I4_17"  
-          value={inputValues.I4_17}
+          name="I5_17"  
+          value={inputValues.I5_17}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1714,7 +1715,7 @@ function Opstmt() {
 <div className="container-fluid border mt-3">
 <div className="row">
     <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Fin. Charges / Cost of Sales %
+      <h6>TOTAL CHARGEABLE CA
        </h6>
     </div>
     <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -1724,8 +1725,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="B4_18"
-          value={inputValues.B4_18}
+          name="B5_18"
+          value={inputValues.B5_18}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1739,8 +1740,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="C4_18"  
-          value={inputValues.C4_18}
+          name="C5_18"  
+          value={inputValues.C5_18}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1753,8 +1754,8 @@ function Opstmt() {
           <input type="text" 
           className="form-control" 
            aria-label="First name" 
-          name="D4_18"  
-          value={inputValues.D4_18}
+          name="D5_18"  
+          value={inputValues.D5_18}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1768,8 +1769,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="E4_18"  
-          value={inputValues.E4_18}
+          name="E5_18"  
+          value={inputValues.E5_18}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1783,8 +1784,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="F4_18" 
-          value={inputValues.F4_18}
+          name="F5_18" 
+          value={inputValues.F5_18}
           onChange={changeData}
 
           />
@@ -1799,8 +1800,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="G4_18"  
-          value={inputValues.G4_18}
+          name="G5_18"  
+          value={inputValues.G5_18}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1814,8 +1815,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="H4_18"  
-          value={inputValues.H4_18}
+          name="H5_18"  
+          value={inputValues.H5_18}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1829,8 +1830,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="I4_18"  
-          value={inputValues.I4_18}
+          name="I5_18"  
+          value={inputValues.I5_18}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -1849,14 +1850,14 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
         <div className="row" style={{backgroundColor:"rgb(224, 231, 231)"}}>
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h5 >FINANCIAL INDICATORS</h5>
+            <h5 >CL OTHER THAN BANK BORROWINGS</h5>
           </div>
         </div>
     </div>
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>Tangible Net Worth(TNW)
+            <h6>TRADE CREDITORS
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -1867,8 +1868,8 @@ function Opstmt() {
                         className="form-control"
                         
                         aria-label="First name"
-                        name="B4_21"
-                        value={inputValues.B4_21}
+                        name="B5_21"
+                        value={inputValues.B5_21}
                         onChange={changeData}
                     />
               </div>
@@ -1882,8 +1883,8 @@ function Opstmt() {
                         type="text"
                         className="form-control"
                         aria-label="First name"
-                        name="C4_21"
-                        value={inputValues.C4_21}
+                        name="C5_21"
+                        value={inputValues.C5_21}
                         onChange={changeData}
                     />
               </div>
@@ -1897,8 +1898,8 @@ function Opstmt() {
                 className="form-control" 
   
                 aria-label="First name" 
-                name="D4_21"  
-                value={inputValues.D4_21}
+                name="D5_21"  
+                value={inputValues.D5_21}
                 onChange={changeData}  
                 />
 
@@ -1912,8 +1913,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="E4_21"  
-                value={inputValues.E4_21}
+                name="E5_21"  
+                value={inputValues.E5_21}
                 onChange={changeData}  
                 />
 
@@ -1927,8 +1928,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="F4_21"  
-                value={inputValues.F4_21}
+                name="F5_21"  
+                value={inputValues.F5_21}
                 onChange={changeData} 
                 />
 
@@ -1942,8 +1943,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="G4_21" 
-                value={inputValues.G4_21}
+                name="G5_21" 
+                value={inputValues.G5_21}
                 onChange={changeData} />
 
               </div>
@@ -1956,8 +1957,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="H4_21"  
-                value={inputValues.H4_21}
+                name="H5_21"  
+                value={inputValues.H5_21}
                 onChange={changeData} 
                 />
 
@@ -1971,8 +1972,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="I4_21"  
-                value={inputValues.I4_21}
+                name="I5_21"  
+                value={inputValues.I5_21}
                 onChange={changeData} 
                 />
 
@@ -1985,7 +1986,7 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>Increase / Decrease
+            <h6>(Month's Purchases)
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -1995,8 +1996,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="B4_22"  
-                value={inputValues.B4_22}
+                name="B5_22"  
+                value={inputValues.B5_22}
                 onChange={changeData}
                 />
                 
@@ -2011,8 +2012,8 @@ function Opstmt() {
                 className="form-control" 
                
                 aria-label="First name" 
-                name="C4_22"
-                value={inputValues.C4_22}
+                name="C5_22"
+                value={inputValues.C5_22}
                 onChange={changeData}  />
 
               </div>
@@ -2025,8 +2026,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="D4_22"  
-                value={inputValues.D4_22}
+                name="D5_22"  
+                value={inputValues.D5_22}
                 onChange={changeData} 
                 />
 
@@ -2040,8 +2041,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="E4_22"  
-                value={inputValues.E4_22}
+                name="E5_22"  
+                value={inputValues.E5_22}
                 onChange={changeData}  
                 />
 
@@ -2055,8 +2056,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="F4_22" 
-                value={inputValues.F4_22}
+                name="F5_22" 
+                value={inputValues.F5_22}
                 onChange={changeData} 
                 />
 
@@ -2070,8 +2071,8 @@ function Opstmt() {
                 className="form-control" 
                
                 aria-label="First name" 
-                name="G4_22"  
-                value={inputValues.G4_22}
+                name="G5_22"  
+                value={inputValues.G5_22}
                 onChange={changeData} 
                 />
 
@@ -2085,8 +2086,8 @@ function Opstmt() {
                 className="form-control" 
                
                 aria-label="First name" 
-                name="H4_22"  
-                value={inputValues.H4_22}
+                name="H5_22"  
+                value={inputValues.H5_22}
                 onChange={changeData} 
                 />
 
@@ -2100,8 +2101,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="I4_22"  
-                value={inputValues.I4_22}
+                name="I5_22"  
+                value={inputValues.I5_22}
                 onChange={changeData} 
                 />
 
@@ -2115,7 +2116,7 @@ function Opstmt() {
 <div className="container-fluid border mt-3">
 <div className="row">
     <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>TNW (Adjusted)
+      <h6>Other Current Liabilities
        </h6>
     </div>
     <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -2125,8 +2126,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="B4_23"
-          value={inputValues.B4_23}
+          name="B5_23"
+          value={inputValues.B5_23}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2140,8 +2141,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="C4_23"  
-          value={inputValues.C4_23}
+          name="C5_23"  
+          value={inputValues.C5_23}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2154,8 +2155,8 @@ function Opstmt() {
           <input type="text" 
           className="form-control" 
            aria-label="First name" 
-          name="D4_23"  
-          value={inputValues.D4_23}
+          name="D5_23"  
+          value={inputValues.D5_23}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2169,8 +2170,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="E4_23"  
-          value={inputValues.E4_23}
+          name="E5_23"  
+          value={inputValues.E5_23}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2184,8 +2185,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="F4_23" 
-          value={inputValues.F4_23}
+          name="F5_23" 
+          value={inputValues.F5_23}
           onChange={changeData}
 
           />
@@ -2200,8 +2201,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="G4_23"  
-          value={inputValues.G4_23}
+          name="G5_23"  
+          value={inputValues.G5_23}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2215,8 +2216,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="H4_23"  
-          value={inputValues.H4_23}
+          name="H5_23"  
+          value={inputValues.H5_23}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2230,8 +2231,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="I4_23"  
-          value={inputValues.I4_23}
+          name="I5_23"  
+          value={inputValues.I5_23}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2244,7 +2245,7 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>TNW (Quasi Equity)
+            <h6>TOTAL LIABILITIES
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -2254,8 +2255,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="B4_24"
-                value={inputValues.B4_24}
+                name="B5_24"
+                value={inputValues.B5_24}
                 onChange={changeData}  
                 />
 
@@ -2269,8 +2270,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="C4_24"  
-                value={inputValues.C4_24}
+                name="C5_24"  
+                value={inputValues.C5_24}
                 onChange={changeData}
                 />
 
@@ -2283,8 +2284,8 @@ function Opstmt() {
                 <input type="text" 
                 className="form-control" 
                aria-label="First name" 
-                name="D4_24"  
-                value={inputValues.D4_24}
+                name="D5_24"  
+                value={inputValues.D5_24}
                 onChange={changeData}
                 />
 
@@ -2298,8 +2299,8 @@ function Opstmt() {
                 className="form-control" 
                
                 aria-label="First name" 
-                name="E4_24"  
-                value={inputValues.E4_24}
+                name="E5_24"  
+                value={inputValues.E5_24}
                 onChange={changeData} 
                 />
 
@@ -2313,8 +2314,8 @@ function Opstmt() {
                 className="form-control" 
                
                 aria-label="First name" 
-                name="F4_24" 
-                value={inputValues.F4_24}
+                name="F5_24" 
+                value={inputValues.F5_24}
                 onChange={changeData}
 
                 />
@@ -2329,8 +2330,8 @@ function Opstmt() {
                 className="form-control" 
                
                 aria-label="First name" 
-                name="G4_24"  
-                value={inputValues.G4_24}
+                name="G5_24"  
+                value={inputValues.G5_24}
                 onChange={changeData} 
                 />
 
@@ -2344,8 +2345,8 @@ function Opstmt() {
                 className="form-control" 
                
                 aria-label="First name" 
-                name="H4_24"  
-                value={inputValues.H4_24}
+                name="H5_24"  
+                value={inputValues.H5_24}
                 onChange={changeData} 
                 />
               </div>
@@ -2358,8 +2359,8 @@ function Opstmt() {
                 className="form-control" 
                
                 aria-label="First name" 
-                name="I4_24"  
-                value={inputValues.I4_24}
+                name="I5_24"  
+                value={inputValues.I5_24}
                 onChange={changeData} 
                 />
               </div>
@@ -2371,7 +2372,7 @@ function Opstmt() {
 <div className="container-fluid border mt-3">
 <div className="row">
     <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Net Working Capital(NWC)
+      <h6>WORKING CAPITAL GAP(A)
        </h6>
     </div>
     <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -2381,8 +2382,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="B4_25"
-          value={inputValues.B4_25}
+          name="B5_26"
+          value={inputValues.B5_26}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2396,8 +2397,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="C4_25"  
-          value={inputValues.C4_25}
+          name="C5_26"  
+          value={inputValues.C5_26}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2410,8 +2411,8 @@ function Opstmt() {
           <input type="text" 
           className="form-control" 
            aria-label="First name" 
-          name="D4_25"  
-          value={inputValues.D4_25}
+          name="D5_26"  
+          value={inputValues.D5_26}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2425,8 +2426,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="E4_25"  
-          value={inputValues.E4_25}
+          name="E5_26"  
+          value={inputValues.E5_26}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2440,8 +2441,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="F4_25" 
-          value={inputValues.F4_25}
+          name="F5_26" 
+          value={inputValues.F5_26}
           onChange={changeData}
 
           />
@@ -2456,8 +2457,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="G4_25"  
-          value={inputValues.G4_25}
+          name="G5_26"  
+          value={inputValues.G5_26}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2471,8 +2472,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="H4_25"  
-          value={inputValues.H4_25}
+          name="H5_26"  
+          value={inputValues.H5_26}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2486,8 +2487,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="I4_25"  
-          value={inputValues.I4_25}
+          name="I5_26"  
+          value={inputValues.I5_26}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2501,7 +2502,7 @@ function Opstmt() {
 <div className="container-fluid border mt-3">
 <div className="row">
     <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Increase / Decrease
+      <h6>25% Margin on C A (B)
        </h6>
     </div>
     <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -2511,8 +2512,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="B4_26"
-          value={inputValues.B4_26}
+          name="B5_27"
+          value={inputValues.B5_27}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2526,8 +2527,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="C4_26"  
-          value={inputValues.C4_26}
+          name="C5_27"  
+          value={inputValues.C5_27}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2540,8 +2541,8 @@ function Opstmt() {
           <input type="text" 
           className="form-control" 
            aria-label="First name" 
-          name="D4_26"  
-          value={inputValues.D4_26}
+          name="D5_27"  
+          value={inputValues.D5_27}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2555,8 +2556,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="E4_26"  
-          value={inputValues.E4_26}
+          name="E5_27"  
+          value={inputValues.E5_27}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2570,8 +2571,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="F4_26" 
-          value={inputValues.F4_26}
+          name="F5_27" 
+          value={inputValues.F5_27}
           onChange={changeData}
 
           />
@@ -2586,8 +2587,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="G4_26"  
-          value={inputValues.G4_26}
+          name="G5_27"  
+          value={inputValues.G5_27}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2601,8 +2602,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="H4_26"  
-          value={inputValues.H4_26}
+          name="H5_27"  
+          value={inputValues.H5_27}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2616,8 +2617,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="I4_26"  
-          value={inputValues.I4_26}
+          name="I5_27"  
+          value={inputValues.I5_27}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2631,7 +2632,7 @@ function Opstmt() {
 <div className="container-fluid border mt-3">
 <div className="row">
     <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Current Ratio
+      <h6>Actual/Projected N W C(C)
        </h6>
     </div>
     <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -2641,8 +2642,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="B4_27"
-          value={inputValues.B4_27}
+          name="B5_28"
+          value={inputValues.B5_28}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2656,8 +2657,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="C4_27"  
-          value={inputValues.C4_27}
+          name="C5_28"  
+          value={inputValues.C5_28}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2670,8 +2671,8 @@ function Opstmt() {
           <input type="text" 
           className="form-control" 
            aria-label="First name" 
-          name="D4_27"  
-          value={inputValues.D4_27}
+          name="D5_28"  
+          value={inputValues.D5_28}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2685,8 +2686,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="E4_27"  
-          value={inputValues.E4_27}
+          name="E5_28"  
+          value={inputValues.E5_28}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2700,8 +2701,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="F4_27" 
-          value={inputValues.F4_27}
+          name="F5_28" 
+          value={inputValues.F5_28}
           onChange={changeData}
 
           />
@@ -2716,8 +2717,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="G4_27"  
-          value={inputValues.G4_27}
+          name="G5_28"  
+          value={inputValues.G5_28}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2731,8 +2732,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="H4_27"  
-          value={inputValues.H4_27}
+          name="H5_28"  
+          value={inputValues.H5_28}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2746,8 +2747,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="I4_27"  
-          value={inputValues.I4_27}
+          name="I5_28"  
+          value={inputValues.I5_28}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2761,7 +2762,7 @@ function Opstmt() {
 <div className="container-fluid border mt-3">
 <div className="row">
     <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>TOL / T N W(Quasi Equity)
+      <h6>A - B (I)
        </h6>
     </div>
     <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -2771,8 +2772,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="B4_29"
-          value={inputValues.B4_29}
+          name="B5_29"
+          value={inputValues.B5_29}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2786,8 +2787,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="C4_29"  
-          value={inputValues.C4_29}
+          name="C5_29"  
+          value={inputValues.C5_29}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2800,8 +2801,8 @@ function Opstmt() {
           <input type="text" 
           className="form-control" 
            aria-label="First name" 
-          name="D4_29"  
-          value={inputValues.D4_29}
+          name="D5_29"  
+          value={inputValues.D5_29}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2815,8 +2816,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="E4_29"  
-          value={inputValues.E4_29}
+          name="E5_29"  
+          value={inputValues.E5_29}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2830,8 +2831,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="F4_29" 
-          value={inputValues.F4_29}
+          name="F5_29" 
+          value={inputValues.F5_29}
           onChange={changeData}
 
           />
@@ -2846,8 +2847,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="G4_29"  
-          value={inputValues.G4_29}
+          name="G5_29"  
+          value={inputValues.G5_29}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2861,8 +2862,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="H4_29"  
-          value={inputValues.H4_29}
+          name="H5_29"  
+          value={inputValues.H5_29}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2876,8 +2877,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="I4_29"  
-          value={inputValues.I4_29}
+          name="I5_29"  
+          value={inputValues.I5_29}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2891,7 +2892,7 @@ function Opstmt() {
 <div className="container-fluid border mt-3">
 <div className="row">
     <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>TOL / T N W(Adjusted)
+      <h6>A - C (II)
        </h6>
     </div>
     <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -2901,8 +2902,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="B4_30"
-          value={inputValues.B4_30}
+          name="B5_30"
+          value={inputValues.B5_30}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2916,8 +2917,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="C4_30"  
-          value={inputValues.C4_30}
+          name="C5_30"  
+          value={inputValues.C5_30}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2930,8 +2931,8 @@ function Opstmt() {
           <input type="text" 
           className="form-control" 
            aria-label="First name" 
-          name="D4_30"  
-          value={inputValues.D4_30}
+          name="D5_30"  
+          value={inputValues.D5_30}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2945,8 +2946,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="E4_30"  
-          value={inputValues.E4_30}
+          name="E5_30"  
+          value={inputValues.E5_30}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2960,8 +2961,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="F4_30" 
-          value={inputValues.F4_30}
+          name="F5_30" 
+          value={inputValues.F5_30}
           onChange={changeData}
 
           />
@@ -2976,8 +2977,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="G4_30"  
-          value={inputValues.G4_30}
+          name="G5_30"  
+          value={inputValues.G5_30}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -2991,8 +2992,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="H4_30"  
-          value={inputValues.H4_30}
+          name="H5_30"  
+          value={inputValues.H5_30}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -3006,8 +3007,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="I4_30"  
-          value={inputValues.I4_30}
+          name="I5_30"  
+          value={inputValues.I5_30}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -3021,7 +3022,7 @@ function Opstmt() {
 <div className="container-fluid border mt-3">
 <div className="row">
     <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6 style={{color:"red"}}>Funded Debt / T N W
+      <h6>M P B F( Lower of I or II )
        </h6>
     </div>
     <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -3031,8 +3032,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="B4_31"
-          value={inputValues.B4_31}
+          name="B5_31"
+          value={inputValues.B5_31}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -3046,8 +3047,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="C4_31"  
-          value={inputValues.C4_31}
+          name="C5_31"  
+          value={inputValues.C5_31}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -3060,8 +3061,8 @@ function Opstmt() {
           <input type="text" 
           className="form-control" 
            aria-label="First name" 
-          name="D4_31"  
-          value={inputValues.D4_31}
+          name="D5_31"  
+          value={inputValues.D5_31}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -3075,8 +3076,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="E4_31"  
-          value={inputValues.E4_31}
+          name="E5_31"  
+          value={inputValues.E5_31}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -3090,8 +3091,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="F4_31" 
-          value={inputValues.F4_31}
+          name="F5_31" 
+          value={inputValues.F5_31}
           onChange={changeData}
 
           />
@@ -3106,8 +3107,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="G4_31"  
-          value={inputValues.G4_31}
+          name="G5_31"  
+          value={inputValues.G5_31}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -3121,8 +3122,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="H4_31"  
-          value={inputValues.H4_31}
+          name="H5_31"  
+          value={inputValues.H5_31}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -3136,8 +3137,8 @@ function Opstmt() {
           className="form-control" 
            
           aria-label="First name" 
-          name="I4_31"  
-          value={inputValues.I4_31}
+          name="I5_31"  
+          value={inputValues.I5_31}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -3147,22 +3148,11 @@ function Opstmt() {
     {/* Add similar input fields for other years here */}
 </div>
 </div>
-    
-
-{/*---------------------------------------- PROFITABILITY RATIOS -------------------------------------*/}
 
 <div className="container-fluid border mt-3">
-        <div className="row" style={{backgroundColor:"rgb(224, 231, 231)"}}>
+     <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h5 >PROFITABILITY RATIOS </h5>
-          </div>
-        </div>
-    </div>
-
-    <div className="container-fluid border mt-3">
-      <div className="row">
-          <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>NET SALES
+            <h6>Excess borrowings representing
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -3173,8 +3163,8 @@ function Opstmt() {
                         className="form-control"
                         
                         aria-label="First name"
-                        name="B4_34"
-                        value={inputValues.B4_34}
+                        name="B5_32"
+                        value={inputValues.B5_32}
                         onChange={changeData}
                     />
     
@@ -3190,8 +3180,8 @@ function Opstmt() {
                          
                         className="form-control"
                         aria-label="First name"
-                        name="C4_34"
-                        value={inputValues.C4_34}
+                        name="C5_32"
+                        value={inputValues.C5_32}
                         onChange={changeData}
                     />
               </div>
@@ -3205,8 +3195,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="D4_34"  
-                value={inputValues.D4_34}
+                name="D5_32"  
+                value={inputValues.D5_32}
                 onChange={changeData}  
                 />
 
@@ -3220,8 +3210,8 @@ function Opstmt() {
                 className="form-control" 
                   
                 aria-label="First name" 
-                name="E4_34"  
-                value={inputValues.E4_34}
+                name="E5_32"  
+                value={inputValues.E5_32}
                 onChange={changeData}  
                 />
 
@@ -3235,8 +3225,8 @@ function Opstmt() {
                 className="form-control" 
                   
                 aria-label="First name" 
-                name="F4_34"  
-                value={inputValues.F4_34}
+                name="F5_32"  
+                value={inputValues.F5_32}
                 onChange={changeData} 
                 />
 
@@ -3250,8 +3240,8 @@ function Opstmt() {
                 className="form-control" 
                   
                 aria-label="First name" 
-                name="G4_34" 
-                value={inputValues.G4_34}
+                name="G5_32" 
+                value={inputValues.G5_32}
                 onChange={changeData} />
 
               </div>
@@ -3264,8 +3254,8 @@ function Opstmt() {
                 className="form-control" 
                   
                 aria-label="First name" 
-                name="H4_34"  
-                value={inputValues.H4_34}
+                name="H5_32"  
+                value={inputValues.H5_32}
                 onChange={changeData} 
                 />
 
@@ -3279,8 +3269,8 @@ function Opstmt() {
                 className="form-control" 
                   
                 aria-label="First name" 
-                name="I4_34"  
-                value={inputValues.I4_34}
+                name="I5_32"  
+                value={inputValues.I5_32}
                 onChange={changeData} 
                 />
 
@@ -3290,10 +3280,1195 @@ function Opstmt() {
           {/* Add similar input fields for other years here */}
       </div>
     </div>
+
+    <div className="container-fluid border mt-3">
+     <div className="row">
+          <div className="col-lg-4 border-end d-flex justify-content-center">
+            <h6>SHORTFALL IN NWC
+             </h6>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+              <input
+                        type="text"
+                        className="form-control"
+                        
+                        aria-label="First name"
+                        name="B5_33"
+                        value={inputValues.B5_33}
+                        onChange={changeData}
+                    />
+    
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+              <input
+                        
+                        type="text"
+                         
+                        className="form-control"
+                        aria-label="First name"
+                        name="C5_33"
+                        value={inputValues.C5_33}
+                        onChange={changeData}
+                    />
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input 
+                type="text" 
+                className="form-control" 
+                
+                aria-label="First name" 
+                name="D5_33"  
+                value={inputValues.D5_33}
+                onChange={changeData}  
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                  
+                aria-label="First name" 
+                name="E5_33"  
+                value={inputValues.E5_33}
+                onChange={changeData}  
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                  
+                aria-label="First name" 
+                name="F5_33"  
+                value={inputValues.F5_33}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                  
+                aria-label="First name" 
+                name="G5_33" 
+                value={inputValues.G5_33}
+                onChange={changeData} />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                  
+                aria-label="First name" 
+                name="H5_33"  
+                value={inputValues.H5_33}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                  
+                aria-label="First name" 
+                name="I5_33"  
+                value={inputValues.I5_33}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          {/* Add similar input fields for other years here */}
+      </div>
+    </div>
+
+    {/*--------------------------------------------------- FIXED ASSETS--------------------------------------- */}
+    <div className="container-fluid border mt-3">
+        <div className="row" style={{backgroundColor:"rgb(224, 231, 231)"}}>
+          <div className="col-lg-4 border-end d-flex justify-content-center">
+            <h5 >FIXED ASSETS</h5>
+          </div>
+        </div>
+    </div>
+    <div className="container-fluid border mt-3">
+        <div className="row" >
+          <div className="col-lg-4 border-end d-flex justify-content-center">
+            <h5 >Margin Of Security</h5>
+          </div>
+        </div>
+    </div>
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>% rise (+) / fall(-) in sales
+            <h6>Gross Fixed Assets
+             </h6>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                
+                aria-label="First name" 
+                name="B5_37"
+                value={inputValues.B5_37}
+                onChange={changeData}  
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text"
+                className="form-control" 
+                 
+                aria-label="First name" 
+                name="C5_37"  
+                value={inputValues.C5_37}
+                onChange={changeData}
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+               aria-label="First name" 
+               
+                name="D5_37"  
+                value={inputValues.D5_37}
+                onChange={changeData}
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                
+                aria-label="First name" 
+                name="E5_37"  
+                value={inputValues.E5_37}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                
+                aria-label="First name" 
+                name="F5_37" 
+                value={inputValues.F5_37}
+                onChange={changeData}
+
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                
+                aria-label="First name" 
+                name="G5_37"  
+                value={inputValues.G5_37}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                
+                aria-label="First name" 
+                name="H5_37"  
+                value={inputValues.H5_37}
+                onChange={changeData} 
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                
+                aria-label="First name" 
+                name="I5_37"  
+                value={inputValues.I5_37}
+                onChange={changeData} 
+                />
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div className="container-fluid border mt-3">
+      <div className="row">
+          <div className="col-lg-4 border-end d-flex justify-content-center">
+            <h6>WDV of Fixed Assets
+             </h6>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                
+                aria-label="First name" 
+                name="B5_38"
+                value={inputValues.B5_38}
+                onChange={changeData}  
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text"
+                className="form-control" 
+                 
+                aria-label="First name" 
+                name="C5_38"  
+                value={inputValues.C5_38}
+                onChange={changeData}
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+               aria-label="First name" 
+               
+                name="D5_38"  
+                value={inputValues.D5_38}
+                onChange={changeData}
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                
+                aria-label="First name" 
+                name="E5_38"  
+                value={inputValues.E5_38}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                
+                aria-label="First name" 
+                name="F5_38" 
+                value={inputValues.F5_38}
+                onChange={changeData}
+
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                
+                aria-label="First name" 
+                name="G5_38"  
+                value={inputValues.G5_38}
+                onChange={changeData} 
+                />
+
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                
+                aria-label="First name" 
+                name="H5_38"  
+                value={inputValues.H5_38}
+                onChange={changeData} 
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="text" 
+                className="form-control" 
+                
+                aria-label="First name" 
+                name="I5_38"  
+                value={inputValues.I5_38}
+                onChange={changeData} 
+                />
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+<div className="container-fluid border mt-3">
+<div className="row">
+    <div className="col-lg-4 border-end d-flex justify-content-center">
+      <h6>Term Loan O/S
+       </h6>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="B5_39"
+          value={inputValues.B5_39}
+          onChange={changeData}  
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="C5_39"  
+          value={inputValues.C5_39}
+          onChange={changeData}
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           aria-label="First name" 
+          name="D5_39"  
+          value={inputValues.D5_39}
+          onChange={changeData}
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="E5_39"  
+          value={inputValues.E5_39}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="F5_39" 
+          value={inputValues.F5_39}
+          onChange={changeData}
+
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="G5_39"  
+          value={inputValues.G5_39}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="H5_39"  
+          value={inputValues.H5_39}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="I5_39"  
+          value={inputValues.I5_39}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    {/* Add similar input fields for other years here */}
+</div>
+</div>
+
+<div className="container-fluid border mt-3">
+<div className="row">
+    <div className="col-lg-4 border-end d-flex justify-content-center">
+      <h6>Gross Fixed Assets / Term Loan
+       </h6>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="B5_40"
+          value={inputValues.B5_40}
+          onChange={changeData}  
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="C5_40"  
+          value={inputValues.C5_40}
+          onChange={changeData}
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           aria-label="First name" 
+          name="D5_40"  
+          value={inputValues.D5_40}
+          onChange={changeData}
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="E5_40"  
+          value={inputValues.E5_40}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="F5_40" 
+          value={inputValues.F5_40}
+          onChange={changeData}
+
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="G5_40"  
+          value={inputValues.G5_40}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="H5_40"  
+          value={inputValues.H5_40}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="I5_40"  
+          value={inputValues.I5_40}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    {/* Add similar input fields for other years here */}
+</div>
+</div>
+<div className="container-fluid border mt-3">
+<div className="row">
+    <div className="col-lg-4 border-end d-flex justify-content-center">
+      <h6>Margin
+       </h6>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="B5_41"
+          value={inputValues.B5_41}
+          onChange={changeData}  
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="C5_41"  
+          value={inputValues.C5_41}
+          onChange={changeData}
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           aria-label="First name" 
+          name="D5_41"  
+          value={inputValues.D5_41}
+          onChange={changeData}
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="E5_41"  
+          value={inputValues.E5_41}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="F5_41" 
+          value={inputValues.F5_41}
+          onChange={changeData}
+
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="G5_41"  
+          value={inputValues.G5_41}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="H5_41"  
+          value={inputValues.H5_41}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="I5_41"  
+          value={inputValues.I5_41}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    {/* Add similar input fields for other years here */}
+</div>
+</div>
+<div className="container-fluid border mt-3">
+<div className="row">
+    <div className="col-lg-4 border-end d-flex justify-content-center">
+      <h6>Security Margin
+       </h6>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="B5_42"
+          value={inputValues.B5_42}
+          onChange={changeData}  
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="C5_42"  
+          value={inputValues.C5_42}
+          onChange={changeData}
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           aria-label="First name" 
+          name="D5_42"  
+          value={inputValues.D5_42}
+          onChange={changeData}
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="E5_42"  
+          value={inputValues.E5_42}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="F5_42" 
+          value={inputValues.F5_42}
+          onChange={changeData}
+
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="G5_42"  
+          value={inputValues.G5_42}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="H5_42"  
+          value={inputValues.H5_42}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="I5_42"  
+          value={inputValues.I5_42}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    {/* Add similar input fields for other years here */}
+</div>
+</div>
+<div className="container-fluid border mt-3">
+<div className="row">
+    <div className="col-lg-4 border-end d-flex justify-content-center">
+      <h6>Average Security Margin
+       </h6>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="B5_43"
+          value={inputValues.B5_43}
+          onChange={changeData}  
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="C5_43"  
+          value={inputValues.C5_43}
+          onChange={changeData}
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           aria-label="First name" 
+          name="D5_43"  
+          value={inputValues.D5_43}
+          onChange={changeData}
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="E5_43"  
+          value={inputValues.E5_43}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="F5_43" 
+          value={inputValues.F5_43}
+          onChange={changeData}
+
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="G5_43"  
+          value={inputValues.G5_43}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="H5_43"  
+          value={inputValues.H5_43}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="I5_43"  
+          value={inputValues.I5_43}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    {/* Add similar input fields for other years here */}
+</div>
+</div>
+<div className="container-fluid border mt-3">
+<div className="row">
+    <div className="col-lg-4 border-end d-flex justify-content-center">
+      <h6>Fixed Asset Coverage Ratio
+       </h6>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="B5_44"
+          value={inputValues.B5_44}
+          onChange={changeData}  
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="C5_44"  
+          value={inputValues.C5_44}
+          onChange={changeData}
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           aria-label="First name" 
+          name="D5_44"  
+          value={inputValues.D5_44}
+          onChange={changeData}
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="E5_44"  
+          value={inputValues.E5_44}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="F5_44" 
+          value={inputValues.F5_44}
+          onChange={changeData}
+
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="G5_44"  
+          value={inputValues.G5_44}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="H5_44"  
+          value={inputValues.H5_44}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    <div className="col-lg-1 border-start d-flex justify-content-center">
+      <div className="row g-3">
+        <div className="col">
+          <input type="text" 
+          className="form-control" 
+           
+          aria-label="First name" 
+          name="I5_44"  
+          value={inputValues.I5_44}
+          onChange={changeData} 
+          />
+          {/* <!--//AAAAAAAA --> */}
+        </div>
+      </div>
+    </div>
+    {/* Add similar input fields for other years here */}
+</div>
+</div>
+<div className="container-fluid border mt-3">
+        <div className="row" style={{backgroundColor:"rgb(224, 231, 231)"}}>
+          <div className="col-lg-4 border-end d-flex justify-content-center">
+            <h5 ></h5>
+          </div>
+        </div>
+    </div>
+<div className="container-fluid border mt-3">
+      <div className="row">
+          <div className="col-lg-4 border-end d-flex justify-content-center">
+            <h6>If Cash accrual greater TL Installment
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -3303,8 +4478,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="B4_35"  
-                value={inputValues.B4_35}
+                name="B5_46"  
+                value={inputValues.B5_46}
                 onChange={changeData}
                 />
                 
@@ -3319,8 +4494,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="C4_35"
-                value={inputValues.C4_35}
+                name="C5_46"
+                value={inputValues.C5_46}
                 onChange={changeData}  />
 
               </div>
@@ -3333,8 +4508,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="D4_35"  
-                value={inputValues.D4_35}
+                name="D5_46"  
+                value={inputValues.D5_46}
                 onChange={changeData} 
                 />
 
@@ -3348,8 +4523,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="E4_35"  
-                value={inputValues.E4_35}
+                name="E5_46"  
+                value={inputValues.E5_46}
                 onChange={changeData}  
                 />
 
@@ -3363,8 +4538,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="F4_35" 
-                value={inputValues.F4_35}
+                name="F5_46" 
+                value={inputValues.F5_46}
                 onChange={changeData} 
                 />
 
@@ -3378,8 +4553,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="G4_35"  
-                value={inputValues.G4_35}
+                name="G5_46"  
+                value={inputValues.G5_46}
                 onChange={changeData} 
                 />
 
@@ -3393,8 +4568,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="H4_35"  
-                value={inputValues.H4_35}
+                name="H5_46"  
+                value={inputValues.H5_46}
                 onChange={changeData} 
                 />
 
@@ -3408,8 +4583,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="I4_35"  
-                value={inputValues.I4_35}
+                name="I5_46"  
+                value={inputValues.I5_46}
                 onChange={changeData} 
                 />
 
@@ -3422,7 +4597,7 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>Operating Profit
+            <h6>Cash Accrual
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -3432,8 +4607,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="B4_36"
-                value={inputValues.B4_36}
+                name="B5_47"
+                value={inputValues.B5_47}
                 onChange={changeData}  
                 />
 
@@ -3447,8 +4622,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="C4_36"  
-                value={inputValues.C4_36}
+                name="C5_47"  
+                value={inputValues.C5_47}
                 onChange={changeData}
                 />
 
@@ -3462,8 +4637,8 @@ function Opstmt() {
                 className="form-control" 
                aria-label="First name" 
                
-                name="D4_36"  
-                value={inputValues.D4_36}
+                name="D5_47"  
+                value={inputValues.D5_47}
                 onChange={changeData}
                 />
 
@@ -3477,8 +4652,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="E4_36"  
-                value={inputValues.E4_36}
+                name="E5_47"  
+                value={inputValues.E5_47}
                 onChange={changeData} 
                 />
 
@@ -3492,8 +4667,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="F4_36" 
-                value={inputValues.F4_36}
+                name="F5_47" 
+                value={inputValues.F5_47}
                 onChange={changeData}
 
                 />
@@ -3508,8 +4683,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="G4_36"  
-                value={inputValues.G4_36}
+                name="G5_47"  
+                value={inputValues.G5_47}
                 onChange={changeData} 
                 />
 
@@ -3523,8 +4698,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="H4_36"  
-                value={inputValues.H4_36}
+                name="H5_47"  
+                value={inputValues.H5_47}
                 onChange={changeData} 
                 />
               </div>
@@ -3537,8 +4712,8 @@ function Opstmt() {
                 className="form-control" 
                 
                 aria-label="First name" 
-                name="I4_36"  
-                value={inputValues.I4_36}
+                name="I5_47"  
+                value={inputValues.I5_47}
                 onChange={changeData} 
                 />
               </div>
@@ -3549,1176 +4724,7 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>PBDIT
-             </h6>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text" 
-                className="form-control" 
-                
-                aria-label="First name" 
-                name="B4_37"
-                value={inputValues.B4_37}
-                onChange={changeData}  
-                />
-
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text"
-                className="form-control" 
-                 
-                aria-label="First name" 
-                name="C4_37"  
-                value={inputValues.C4_37}
-                onChange={changeData}
-                />
-
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text" 
-                className="form-control" 
-               aria-label="First name" 
-               
-                name="D4_37"  
-                value={inputValues.D4_37}
-                onChange={changeData}
-                />
-
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text" 
-                className="form-control" 
-                
-                aria-label="First name" 
-                name="E4_37"  
-                value={inputValues.E4_37}
-                onChange={changeData} 
-                />
-
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text" 
-                className="form-control" 
-                
-                aria-label="First name" 
-                name="F4_37" 
-                value={inputValues.F4_37}
-                onChange={changeData}
-
-                />
-
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text" 
-                className="form-control" 
-                
-                aria-label="First name" 
-                name="G4_37"  
-                value={inputValues.G4_37}
-                onChange={changeData} 
-                />
-
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text" 
-                className="form-control" 
-                
-                aria-label="First name" 
-                name="H4_37"  
-                value={inputValues.H4_37}
-                onChange={changeData} 
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text" 
-                className="form-control" 
-                
-                aria-label="First name" 
-                name="I4_37"  
-                value={inputValues.I4_37}
-                onChange={changeData} 
-                />
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-    <div className="container-fluid border mt-3">
-      <div className="row">
-          <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>NET PROFIT
-             </h6>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text" 
-                className="form-control" 
-                
-                aria-label="First name" 
-                name="B4_38"
-                value={inputValues.B4_38}
-                onChange={changeData}  
-                />
-
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text"
-                className="form-control" 
-                 
-                aria-label="First name" 
-                name="C4_38"  
-                value={inputValues.C4_38}
-                onChange={changeData}
-                />
-
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text" 
-                className="form-control" 
-               aria-label="First name" 
-               
-                name="D4_38"  
-                value={inputValues.D4_38}
-                onChange={changeData}
-                />
-
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text" 
-                className="form-control" 
-                
-                aria-label="First name" 
-                name="E4_38"  
-                value={inputValues.E4_38}
-                onChange={changeData} 
-                />
-
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text" 
-                className="form-control" 
-                
-                aria-label="First name" 
-                name="F4_38" 
-                value={inputValues.F4_38}
-                onChange={changeData}
-
-                />
-
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text" 
-                className="form-control" 
-                
-                aria-label="First name" 
-                name="G4_38"  
-                value={inputValues.G4_38}
-                onChange={changeData} 
-                />
-
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text" 
-                className="form-control" 
-                
-                aria-label="First name" 
-                name="H4_38"  
-                value={inputValues.H4_38}
-                onChange={changeData} 
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-1 border-start d-flex justify-content-center">
-            <div className="row g-3">
-              <div className="col">
-                <input type="text" 
-                className="form-control" 
-                
-                aria-label="First name" 
-                name="I4_38"  
-                value={inputValues.I4_38}
-                onChange={changeData} 
-                />
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-
-<div className="container-fluid border mt-3">
-<div className="row">
-    <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Depreciation
-       </h6>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="B4_39"
-          value={inputValues.B4_39}
-          onChange={changeData}  
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="C4_39"  
-          value={inputValues.C4_39}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           aria-label="First name" 
-          name="D4_39"  
-          value={inputValues.D4_39}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="E4_39"  
-          value={inputValues.E4_39}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="F4_39" 
-          value={inputValues.F4_39}
-          onChange={changeData}
-
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="G4_39"  
-          value={inputValues.G4_39}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="H4_39"  
-          value={inputValues.H4_39}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="I4_39"  
-          value={inputValues.I4_39}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    {/* Add similar input fields for other years here */}
-</div>
-</div>
-
-<div className="container-fluid border mt-3">
-<div className="row">
-    <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Cash accruals
-       </h6>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="B4_40"
-          value={inputValues.B4_40}
-          onChange={changeData}  
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="C4_40"  
-          value={inputValues.C4_40}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           aria-label="First name" 
-          name="D4_40"  
-          value={inputValues.D4_40}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="E4_40"  
-          value={inputValues.E4_40}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="F4_40" 
-          value={inputValues.F4_40}
-          onChange={changeData}
-
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="G4_40"  
-          value={inputValues.G4_40}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="H4_40"  
-          value={inputValues.H4_40}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="I4_40"  
-          value={inputValues.I4_40}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    {/* Add similar input fields for other years here */}
-</div>
-</div>
-<div className="container-fluid border mt-3">
-<div className="row">
-    <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>PBDIT / Sales%
-       </h6>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="B4_41"
-          value={inputValues.B4_41}
-          onChange={changeData}  
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="C4_41"  
-          value={inputValues.C4_41}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           aria-label="First name" 
-          name="D4_41"  
-          value={inputValues.D4_41}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="E4_41"  
-          value={inputValues.E4_41}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="F4_41" 
-          value={inputValues.F4_41}
-          onChange={changeData}
-
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="G4_41"  
-          value={inputValues.G4_41}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="H4_41"  
-          value={inputValues.H4_41}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="I4_41"  
-          value={inputValues.I4_41}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    {/* Add similar input fields for other years here */}
-</div>
-</div>
-<div className="container-fluid border mt-3">
-<div className="row">
-    <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Operating Cost / Sales(%)
-       </h6>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="B4_42"
-          value={inputValues.B4_42}
-          onChange={changeData}  
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="C4_42"  
-          value={inputValues.C4_42}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           aria-label="First name" 
-          name="D4_42"  
-          value={inputValues.D4_42}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="E4_42"  
-          value={inputValues.E4_42}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="F4_42" 
-          value={inputValues.F4_42}
-          onChange={changeData}
-
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="G4_42"  
-          value={inputValues.G4_42}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="H4_42"  
-          value={inputValues.H4_42}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="I4_42"  
-          value={inputValues.I4_42}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    {/* Add similar input fields for other years here */}
-</div>
-</div>
-<div className="container-fluid border mt-3">
-<div className="row">
-    <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Net Profile / Sales(%)
-       </h6>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="B4_43"
-          value={inputValues.B4_43}
-          onChange={changeData}  
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="C4_43"  
-          value={inputValues.C4_43}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           aria-label="First name" 
-          name="D4_43"  
-          value={inputValues.D4_43}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="E4_43"  
-          value={inputValues.E4_43}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="F4_43" 
-          value={inputValues.F4_43}
-          onChange={changeData}
-
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="G4_43"  
-          value={inputValues.G4_43}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="H4_43"  
-          value={inputValues.H4_43}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="I4_43"  
-          value={inputValues.I4_43}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    {/* Add similar input fields for other years here */}
-</div>
-</div>
-<div className="container-fluid border mt-3">
-<div className="row">
-    <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Net Profit / TNW (%)
-       </h6>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="B4_44"
-          value={inputValues.B4_44}
-          onChange={changeData}  
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="C4_44"  
-          value={inputValues.C4_44}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           aria-label="First name" 
-          name="D4_44"  
-          value={inputValues.D4_44}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="E4_44"  
-          value={inputValues.E4_44}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="F4_44" 
-          value={inputValues.F4_44}
-          onChange={changeData}
-
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="G4_44"  
-          value={inputValues.G4_44}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="H4_44"  
-          value={inputValues.H4_44}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="I4_44"  
-          value={inputValues.I4_44}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    {/* Add similar input fields for other years here */}
-</div>
-</div>
-<div className="container-fluid border mt-3">
-<div className="row">
-    <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Sales / T N W
-       </h6>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="B4_45"
-          value={inputValues.B4_45}
-          onChange={changeData}  
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="C4_45"  
-          value={inputValues.C4_45}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           aria-label="First name" 
-          name="D4_45"  
-          value={inputValues.D4_45}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="E4_45"  
-          value={inputValues.E4_45}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="F4_45" 
-          value={inputValues.F4_45}
-          onChange={changeData}
-
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="G4_45"  
-          value={inputValues.G4_45}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="H4_45"  
-          value={inputValues.H4_45}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="I4_45"  
-          value={inputValues.I4_45}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    {/* Add similar input fields for other years here */}
-</div>
-</div>
-
-{/*---------------------------------------- BANK FINANCE -------------------------------------*/}
-
-<div className="container-fluid border mt-3">
-        <div className="row" style={{backgroundColor:"rgb(224, 231, 231)"}}>
-          <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h5 >BANK FINANCE</h5>
-          </div>
-        </div>
-    </div>
-    <div className="container-fluid border mt-3">
-      <div className="row">
-          <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>TOTAL BANK BORROWINGS
+            <h6>TL Installment
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -4729,8 +4735,8 @@ function Opstmt() {
                         className="form-control"
                         
                         aria-label="First name"
-                        name="B4_48"
-                        value={inputValues.B4_48}
+                        name="B5_48"
+                        value={inputValues.B5_48}
                         onChange={changeData}
                     />
                     {/* <!--//AAAAAAAA --> */}
@@ -4745,8 +4751,8 @@ function Opstmt() {
                         className="form-control"
                         
                         aria-label="First name"
-                        name="C4_48"
-                        value={inputValues.C4_48}
+                        name="C5_48"
+                        value={inputValues.C5_48}
                         onChange={changeData}
                     />
               </div>
@@ -4760,8 +4766,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="D4_48"  
-                value={inputValues.D4_48}
+                name="D5_48"  
+                value={inputValues.D5_48}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -4775,8 +4781,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="E4_48"  
-                value={inputValues.E4_48}
+                name="E5_48"  
+                value={inputValues.E5_48}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -4790,8 +4796,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="F4_48"  
-                value={inputValues.F4_48}
+                name="F5_48"  
+                value={inputValues.F5_48}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -4805,8 +4811,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="G4_48" 
-                value={inputValues.G4_48}
+                name="G5_48" 
+                value={inputValues.G5_48}
                 onChange={changeData} />
                 {/* <!--//AAAAAAAA --> */}
               </div>
@@ -4819,8 +4825,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="H4_48"  
-                value={inputValues.H4_48}
+                name="H5_48"  
+                value={inputValues.H5_48}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -4834,8 +4840,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="I4_48"  
-                value={inputValues.I4_48}
+                name="I5_48"  
+                value={inputValues.I5_48}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -4848,7 +4854,7 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>Inc / dec in Bank Borrowings%
+            <h6>Difference
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -4858,8 +4864,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="B4_49"  
-                value={inputValues.B4_49}
+                name="B5_49"  
+                value={inputValues.B5_49}
                 onChange={changeData}
                 />
                 
@@ -4874,8 +4880,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="C4_49"
-                value={inputValues.C4_49}
+                name="C5_49"
+                value={inputValues.C5_49}
                 onChange={changeData}  />
                 {/* <!--//AAAAAAAA --> */}
               </div>
@@ -4888,8 +4894,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="D4_49"  
-                value={inputValues.D4_49}
+                name="D5_49"  
+                value={inputValues.D5_49}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -4903,8 +4909,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="E4_49"  
-                value={inputValues.E4_49}
+                name="E5_49"  
+                value={inputValues.E5_49}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -4918,8 +4924,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="F4_49" 
-                value={inputValues.F4_49}
+                name="F5_49" 
+                value={inputValues.F5_49}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -4933,8 +4939,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="G4_49"  
-                value={inputValues.G4_49}
+                name="G5_49"  
+                value={inputValues.G5_49}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -4948,8 +4954,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="H4_49"  
-                value={inputValues.H4_49}
+                name="H5_49"  
+                value={inputValues.H5_49}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -4963,8 +4969,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="I4_49"  
-                value={inputValues.I4_49}
+                name="I5_49"  
+                value={inputValues.I5_49}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -4977,7 +4983,7 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>Bank Finance / Current Assets
+            <h6>Net DSCR
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -4987,8 +4993,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="B4_50"
-                value={inputValues.B4_50}
+                name="B5_50"
+                value={inputValues.B5_50}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -5002,8 +5008,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="C4_50"  
-                value={inputValues.C4_50}
+                name="C5_50"  
+                value={inputValues.C5_50}
                 onChange={changeData}
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -5016,8 +5022,8 @@ function Opstmt() {
                 <input type="text" 
                 className="form-control" 
                  aria-label="First name" 
-                name="D4_50"  
-                value={inputValues.D4_50}
+                name="D5_50"  
+                value={inputValues.D5_50}
                 onChange={changeData}
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -5031,8 +5037,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="E4_50"  
-                value={inputValues.E4_50}
+                name="E5_50"  
+                value={inputValues.E5_50}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -5046,8 +5052,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="F4_50" 
-                value={inputValues.F4_50}
+                name="F5_50" 
+                value={inputValues.F5_50}
                 onChange={changeData}
 
                 />
@@ -5062,8 +5068,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="G4_50"  
-                value={inputValues.G4_50}
+                name="G5_50"  
+                value={inputValues.G5_50}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -5077,8 +5083,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="H4_50"  
-                value={inputValues.H4_50}
+                name="H5_50"  
+                value={inputValues.H5_50}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -5092,8 +5098,8 @@ function Opstmt() {
                 className="form-control" 
                  
                 aria-label="First name" 
-                name="I4_50"  
-                value={inputValues.I4_50}
+                name="I5_50"  
+                value={inputValues.I5_50}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -5104,267 +5110,11 @@ function Opstmt() {
       </div>
     </div>
     
-<div className="container-fluid border mt-3">
-<div className="row">
-    <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Inc + Receivables / Sales (days)
-       </h6>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="B4_51"
-          value={inputValues.B4_51}
-          onChange={changeData}  
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="C4_51"  
-          value={inputValues.C4_51}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           aria-label="First name" 
-          name="D4_51"  
-          value={inputValues.D4_51}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="E4_51"  
-          value={inputValues.E4_51}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="F4_51" 
-          value={inputValues.F4_51}
-          onChange={changeData}
 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="G4_51"  
-          value={inputValues.G4_51}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="H4_51"  
-          value={inputValues.H4_51}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="I4_51"  
-          value={inputValues.I4_51}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    {/* Add similar input fields for other years here */}
-</div>
-</div>
-<div className="container-fluid border mt-3">
-<div className="row">
-    <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>PBDIT / Interest
-       </h6>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="B4_52"
-          value={inputValues.B4_52}
-          onChange={changeData}  
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="C4_52"  
-          value={inputValues.C4_52}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           aria-label="First name" 
-          name="D4_52"  
-          value={inputValues.D4_52}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="E4_52"  
-          value={inputValues.E4_52}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="F4_52" 
-          value={inputValues.F4_52}
-          onChange={changeData}
-
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="G4_52"  
-          value={inputValues.G4_52}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="H4_52"  
-          value={inputValues.H4_52}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="text" 
-          className="form-control" 
-           
-          aria-label="First name" 
-          name="I4_52"  
-          value={inputValues.I4_52}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    {/* Add similar input fields for other years here */}
-</div>
 </div>
     
     
-</div>
+
  
 
     

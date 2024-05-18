@@ -1,27 +1,37 @@
 // Opstmt.js
-import React, { useEffect, useState } from 'react';
+import React, { useContext,useEffect, useState } from 'react';
 import axios from 'axios'
+import { AppContext } from '../AppContext';
 
 
-function Opstmt() {
-  
-    const [inputValues, setInputValues] = useState({
-        B1_7: '',
-        B1_8: '',
-        B1_9: '',
-        B1_10: '',
-        
-        C1_7: '',
-        C1_8: '',
-        C1_9: '',
-        C1_10: '',
-        
-    });
+function Ocl() {
+  const { inputValues, setInputValues, tot15, setTot15,tot23,setTot23,tot31, setTot31, tot37, setTot37 } = useContext(AppContext);
+
+
+  const [prefix, setPrefix] = useState("");
+  // const [tot15, setTot15] = useState({});
+  // const [tot23, setTot23] = useState({});
+  // const [tot31, setTot31] = useState({});
+  // const [tot37, setTot37] = useState({});
 
 
 
+ 
 
-    let [tot2020,setTot2020]=useState(0)
+  useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const user_id = localStorage.getItem("user_id");
+            const response = await axios.get(`http://127.0.0.1:8000/api/save_oca/?user_id=${user_id}`);
+            const data = response.data; // Assuming response.data is an object with keys matching inputValues keys
+            setInputValues(data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    fetchData(); // Call fetchData when component mounts
+}, []); // Empty dependency array ensures it runs only once when component mounts
 
     
     const changeData = async (e) => {
@@ -37,10 +47,13 @@ function Opstmt() {
         })
 
           console.log(da); // Log the name being set
+          if (name.includes("_7") || name.includes("_8") || name.includes("_9")  || name.includes("_10")  ||name.includes("_11")  || name.includes("_12")  || name.includes("_13") || name.includes("_14") || name.includes("_17") || name.includes("_18") || name.includes("_19") || name.includes("_20") || name.includes("_21") || name.includes("_22") || name.includes("_25")|| name.includes("_26")|| name.includes("_27")|| name.includes("_28")|| name.includes("_29")|| name.includes("_30") || name.includes("_33") || name.includes("_34") || name.includes("_35") || name.includes("_36"))   {
+            setPrefix(name.split("_")[0]);
+          }
           
          if(value!=""){
-          setTot2020(tot2020+=parseInt(value))
-          const res = await fetch("http://127.0.0.1:8000/api/save_opstmt/", {
+          
+          const res = await fetch("http://127.0.0.1:8000/api/save_oca/", {
             method: "POST",
             headers:{
                 "Content-Type":"application/json"
@@ -59,11 +72,182 @@ function Opstmt() {
   };
 
 
- useEffect(()=>{
-  console.log(tot2020);
-  
-  
- },[tot2020])
+
+
+// ------------------------------------ TOTAL OTHER CURRENT ASSETS (START1 ) ---------------------------------------------
+
+const uploadSum = async (data) => {
+  try {
+    const { name, namePrefix } = data;
+    const user_id = localStorage.getItem("user_id");
+
+    let sum = parseFloat(inputValues[namePrefix + "_7"] || 0) + parseFloat(inputValues[namePrefix + "_8"] || 0) + parseFloat(inputValues[namePrefix + "_9"] || 0) + parseFloat(inputValues[namePrefix + "_10"] || 0) + parseFloat(inputValues[namePrefix + "_11"] || 0) + parseFloat(inputValues[namePrefix + "_12"] || 0) + parseFloat(inputValues[namePrefix + "_13"] || 0) + parseFloat(inputValues[namePrefix + "_14"] || 0);
+
+    console.log(`>>>>>>${sum}`);
+
+    if (sum !== 0) {
+      const res = await fetch("http://127.0.0.1:8000/api/save_oca/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ cell_id: name, cell_value: sum, user_id: user_id })
+      });
+      console.log('Response:', res); // Log the response data
+    }
+
+  } catch (error) {
+    console.error('Error:', error); // Log any errors that occur during the request
+  }
+};
+
+
+
+useEffect(() => {
+  console.log(tot15);
+  const total = parseFloat(inputValues[prefix + "_7"] || 0) + parseFloat(inputValues[prefix + "_8"] || 0) + parseFloat(inputValues[prefix + "_9"] || 0) + parseFloat(inputValues[prefix + "_10"] || 0) + parseFloat(inputValues[prefix + "_11"] || 0) + parseFloat(inputValues[prefix + "_12"] || 0) + parseFloat(inputValues[prefix + "_13"] || 0) + parseFloat(inputValues[prefix + "_14"] || 0) ;
+  setTot15(total);
+  setTot15({
+    ...tot15,
+    [[prefix + "_15"]]: total.toString()
+  });
+  uploadSum({ name: prefix + "_15", namePrefix: prefix });
+}, [prefix, inputValues])
+
+
+// ------------------------------------ TOTAL OTHER CURRENT ASSETS ( END1 ) ---------------------------------------------
+
+// ------------------------------------ TOTAL NON CURRENT ASSETS (START2 ) ---------------------------------------------
+
+const uploadSum2 = async (data) => {
+  try {
+    const { name, namePrefix } = data;
+    const user_id = localStorage.getItem("user_id");
+
+    let sum2 = parseFloat(inputValues[namePrefix + "_17"] || 0) + parseFloat(inputValues[namePrefix + "_18"] || 0) + parseFloat(inputValues[namePrefix + "_19"] || 0) + parseFloat(inputValues[namePrefix + "_20"] || 0) + parseFloat(inputValues[namePrefix + "_21"] || 0) + parseFloat(inputValues[namePrefix + "_22"] || 0);
+
+
+    if (sum2 !== 0) {
+      const res = await fetch("http://127.0.0.1:8000/api/save_oca/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ cell_id: name, cell_value: sum2, user_id: user_id })
+      });
+      console.log('Response:', res); // Log the response data
+    }
+
+  } catch (error) {
+    console.error('Error:', error); // Log any errors that occur during the request
+  }
+};
+
+
+
+useEffect(() => {
+  console.log(tot23);
+  const total23 = parseFloat(inputValues[prefix + "_17"] || 0) + parseFloat(inputValues[prefix + "_18"] || 0) + parseFloat(inputValues[prefix + "_19"] || 0) + parseFloat(inputValues[prefix + "_20"] || 0) + parseFloat(inputValues[prefix + "_21"] || 0) + parseFloat(inputValues[prefix + "_22"] || 0) ;
+  setTot23(total23);
+  setTot23({
+    ...tot23,
+    [[prefix + "_23"]]: total23.toString()
+  });
+  uploadSum2({ name: prefix + "_23", namePrefix: prefix });
+}, [prefix, inputValues])
+
+
+// ------------------------------------ TOTAL NON CURRENT ASSETS ( END2 ) ---------------------------------------------
+
+// ------------------------------- TOTAL OTHER CURRENT LIABILITIES (START3 ) ---------------------------------------------
+
+const uploadSum3 = async (data) => {
+  try {
+    const { name, namePrefix } = data;
+    const user_id = localStorage.getItem("user_id");
+
+    let sum3 = parseFloat(inputValues[namePrefix + "_25"] || 0) + parseFloat(inputValues[namePrefix + "_26"] || 0) + parseFloat(inputValues[namePrefix + "_27"] || 0) + parseFloat(inputValues[namePrefix + "_28"] || 0) + parseFloat(inputValues[namePrefix + "_29"] || 0) + parseFloat(inputValues[namePrefix + "_30"] || 0);
+
+
+    if (sum3 !== 0) {
+      const res = await fetch("http://127.0.0.1:8000/api/save_oca/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ cell_id: name, cell_value: sum3, user_id: user_id })
+      });
+      console.log('Response:', res); // Log the response data
+    }
+
+  } catch (error) {
+    console.error('Error:', error); // Log any errors that occur during the request
+  }
+};
+
+
+
+useEffect(() => {
+  console.log(tot31);
+  const total31 = parseFloat(inputValues[prefix + "_25"] || 0) + parseFloat(inputValues[prefix + "_26"] || 0) + parseFloat(inputValues[prefix + "_27"] || 0) + parseFloat(inputValues[prefix + "_28"] || 0) + parseFloat(inputValues[prefix + "_29"] || 0) + parseFloat(inputValues[prefix + "_30"] || 0) ;
+  setTot31(total31);
+  setTot31({
+    ...tot31,
+    [[prefix + "_31"]]: total31.toString()
+  });
+  uploadSum3({ name: prefix + "_31", namePrefix: prefix });
+}, [prefix, inputValues])
+
+
+// -------------------------------- TOTAL OTHER CURRENT LIABILITIES ( END3 ) ---------------------------------------------
+
+
+
+
+
+// ------------------------------- TOTAL OTHER TERM LIABILITIES (START4 ) ---------------------------------------------
+
+const uploadSum4 = async (data) => {
+  try {
+    const { name, namePrefix } = data;
+    const user_id = localStorage.getItem("user_id");
+
+    let sum4 = parseFloat(inputValues[namePrefix + "_33"] || 0) + parseFloat(inputValues[namePrefix + "_34"] || 0) + parseFloat(inputValues[namePrefix + "_35"] || 0) + parseFloat(inputValues[namePrefix + "_36"] || 0);
+
+
+    if (sum4 !== 0) {
+      const res = await fetch("http://127.0.0.1:8000/api/save_oca/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ cell_id: name, cell_value: sum4, user_id: user_id })
+      });
+      console.log('Response:', res); // Log the response data
+    }
+
+  } catch (error) {
+    console.error('Error:', error); // Log any errors that occur during the request
+  }
+};
+
+
+
+useEffect(() => {
+  console.log(tot37);
+  const total37 = parseFloat(inputValues[prefix + "_33"] || 0) + parseFloat(inputValues[prefix + "_34"] || 0) + parseFloat(inputValues[prefix + "_35"] || 0) + parseFloat(inputValues[prefix + "_36"] || 0);
+  setTot37(total37);
+  setTot37({
+    ...tot37,
+    [[prefix + "_37"]]: total37.toString()
+  });
+  uploadSum4({ name: prefix + "_37", namePrefix: prefix });
+}, [prefix, inputValues])
+
+
+// -------------------------------- TOTAL OTHER TERM LIABILITIES ( END4 ) ---------------------------------------------
+
+
  
 
   return (
@@ -1198,12 +1382,12 @@ function Opstmt() {
             <div className="row g-3">
               <div className="col">
                 <input 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight:"bold"}}
                 type="text" 
                 className="form-control" 
                 aria-label="First name" 
                 name="B3_15"
-                value={inputValues.B3_15}
+                value={tot15.B3_15}
                 onChange={changeData}  
                 />
 
@@ -1215,10 +1399,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text"
                 className="form-control" 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight:"bold"}}
                 aria-label="First name" 
                 name="C3_15"  
-                value={inputValues.C3_15}
+                value={tot15.C3_15}
                 onChange={changeData}
                 />
 
@@ -1229,12 +1413,12 @@ function Opstmt() {
             <div className="row g-3">
               <div className="col">
                 <input 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight:"bold"}}
                 type="text" 
                 className="form-control" 
                aria-label="First name" 
                 name="D3_15"  
-                value={inputValues.D3_15}
+                value={tot15.D3_15}
                 onChange={changeData}
                 />
 
@@ -1246,10 +1430,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight:"bold"}}
                 aria-label="First name" 
                 name="E3_15"  
-                value={inputValues.E3_15}
+                value={tot15.E3_15}
                 onChange={changeData} 
                 />
 
@@ -1261,10 +1445,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight:"bold"}}
                 aria-label="First name" 
                 name="F3_15" 
-                value={inputValues.F3_15}
+                value={tot15.F3_15}
                 onChange={changeData}
 
                 />
@@ -1277,10 +1461,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight:"bold"}}
                 aria-label="First name" 
                 name="G3_15"  
-                value={inputValues.G3_15}
+                value={tot15.G3_15}
                 onChange={changeData} 
                 />
 
@@ -1292,10 +1476,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight:"bold"}}
                 aria-label="First name" 
                 name="H3_15"  
-                value={inputValues.H3_15}
+                value={tot15.H3_15}
                 onChange={changeData} 
                 />
               </div>
@@ -1306,10 +1490,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(169, 255, 251)"}}
+                style={{backgroundColor: "rgb(169, 255, 251)",fontWeight:"bold"}}
                 aria-label="First name" 
                 name="I3_15"  
-                value={inputValues.I3_15}
+                value={tot15.I3_15}
                 onChange={changeData} 
                 />
               </div>
@@ -2112,12 +2296,12 @@ function Opstmt() {
       <div className="row g-3">
         <div className="col">
           <input 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           type="text" 
           className="form-control" 
           aria-label="First name" 
           name="B3_23"
-          value={inputValues.B3_23}
+          value={tot23.B3_23}
           onChange={changeData}  
           />
 
@@ -2129,10 +2313,10 @@ function Opstmt() {
         <div className="col">
           <input type="text"
           className="form-control" 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           aria-label="First name" 
           name="C3_23"  
-          value={inputValues.C3_23}
+          value={tot23.C3_23}
           onChange={changeData}
           />
 
@@ -2143,12 +2327,12 @@ function Opstmt() {
       <div className="row g-3">
         <div className="col">
           <input 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           type="text" 
           className="form-control" 
          aria-label="First name" 
           name="D3_23"  
-          value={inputValues.D3_23}
+          value={tot23.D3_23}
           onChange={changeData}
           />
 
@@ -2160,10 +2344,10 @@ function Opstmt() {
         <div className="col">
           <input type="text" 
           className="form-control" 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           aria-label="First name" 
           name="E3_23"  
-          value={inputValues.E3_23}
+          value={tot23.E3_23}
           onChange={changeData} 
           />
 
@@ -2175,10 +2359,10 @@ function Opstmt() {
         <div className="col">
           <input type="text" 
           className="form-control" 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           aria-label="First name" 
           name="F3_23" 
-          value={inputValues.F3_23}
+          value={tot23.F3_23}
           onChange={changeData}
 
           />
@@ -2191,10 +2375,10 @@ function Opstmt() {
         <div className="col">
           <input type="text" 
           className="form-control" 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           aria-label="First name" 
           name="G3_23"  
-          value={inputValues.G3_23}
+          value={tot23.G3_23}
           onChange={changeData} 
           />
 
@@ -2206,10 +2390,10 @@ function Opstmt() {
         <div className="col">
           <input type="text" 
           className="form-control" 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           aria-label="First name" 
           name="H3_23"  
-          value={inputValues.H3_23}
+          value={tot23.H3_23}
           onChange={changeData} 
           />
         </div>
@@ -2220,10 +2404,10 @@ function Opstmt() {
         <div className="col">
           <input type="text" 
           className="form-control" 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           aria-label="First name" 
           name="I3_23"  
-          value={inputValues.I3_23}
+          value={tot23.I3_23}
           onChange={changeData} 
           />
         </div>
@@ -3013,7 +3197,6 @@ function Opstmt() {
     {/* Add similar input fields for other years here */}
 </div>
 </div>
-
 <div className="container-fluid border mt-3 div_main4">
 <div className="row" >
   <div className="col-lg-4 border-end d-flex justify-content-center"style={{backgroundColor: "rgb(159, 252, 204)"}}>
@@ -3023,12 +3206,12 @@ function Opstmt() {
       <div className="row g-3">
         <div className="col">
           <input 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           type="text" 
           className="form-control" 
           aria-label="First name" 
-          name="B3_32"
-          value={inputValues.B3_32}
+          name="B3_31"
+          value={tot31.B3_31}
           onChange={changeData}  
           />
 
@@ -3040,10 +3223,10 @@ function Opstmt() {
         <div className="col">
           <input type="text"
           className="form-control" 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           aria-label="First name" 
-          name="C3_32"  
-          value={inputValues.C3_32}
+          name="C3_31"  
+          value={tot31.C3_31}
           onChange={changeData}
           />
 
@@ -3054,12 +3237,12 @@ function Opstmt() {
       <div className="row g-3">
         <div className="col">
           <input 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           type="text" 
           className="form-control" 
          aria-label="First name" 
-          name="D3_32"  
-          value={inputValues.D3_32}
+          name="D3_31"  
+          value={tot31.D3_31}
           onChange={changeData}
           />
 
@@ -3071,10 +3254,10 @@ function Opstmt() {
         <div className="col">
           <input type="text" 
           className="form-control" 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           aria-label="First name" 
-          name="E3_32"  
-          value={inputValues.E3_32}
+          name="E3_31"  
+          value={tot31.E3_31}
           onChange={changeData} 
           />
 
@@ -3086,10 +3269,10 @@ function Opstmt() {
         <div className="col">
           <input type="text" 
           className="form-control" 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           aria-label="First name" 
-          name="F3_32" 
-          value={inputValues.F3_32}
+          name="F3_31" 
+          value={tot31.F3_31}
           onChange={changeData}
 
           />
@@ -3102,10 +3285,10 @@ function Opstmt() {
         <div className="col">
           <input type="text" 
           className="form-control" 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           aria-label="First name" 
-          name="G3_32"  
-          value={inputValues.G3_32}
+          name="G3_31"  
+          value={tot31.G3_31}
           onChange={changeData} 
           />
 
@@ -3117,10 +3300,10 @@ function Opstmt() {
         <div className="col">
           <input type="text" 
           className="form-control" 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           aria-label="First name" 
-          name="H3_32"  
-          value={inputValues.H3_32}
+          name="H3_31"  
+          value={tot31.H3_31}
           onChange={changeData} 
           />
         </div>
@@ -3131,10 +3314,10 @@ function Opstmt() {
         <div className="col">
           <input type="text" 
           className="form-control" 
-          style={{backgroundColor: "rgb(159, 252, 204)"}}
+          style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
           aria-label="First name" 
-          name="I3_32"  
-          value={inputValues.I3_32}
+          name="I3_31"  
+          value={tot31.I3_31}
           onChange={changeData} 
           />
         </div>
@@ -3156,6 +3339,136 @@ function Opstmt() {
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
             <h6>Unsecured Loan Promotors
+             </h6>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+              <input
+                        type="number"
+                        className="form-control"
+                        placeholder="Rs."
+                        aria-label="First name"
+                        name="B3_33"
+                        value={inputValues.B3_33}
+                        onChange={changeData}
+                    />
+                    {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+              <input
+                        type="number"
+                        className="form-control"
+                        placeholder="Rs."
+                        aria-label="First name"
+                        name="C3_33"
+                        value={inputValues.C3_33}
+                        onChange={changeData}
+                    />
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input 
+                type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="D3_33"  
+                value={inputValues.D3_33}
+                onChange={changeData}  
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="E3_33"  
+                value={inputValues.E3_33}
+                onChange={changeData}  
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="F3_33"  
+                value={inputValues.F3_33}
+                onChange={changeData} 
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="G3_33" 
+                value={inputValues.G3_33}
+                onChange={changeData} />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="H3_33"  
+                value={inputValues.H3_33}
+                onChange={changeData} 
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="I3_33"  
+                value={inputValues.I3_33}
+                onChange={changeData} 
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          {/* Add similar input fields for other years here */}
+      </div>
+    </div>
+    <div className="container-fluid border mt-3">
+      <div className="row">
+          <div className="col-lg-4 border-end d-flex justify-content-center">
+            <h6>Defered Tax
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -3285,7 +3598,7 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>Defered Tax
+            <h6>Security Deposite
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -3414,7 +3727,7 @@ function Opstmt() {
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h6>Security Deposits
+            <h6>Reveluation Reserve
              </h6>
           </div>
           <div className="col-lg-1 border-start d-flex justify-content-center">
@@ -3540,136 +3853,6 @@ function Opstmt() {
           {/* Add similar input fields for other years here */}
       </div>
     </div>
-    
-<div className="container-fluid border mt-3">
-<div className="row">
-    <div className="col-lg-4 border-end d-flex justify-content-center">
-      <h6>Revaluation Reserve
-       </h6>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="number" 
-          className="form-control" 
-          placeholder="Rs." 
-          aria-label="First name" 
-          name="B3_37"
-          value={inputValues.B3_37}
-          onChange={changeData}  
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="number" 
-          className="form-control" 
-          placeholder="Rs." 
-          aria-label="First name" 
-          name="C3_37"  
-          value={inputValues.C3_37}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="number" 
-          className="form-control" 
-          placeholder="Rs." aria-label="First name" 
-          name="D3_37"  
-          value={inputValues.D3_37}
-          onChange={changeData}
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="number" 
-          className="form-control" 
-          placeholder="Rs." 
-          aria-label="First name" 
-          name="E3_37"  
-          value={inputValues.E3_37}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="number" 
-          className="form-control" 
-          placeholder="Rs." 
-          aria-label="First name" 
-          name="F3_37" 
-          value={inputValues.F3_37}
-          onChange={changeData}
-
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="number" 
-          className="form-control" 
-          placeholder="Rs." 
-          aria-label="First name" 
-          name="G3_37"  
-          value={inputValues.G3_37}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="number" 
-          className="form-control" 
-          placeholder="Rs." 
-          aria-label="First name" 
-          name="H3_37"  
-          value={inputValues.H3_37}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    <div className="col-lg-1 border-start d-flex justify-content-center">
-      <div className="row g-3">
-        <div className="col">
-          <input type="number" 
-          className="form-control" 
-          placeholder="Rs." 
-          aria-label="First name" 
-          name="I3_37"  
-          value={inputValues.I3_37}
-          onChange={changeData} 
-          />
-          {/* <!--//AAAAAAAA --> */}
-        </div>
-      </div>
-    </div>
-    {/* Add similar input fields for other years here */}
-</div>
-</div>
     <div className="container-fluid border mt-3 div_main4">
       <div className="row" >
         <div className="col-lg-4 border-end d-flex justify-content-center"style={{backgroundColor: "rgb(159, 252, 204)"}}>
@@ -3679,12 +3862,12 @@ function Opstmt() {
             <div className="row g-3">
               <div className="col">
                 <input 
-                style={{backgroundColor: "rgb(159, 252, 204)"}}
+                style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
                 type="text" 
                 className="form-control" 
                 aria-label="First name" 
-                name="B3_38"
-                value={inputValues.B3_38}
+                name="B3_37"
+                value={tot37.B3_37}
                 onChange={changeData}  
                 />
 
@@ -3696,10 +3879,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text"
                 className="form-control" 
-                style={{backgroundColor: "rgb(159, 252, 204)"}}
+                style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
                 aria-label="First name" 
-                name="C3_38"  
-                value={inputValues.C3_38}
+                name="C3_37"  
+                value={tot37.C3_37}
                 onChange={changeData}
                 />
 
@@ -3710,12 +3893,12 @@ function Opstmt() {
             <div className="row g-3">
               <div className="col">
                 <input 
-                style={{backgroundColor: "rgb(159, 252, 204)"}}
+                style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
                 type="text" 
                 className="form-control" 
                aria-label="First name" 
-                name="D3_38"  
-                value={inputValues.D3_38}
+                name="D3_37"  
+                value={tot37.D3_37}
                 onChange={changeData}
                 />
 
@@ -3727,10 +3910,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(159, 252, 204)"}}
+                style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
                 aria-label="First name" 
-                name="E3_38"  
-                value={inputValues.E3_38}
+                name="E3_37"  
+                value={tot37.E3_37}
                 onChange={changeData} 
                 />
 
@@ -3742,10 +3925,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(159, 252, 204)"}}
+                style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
                 aria-label="First name" 
-                name="F3_38" 
-                value={inputValues.F3_38}
+                name="F3_37" 
+                value={tot37.F3_37}
                 onChange={changeData}
 
                 />
@@ -3758,10 +3941,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(159, 252, 204)"}}
+                style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
                 aria-label="First name" 
-                name="G3_38"  
-                value={inputValues.G3_38}
+                name="G3_37"  
+                value={tot37.G3_37}
                 onChange={changeData} 
                 />
 
@@ -3773,10 +3956,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(159, 252, 204)"}}
+                style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
                 aria-label="First name" 
-                name="H3_38"  
-                value={inputValues.H3_38}
+                name="H3_37"  
+                value={tot37.H3_37}
                 onChange={changeData} 
                 />
               </div>
@@ -3787,10 +3970,10 @@ function Opstmt() {
               <div className="col">
                 <input type="text" 
                 className="form-control" 
-                style={{backgroundColor: "rgb(159, 252, 204)"}}
+                style={{backgroundColor: "rgb(159, 252, 204)",fontWeight:"bold"}}
                 aria-label="First name" 
-                name="I3_38"  
-                value={inputValues.I3_38}
+                name="I3_37"  
+                value={tot37.I3_37}
                 onChange={changeData} 
                 />
               </div>
@@ -3807,4 +3990,4 @@ function Opstmt() {
   
 }
 
-export default Opstmt;
+export default Ocl;

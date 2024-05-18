@@ -1,28 +1,118 @@
 // Opstmt.js
-import React, { useEffect, useState } from 'react';
+import React, { useContext,useEffect, useState } from 'react';
 import axios from 'axios'
+import { AppContext } from '../AppContext';
 
 
-function Opstmt() {
+function Ratio( ) {
+
+  const { inputValues, setInputValues,tot2020,
+    Cost27, setCost27,
+    Cost26, setCost26,
+    sumB50, setSumB50,
+    sumC50, setSumC50,
+    sumD50, setSumD50,
+    sumE50, setSumE50,
+    sumF50, setSumF50,
+    sumG50, setSumG50,
+    sumH50, setSumH50,
+    sumI50, setSumI50,
+    sumB30, setSumB30,
+    sumC30, setSumC30,
+    sumD30, setSumD30,
+    sumE30, setSumE30,
+    sumF30, setSumF30,
+    sumG30, setSumG30,
+    sumH30, setSumH30,
+    sumI30, setSumI30
+   } = useContext(AppContext);
+
   
-    const [inputValues, setInputValues] = useState({
-        B1_7: '',
-        B1_8: '',
-        B1_9: '',
-        B1_10: '',
-        
-        C1_7: '',
-        C1_8: '',
-        C1_9: '',
-        C1_10: '',
-        
-    });
+  const [sumB4_6, setSumB4_6] = useState(0);
+  const [sumC4_6, setSumC4_6] = useState(0);
+  const [sumD4_6, setSumD4_6] = useState(0);
+  const [sumE4_6, setSumE4_6] = useState(0);
+  const [sumF4_6, setSumF4_6] = useState(0);
+  const [sumG4_6, setSumG4_6] = useState(0);
+  const [sumH4_6, setSumH4_6] = useState(0);
+  const [sumI4_6, setSumI4_6] = useState(0);
+
+  const [sumB4_7, setSumB4_7] = useState(0);
+  const [sumC4_7, setSumC4_7] = useState(0);
+  const [sumD4_7, setSumD4_7] = useState(0);
+  const [sumE4_7, setSumE4_7] = useState(0);
+  const [sumF4_7, setSumF4_7] = useState(0);
+  const [sumG4_7, setSumG4_7] = useState(0);
+  const [sumH4_7, setSumH4_7] = useState(0);
+  const [sumI4_7, setSumI4_7] = useState(0);
+
+  const [sumB4_8, setSumB4_8] = useState(0);
+  const [sumC4_8, setSumC4_8] = useState(0);
+  const [sumD4_8, setSumD4_8] = useState(0);
+  const [sumE4_8, setSumE4_8] = useState(0);
+  const [sumF4_8, setSumF4_8] = useState(0);
+  const [sumG4_8, setSumG4_8] = useState(0);
+  const [sumH4_8, setSumH4_8] = useState(0);
+  const [sumI4_8, setSumI4_8] = useState(0);
+
+  const [sumB4_9, setSumB4_9] = useState(0);
+  const [sumC4_9, setSumC4_9] = useState(0);
+  const [sumD4_9, setSumD4_9] = useState(0);
+  const [sumE4_9, setSumE4_9] = useState(0);
+  const [sumF4_9, setSumF4_9] = useState(0);
+  const [sumG4_9, setSumG4_9] = useState(0);
+  const [sumH4_9, setSumH4_9] = useState(0);
+  const [sumI4_9, setSumI4_9] = useState(0);
+ 
+  const [sumB4_10, setSumB4_10] = useState(0);
+  const [sumC4_10, setSumC4_10] = useState(0);
+  const [sumD4_10, setSumD4_10] = useState(0);
+  const [sumE4_10, setSumE4_10] = useState(0);
+  const [sumF4_10, setSumF4_10] = useState(0);
+  const [sumG4_10, setSumG4_10] = useState(0);
+  const [sumH4_10, setSumH4_10] = useState(0);
+  const [sumI4_10, setSumI4_10] = useState(0);
+
+ 
+  const [sumB4_21, setSumB4_21] = useState(0);
+  const [sumC4_21, setSumC4_21] = useState(0);
+  const [sumD4_21, setSumD4_21] = useState(0);
+  const [sumE4_21, setSumE4_21] = useState(0);
+  const [sumF4_21, setSumF4_21] = useState(0);
+  const [sumG4_21, setSumG4_21] = useState(0);
+  const [sumH4_21, setSumH4_21] = useState(0);
+  const [sumI4_21, setSumI4_21] = useState(0);
 
 
+  //------------------------------------------------ MAIN FUNCION2 ---------------------------------------------
 
 
-    let [tot2020,setTot2020]=useState(0)
+  const uploadData = async (cell_id, cell_value) => {
+    try {
+      const user_id = localStorage.getItem("user_id");
+      const res = await fetch("http://127.0.0.1:8000/api/save_ratio/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ cell_id, cell_value, user_id })
+      });
+      console.log('Response:', res);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
+   const calculateTotal = (arr) => {
+    return arr.reduce((total, currentValue) => total + parseFloat(inputValues[currentValue] || 0), 0);
+  
+  
+  };
+
+
+   
+  //------------------------------------------------ MAIN FUNCION ---------------------------------------------
+  
     
     const changeData = async (e) => {
       try {
@@ -39,8 +129,7 @@ function Opstmt() {
           console.log(da); // Log the name being set
           
          if(value!=""){
-          setTot2020(tot2020+=parseInt(value))
-          const res = await fetch("http://127.0.0.1:8000/api/save_opstmt/", {
+          const res = await fetch("http://127.0.0.1:8000/api/save_ratio/", {
             method: "POST",
             headers:{
                 "Content-Type":"application/json"
@@ -59,11 +148,251 @@ function Opstmt() {
   };
 
 
- useEffect(()=>{
-  console.log(tot2020);
-  
-  
- },[tot2020])
+
+  //------------------------------------------------ SAVE FOR 6 TO DATABASE ---------------------------------------------
+
+
+
+
+  const updateB4_6 = () => {
+    setSumB4_6(calculateTotal([0]) + (parseFloat(tot2020.B1_10 || 0)));
+    setSumC4_6(calculateTotal([0]) + (parseFloat(tot2020.C1_10 || 0)));
+    setSumD4_6(calculateTotal([0]) + (parseFloat(tot2020.D1_10 || 0)));
+    setSumE4_6(calculateTotal([0]) + (parseFloat(tot2020.E1_10 || 0)));
+    setSumF4_6(calculateTotal([0]) + (parseFloat(tot2020.F1_10 || 0)));
+    setSumG4_6(calculateTotal([0]) + (parseFloat(tot2020.G1_10 || 0)));
+    setSumH4_6(calculateTotal([0]) + (parseFloat(tot2020.H1_10 || 0)));
+    setSumI4_6(calculateTotal([0]) + (parseFloat(tot2020.I1_10 || 0)));
+  };
+
+  useEffect(() => {
+    updateB4_6();
+  }, [inputValues, tot2020]);
+
+  useEffect(() => {
+    const uploadB4_6 = async () => {
+      await uploadData("B4_6", sumB4_6.toString());
+      await uploadData("C4_6", sumC4_6.toString());
+      await uploadData("D4_6", sumD4_6.toString());
+      await uploadData("E4_6", sumE4_6.toString());
+      await uploadData("F4_6", sumF4_6.toString());
+      await uploadData("G4_6", sumG4_6.toString());
+      await uploadData("H4_6", sumH4_6.toString());
+      await uploadData("I4_6", sumI4_6.toString());
+    };
+    if (sumB4_6 || sumC4_6 || sumD4_6 || sumE4_6 || sumF4_6 || sumG4_6 || sumH4_6 || sumI4_6) {
+      uploadB4_6();
+    }
+  }, [sumB4_6, sumC4_6, sumD4_6, sumE4_6, sumF4_6, sumG4_6, sumH4_6, sumI4_6]);
+
+
+
+  //------------------------------------------------------ CODE FOR 7  ---------------------------------------------
+
+  const updateTotals = () => {
+    setSumB4_7(calculateTotal(["B1_15", "B1_16"]) - parseFloat(inputValues["B1_25"] || 0));
+    setSumC4_7(calculateTotal(["B1_25", "C1_16"]) - parseFloat(inputValues["C1_25"] || 0));
+    setSumD4_7(calculateTotal(["C1_25", "D1_16"]) - parseFloat(inputValues["D1_25"] || 0));
+    setSumE4_7(calculateTotal(["D1_25", "E1_16"]) - parseFloat(inputValues["E1_25"] || 0));
+    setSumF4_7(calculateTotal(["E1_25", "F1_16"]) - parseFloat(inputValues["F1_25"] || 0));
+    setSumG4_7(calculateTotal(["F1_25", "G1_16"]) - parseFloat(inputValues["G1_25"] || 0));
+    setSumH4_7(calculateTotal(["G1_25", "H1_16"]) - parseFloat(inputValues["H1_25"] || 0));
+    setSumI4_7(calculateTotal(["H1_25", "I1_16"]) - parseFloat(inputValues["I1_25"] || 0));
+  };
+
+  useEffect(() => {
+    updateTotals();
+  }, [inputValues, ]);
+
+  useEffect(() => {
+    const uploadTotals = async () => {
+      await uploadData("B4_7", sumB4_7.toString());
+      await uploadData("C4_7", sumC4_7.toString());
+      await uploadData("D4_7", sumD4_7.toString());
+      await uploadData("E4_7", sumE4_7.toString());
+      await uploadData("F4_7", sumF4_7.toString());
+      await uploadData("G4_7", sumG4_7.toString());
+      await uploadData("H4_7", sumH4_7.toString());
+      await uploadData("I4_7", sumI4_7.toString());
+    };
+
+  if (sumB4_7 || sumC4_7 || sumD4_7 || sumE4_7 || sumF4_7 || sumG4_7 || sumH4_7 || sumI4_7) {
+    uploadTotals();
+  }
+}, [sumB4_7, sumC4_7, sumD4_7, sumE4_7, sumF4_7, sumG4_7, sumH4_7, sumI4_7]);
+
+
+
+  //------------------------------------------------ SAVE FOR 8 TO DATABASE ---------------------------------------------
+
+
+
+
+  const updateB4_8 = () => {
+    setSumB4_8((parseFloat(Cost27.B1_27 || 0)));
+    setSumC4_8((parseFloat(Cost27.C1_27 || 0)));
+    setSumD4_8((parseFloat(Cost27.D1_27 || 0)));
+    setSumE4_8((parseFloat(Cost27.E1_27 || 0)));
+    setSumF4_8((parseFloat(Cost27.F1_27 || 0)));
+    setSumG4_8((parseFloat(Cost27.G1_27 || 0)));
+    setSumH4_8((parseFloat(Cost27.H1_27 || 0)));
+    setSumI4_8((parseFloat(Cost27.I1_27 || 0)));
+  };
+
+  useEffect(() => {
+    updateB4_8();
+  }, [inputValues, Cost27,]);
+
+  useEffect(() => {
+    const uploadB4_8 = async () => {
+      await uploadData("B4_8", sumB4_8.toString());
+      await uploadData("C4_8", sumC4_8.toString());
+      await uploadData("D4_8", sumD4_8.toString());
+      await uploadData("E4_8", sumE4_8.toString());
+      await uploadData("F4_8", sumF4_8.toString());
+      await uploadData("G4_8", sumG4_8.toString());
+      await uploadData("H4_8", sumH4_8.toString());
+      await uploadData("I4_8", sumI4_8.toString());
+    };
+    if (sumB4_8 || sumC4_8 || sumD4_8 || sumE4_8 || sumF4_8 || sumG4_8 || sumH4_8 || sumI4_8) {
+      uploadB4_8();
+    }
+  }, [sumB4_8, sumC4_8, sumD4_8, sumE4_8, sumF4_8, sumG4_8, sumH4_8, sumI4_8]);
+
+
+//------------------------------------------------ SAVE FOR 9 TO DATABASE ---------------------------------------------
+
+
+
+
+const updateB4_9 = () => {
+  setSumB4_9((parseFloat(Cost26.B1_26 || 0)));
+  setSumC4_9((parseFloat(Cost26.C1_26 || 0)));
+  setSumD4_9((parseFloat(Cost26.D1_26 || 0)));
+  setSumE4_9((parseFloat(Cost26.E1_26 || 0)));
+  setSumF4_9((parseFloat(Cost26.F1_26 || 0)));
+  setSumG4_9((parseFloat(Cost26.G1_26 || 0)));
+  setSumH4_9((parseFloat(Cost26.H1_26 || 0)));
+  setSumI4_9((parseFloat(Cost26.I1_26 || 0)));
+};
+
+useEffect(() => {
+  updateB4_9();
+}, [inputValues, Cost26,]);
+
+useEffect(() => {
+  const uploadB4_9 = async () => {
+    await uploadData("B4_9", sumB4_9.toString());
+    await uploadData("C4_9", sumC4_9.toString());
+    await uploadData("D4_9", sumD4_9.toString());
+    await uploadData("E4_9", sumE4_9.toString());
+    await uploadData("F4_9", sumF4_9.toString());
+    await uploadData("G4_9", sumG4_9.toString());
+    await uploadData("H4_9", sumH4_9.toString());
+    await uploadData("I4_9", sumI4_9.toString());
+  };
+  if (sumB4_9 || sumC4_9 || sumD4_9 || sumE4_9 || sumF4_9 || sumG4_9 || sumH4_9 || sumI4_9) {
+    uploadB4_9();
+  }
+}, [sumB4_9, sumC4_9, sumD4_9, sumE4_9, sumF4_9, sumG4_9, sumH4_9, sumI4_9]);
+
+
+ //------------------------------------------------------ CODE FOR 10  ---------------------------------------------
+
+ const updateB4_10 = () => {
+  setSumB4_10(parseFloat(tot2020.B1_10 || 0) + parseFloat(inputValues["B1_23"] || 0) + parseFloat(inputValues["B1_24"] || 0) - parseFloat(inputValues["B1_13"] || 0) - parseFloat(inputValues["B1_14"] || 0) );
+  setSumC4_10(parseFloat(tot2020.C1_10 || 0) + parseFloat(inputValues["C1_23"] || 0) + parseFloat(inputValues["C1_24"] || 0) - parseFloat(inputValues["B1_23"] || 0) - parseFloat(inputValues["B1_24"] || 0) );
+  setSumD4_10(parseFloat(tot2020.D1_10 || 0) + parseFloat(inputValues["D1_23"] || 0) + parseFloat(inputValues["D1_24"] || 0) - parseFloat(inputValues["C1_23"] || 0) - parseFloat(inputValues["C1_24"] || 0) );
+  setSumE4_10(parseFloat(tot2020.E1_10 || 0) + parseFloat(inputValues["E1_23"] || 0) + parseFloat(inputValues["E1_24"] || 0) - parseFloat(inputValues["D1_23"] || 0) - parseFloat(inputValues["D1_24"] || 0) );
+  setSumF4_10(parseFloat(tot2020.F1_10 || 0) + parseFloat(inputValues["F1_23"] || 0) + parseFloat(inputValues["F1_24"] || 0) - parseFloat(inputValues["E1_23"] || 0) - parseFloat(inputValues["E1_24"] || 0) );
+  setSumG4_10(parseFloat(tot2020.G1_10 || 0) + parseFloat(inputValues["G1_23"] || 0) + parseFloat(inputValues["G1_24"] || 0) - parseFloat(inputValues["F1_23"] || 0) - parseFloat(inputValues["F1_24"] || 0) );
+  setSumH4_10(parseFloat(tot2020.H1_10 || 0) + parseFloat(inputValues["H1_23"] || 0) + parseFloat(inputValues["H1_24"] || 0) - parseFloat(inputValues["G1_23"] || 0) - parseFloat(inputValues["G1_24"] || 0) );
+  setSumI4_10(parseFloat(tot2020.I1_10 || 0) + parseFloat(inputValues["I1_23"] || 0) + parseFloat(inputValues["I1_24"] || 0) - parseFloat(inputValues["H1_23"] || 0) - parseFloat(inputValues["H1_24"] || 0) );
+};
+
+useEffect(() => {
+  updateB4_10();
+}, [inputValues,tot2020.I1_10 ]);
+
+useEffect(() => {
+  const uploadB4_10 = async () => {
+    await uploadData("B4_10", sumB4_10.toString());
+    await uploadData("C4_10", sumC4_10.toString());
+    await uploadData("D4_10", sumD4_10.toString());
+    await uploadData("E4_10", sumE4_10.toString());
+    await uploadData("F4_10", sumF4_10.toString());
+    await uploadData("G4_10", sumG4_10.toString());
+    await uploadData("H4_10", sumH4_10.toString());
+    await uploadData("I4_10", sumI4_10.toString());
+  };
+
+if (sumB4_10 || sumC4_10 || sumD4_10 || sumE4_10 || sumF4_10 || sumG4_10 || sumH4_10 || sumI4_10) {
+  uploadB4_10();
+}
+}, [sumB4_10, sumC4_10, sumD4_10, sumE4_10, sumF4_10, sumG4_10, sumH4_10, sumI4_10]);
+
+
+//------------------------------------------------- TOTAL OF 21 -------------------------------------------------------
+
+
+const uploadSumB4_21 = () => {
+  setSumB4_21( + parseFloat(sumB50 || 0) - parseFloat(sumB30 || 0)); 
+  setSumC4_21( + parseFloat(sumC50 || 0) - parseFloat(sumC30 || 0));
+  setSumD4_21( + parseFloat(sumD50 || 0) - parseFloat(sumD30 || 0));
+  setSumE4_21( + parseFloat(sumE50 || 0) - parseFloat(sumE30 || 0));
+  setSumF4_21( + parseFloat(sumF50 || 0) - parseFloat(sumF30 || 0));
+  setSumG4_21( + parseFloat(sumG50 || 0) - parseFloat(sumG30 || 0));
+  setSumH4_21( + parseFloat(sumH50 || 0) - parseFloat(sumH30 || 0));
+  setSumI4_21( + parseFloat(sumI50 || 0) - parseFloat(sumI30 || 0));
+};
+
+useEffect(() => {
+  uploadSumB4_21();
+}, [inputValues,sumB50, sumC50, sumD50, sumE50, sumF50, sumG50, sumH50, sumI50,sumB30, sumC30, sumD30, sumE30, sumF30, sumG30, sumH30, sumI30]);
+
+useEffect(() => {
+  const uploadSumB4_21 = async () => {
+    await uploadData("B2_21", sumB4_21.toString());
+    await uploadData("C2_21", sumC4_21.toString());
+    await uploadData("D2_21", sumD4_21.toString());
+    await uploadData("E2_21", sumE4_21.toString());
+    await uploadData("F2_21", sumF4_21.toString());
+    await uploadData("G2_21", sumG4_21.toString());
+    await uploadData("H2_21", sumH4_21.toString());
+    await uploadData("I2_21", sumI4_21.toString());
+  };
+  if (sumB4_21 || sumC4_21 || sumD4_21 || sumE4_21 || sumF4_21 || sumG4_21 || sumH4_21 || sumI4_21) {
+    uploadSumB4_21();
+  }
+}, [sumB4_21, sumC4_21, sumD4_21, sumE4_21, sumF4_21, sumG4_21, sumH4_21, sumI4_21]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 
   return (
@@ -169,7 +498,7 @@ function Opstmt() {
            
           aria-label="First name" 
           name="B4_6"
-          value={inputValues.B4_6}
+          value={sumB4_6}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -184,7 +513,7 @@ function Opstmt() {
            
           aria-label="First name" 
           name="C4_6"  
-          value={inputValues.C4_6}
+          value={sumC4_6}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -198,7 +527,7 @@ function Opstmt() {
           className="form-control" 
            aria-label="First name" 
           name="D4_6"  
-          value={inputValues.D4_6}
+          value={sumD4_6}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -213,7 +542,7 @@ function Opstmt() {
            
           aria-label="First name" 
           name="E4_6"  
-          value={inputValues.E4_6}
+          value={sumE4_6}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -228,7 +557,7 @@ function Opstmt() {
            
           aria-label="First name" 
           name="F4_6" 
-          value={inputValues.F4_6}
+          value={sumF4_6}
           onChange={changeData}
 
           />
@@ -244,7 +573,7 @@ function Opstmt() {
            
           aria-label="First name" 
           name="G4_6"  
-          value={inputValues.G4_6}
+          value={sumG4_6}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -259,7 +588,7 @@ function Opstmt() {
            
           aria-label="First name" 
           name="H4_6"  
-          value={inputValues.H4_6}
+          value={sumH4_6}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -274,7 +603,7 @@ function Opstmt() {
            
           aria-label="First name" 
           name="I4_6"  
-          value={inputValues.I4_6}
+          value={sumI4_6}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -299,7 +628,7 @@ function Opstmt() {
            
           aria-label="First name" 
           name="B4_7"
-          value={inputValues.B4_7}
+          value={sumB4_7}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -314,7 +643,7 @@ function Opstmt() {
            
           aria-label="First name" 
           name="C4_7"  
-          value={inputValues.C4_7}
+          value={ sumC4_7}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -328,7 +657,7 @@ function Opstmt() {
           className="form-control" 
            aria-label="First name" 
           name="D4_7"  
-          value={inputValues.D4_7}
+          value={ sumD4_7}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -343,7 +672,7 @@ function Opstmt() {
            
           aria-label="First name" 
           name="E4_7"  
-          value={inputValues.E4_7}
+          value={ sumE4_7}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -358,7 +687,7 @@ function Opstmt() {
            
           aria-label="First name" 
           name="F4_7" 
-          value={inputValues.F4_7}
+          value={ sumF4_7}
           onChange={changeData}
 
           />
@@ -374,7 +703,7 @@ function Opstmt() {
            
           aria-label="First name" 
           name="G4_7"  
-          value={inputValues.G4_7}
+          value={ sumG4_7}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -389,7 +718,7 @@ function Opstmt() {
            
           aria-label="First name" 
           name="H4_7"  
-          value={inputValues.H4_7}
+          value={ sumH4_7}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -404,7 +733,7 @@ function Opstmt() {
            
           aria-label="First name" 
           name="I4_7"  
-          value={inputValues.I4_7}
+          value={ sumI4_7}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -429,7 +758,7 @@ function Opstmt() {
                         
                         aria-label="First name"
                         name="B4_8"
-                        value={inputValues.B4_8}
+                        value={sumB4_8}
                         onChange={changeData}
                     />
                     {/* <!--//AAAAAAAA --> */}
@@ -445,7 +774,7 @@ function Opstmt() {
                         
                         aria-label="First name"
                         name="C4_8"
-                        value={inputValues.C4_8}
+                        value={sumC4_8}
                         onChange={changeData}
                     />
               </div>
@@ -460,7 +789,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="D4_8"  
-                value={inputValues.D4_8}
+                value={sumD4_8}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -475,7 +804,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="E4_8"  
-                value={inputValues.E4_8}
+                value={sumE4_8}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -490,7 +819,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="F4_8"  
-                value={inputValues.F4_8}
+                value={sumF4_8}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -505,7 +834,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="G4_8" 
-                value={inputValues.G4_8}
+                value={sumG4_8}
                 onChange={changeData} />
                 {/* <!--//AAAAAAAA --> */}
               </div>
@@ -519,7 +848,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="H4_8"  
-                value={inputValues.H4_8}
+                value={sumH4_8}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -534,7 +863,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="I4_8"  
-                value={inputValues.I4_8}
+                value={sumI4_8}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -558,7 +887,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="B4_9"  
-                value={inputValues.B4_9}
+                value={sumB4_9}
                 onChange={changeData}
                 />
                 
@@ -574,7 +903,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="C4_9"
-                value={inputValues.C4_9}
+                value={sumC4_9}
                 onChange={changeData}  />
                 {/* <!--//AAAAAAAA --> */}
               </div>
@@ -588,7 +917,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="D4_9"  
-                value={inputValues.D4_9}
+                value={sumD4_9}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -603,7 +932,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="E4_9"  
-                value={inputValues.E4_9}
+                value={sumE4_9}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -618,7 +947,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="F4_9" 
-                value={inputValues.F4_9}
+                value={sumF4_9}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -633,7 +962,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="G4_9"  
-                value={inputValues.G4_9}
+                value={sumG4_9}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -648,7 +977,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="H4_9"  
-                value={inputValues.H4_9}
+                value={sumH4_9}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -663,7 +992,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="I4_9"  
-                value={inputValues.I4_9}
+                value={sumI4_9}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -687,7 +1016,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="B4_10"
-                value={inputValues.B4_10}
+                value={sumB4_10}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -702,7 +1031,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="C4_10"  
-                value={inputValues.C4_10}
+                value={sumC4_10}
                 onChange={changeData}
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -716,7 +1045,7 @@ function Opstmt() {
                 className="form-control" 
                  aria-label="First name" 
                 name="D4_10"  
-                value={inputValues.D4_10}
+                value={sumD4_10}
                 onChange={changeData}
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -731,7 +1060,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="E4_10"  
-                value={inputValues.E4_10}
+                value={sumE4_10}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -746,7 +1075,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="F4_10" 
-                value={inputValues.F4_10}
+                value={sumF4_10}
                 onChange={changeData}
 
                 />
@@ -762,7 +1091,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="G4_10"  
-                value={inputValues.G4_10}
+                value={sumG4_10}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -777,7 +1106,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="H4_10"  
-                value={inputValues.H4_10}
+                value={sumH4_10}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -792,7 +1121,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="I4_10"  
-                value={inputValues.I4_10}
+                value={sumI4_10}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -1868,7 +2197,7 @@ function Opstmt() {
                         
                         aria-label="First name"
                         name="B4_21"
-                        value={inputValues.B4_21}
+                        value={sumB4_21}
                         onChange={changeData}
                     />
               </div>
@@ -1883,7 +2212,7 @@ function Opstmt() {
                         className="form-control"
                         aria-label="First name"
                         name="C4_21"
-                        value={inputValues.C4_21}
+                        value={sumC4_21}
                         onChange={changeData}
                     />
               </div>
@@ -1898,7 +2227,7 @@ function Opstmt() {
   
                 aria-label="First name" 
                 name="D4_21"  
-                value={inputValues.D4_21}
+                value={sumD4_21}
                 onChange={changeData}  
                 />
 
@@ -1913,7 +2242,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="E4_21"  
-                value={inputValues.E4_21}
+                value={sumE4_21}
                 onChange={changeData}  
                 />
 
@@ -1928,7 +2257,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="F4_21"  
-                value={inputValues.F4_21}
+                value={sumF4_21}
                 onChange={changeData} 
                 />
 
@@ -1943,7 +2272,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="G4_21" 
-                value={inputValues.G4_21}
+                value={sumG4_21}
                 onChange={changeData} />
 
               </div>
@@ -1957,7 +2286,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="H4_21"  
-                value={inputValues.H4_21}
+                value={sumH4_21}
                 onChange={changeData} 
                 />
 
@@ -1972,7 +2301,7 @@ function Opstmt() {
                  
                 aria-label="First name" 
                 name="I4_21"  
-                value={inputValues.I4_21}
+                value={sumB4_21}
                 onChange={changeData} 
                 />
 
@@ -5372,4 +5701,4 @@ function Opstmt() {
   
 }
 
-export default Opstmt;
+export default Ratio;
