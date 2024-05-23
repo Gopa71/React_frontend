@@ -6,7 +6,7 @@ import { AppContext } from '../AppContext';
 
 function Opstmt() {
 
-  const { inputValues, setInputValues,tot2020, setTot2020,Cost27, setCost27,Cost26, setCost26 } = useContext(AppContext);
+  const { inputValues, setInputValues,tot2020, setTot2020,Cost27, setCost27,Cost26, setCost26,Cost37, setCost37,Cost31, setCost31,Cost42, setCost42 } = useContext(AppContext);
     
 
 
@@ -14,13 +14,11 @@ function Opstmt() {
 
   const [prefix, setPrefix] = useState("");
   const [Cost28, setCost28] = useState({});
-  const [Cost31, setCost31] = useState({});
   const [Cost35, setCost35] = useState({});
-  const [Cost37, setCost37] = useState({});
   const [Cost38, setCost38] = useState({});
   const [Cost39, setCost39] = useState({});
   const [Cost41, setCost41] = useState({});
-  const [Cost42, setCost42] = useState({});
+  
 
 // const [lessB,setLessB]=useState(0);
 

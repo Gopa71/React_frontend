@@ -3328,13 +3328,138 @@ useEffect(() => {
   
 {/*---------------------------------------- OTHER TERM LIABILITIES -------------------------------------*/}
 
+
 <div className="container-fluid border mt-3">
-        <div className="row" style={{backgroundColor:"rgb(224, 231, 231)"}}>
+        <div className="row" >
           <div className="col-lg-4 border-end d-flex justify-content-center">
-            <h5 >OTHER TERM LIABILITIES</h5>
+            <h5 >Other Term Liabilities</h5>
           </div>
-        </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+              <input
+                        type="number"
+                        className="form-control"
+                        placeholder="Rs."
+                        aria-label="First name"
+                        name="B3_32"
+                        value={inputValues.B3_32}
+                        onChange={changeData}
+                    />
+                    {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+              <input
+                        type="number"
+                        className="form-control"
+                        placeholder="Rs."
+                        aria-label="First name"
+                        name="C3_32"
+                        value={inputValues.C3_32}
+                        onChange={changeData}
+                    />
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input 
+                type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="D3_32"  
+                value={inputValues.D3_32}
+                onChange={changeData}  
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="E3_32"  
+                value={inputValues.E3_32}
+                onChange={changeData}  
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="F3_32"  
+                value={inputValues.F3_32}
+                onChange={changeData} 
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="G3_32" 
+                value={inputValues.G3_32}
+                onChange={changeData} />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="H3_32"  
+                value={inputValues.H3_32}
+                onChange={changeData} 
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-1 border-start d-flex justify-content-center">
+            <div className="row g-3">
+              <div className="col">
+                <input type="number" 
+                className="form-control" 
+                placeholder="Rs." 
+                aria-label="First name" 
+                name="I3_32"  
+                value={inputValues.I3_32}
+                onChange={changeData} 
+                />
+                {/* <!--//AAAAAAAA --> */}
+              </div>
+            </div>
+          </div>
+          {/* Add similar input fields for other years here */}
+      </div>
     </div>
+
+    
     <div className="container-fluid border mt-3">
       <div className="row">
           <div className="col-lg-4 border-end d-flex justify-content-center">
