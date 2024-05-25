@@ -47,6 +47,7 @@ sumF45, setSumF45,
 sumG45, setSumG45,
 sumH45, setSumH45,
 sumI45, setSumI45,
+
 sumB25, setSumB25,
 sumC25, setSumC25,
 sumD25, setSumD25,
@@ -55,6 +56,7 @@ sumF25, setSumF25,
 sumG25, setSumG25,
 sumH25, setSumH25,
 sumI25, setSumI25,
+
 sumB19, setSumB19,
 sumC19, setSumC19,
 sumD19, setSumD19,
@@ -63,6 +65,7 @@ sumF19, setSumF19,
 sumG19, setSumG19,
 sumH19, setSumH19,
 sumI19, setSumI19,
+
 sumB21, setSumB21,
 sumC21, setSumC21,
 sumD21, setSumD21,
@@ -71,6 +74,7 @@ sumF21, setSumF21,
 sumG21, setSumG21,
 sumH21, setSumH21,
 sumI21, setSumI21,
+
 sumB37, setSumB37,
 sumC37, setSumC37,
 sumD37, setSumD37,
@@ -79,6 +83,25 @@ sumF37, setSumF37,
 sumG37, setSumG37,
 sumH37, setSumH37,
 sumI37, setSumI37,
+
+sumB51, setSumB51,
+sumC51, setSumC51,
+sumD51, setSumD51,
+sumE51, setSumE51,
+sumF51, setSumF51,
+sumG51, setSumG51,
+sumH51, setSumH51,
+sumI51, setSumI51,
+
+sumB31, setSumB31,
+sumC31, setSumC31,
+sumD31, setSumD31,
+sumE31, setSumE31,
+sumF31, setSumF31,
+sumG31, setSumG31,
+sumH31, setSumH31,
+sumI31, setSumI31,
+ 
 
   } = useContext(AppContext);
 
@@ -103,14 +126,6 @@ sumI37, setSumI37,
   const [sumH24, setSumH24] = useState(0);
   const [sumI24, setSumI24] = useState(0);
 
-  const [sumB31, setSumB31] = useState(0);
-  const [sumC31, setSumC31] = useState(0);
-  const [sumD31, setSumD31] = useState(0);
-  const [sumE31, setSumE31] = useState(0);
-  const [sumF31, setSumF31] = useState(0);
-  const [sumG31, setSumG31] = useState(0);
-  const [sumH31, setSumH31] = useState(0);
-  const [sumI31, setSumI31] = useState(0);
 
  
 
@@ -123,14 +138,7 @@ sumI37, setSumI37,
   const [sumH43, setSumH43] = useState(0);
   const [sumI43, setSumI43] = useState(0);
 
-  const [sumB51, setSumB51] = useState(0);
-  const [sumC51, setSumC51] = useState(0);
-  const [sumD51, setSumD51] = useState(0);
-  const [sumE51, setSumE51] = useState(0);
-  const [sumF51, setSumF51] = useState(0);
-  const [sumG51, setSumG51] = useState(0);
-  const [sumH51, setSumH51] = useState(0);
-  const [sumI51, setSumI51] = useState(0);
+
 
   // const [prefix, setPrefix] = useState("");
   // const [tot2020, setTot2020] = useState({});

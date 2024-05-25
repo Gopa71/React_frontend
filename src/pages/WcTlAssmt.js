@@ -29,7 +29,81 @@ function Opstmt() {
     sumG21, setSumG21,
     sumH21, setSumH21,
     sumI21, setSumI21,
-    Cost42
+    Cost42,
+
+    sumB5_28, setSumB5_28,
+    sumC5_28, setSumC5_28,
+    sumD5_28, setSumD5_28,
+    sumE5_28, setSumE5_28,
+    sumF5_28, setSumF5_28,
+    sumG5_28, setSumG5_28,
+    sumH5_28, setSumH5_28,
+    sumI5_28, setSumI5_28,
+
+    sumB5_21, setSumB5_21,
+    sumC5_21, setSumC5_21,
+    sumD5_21, setSumD5_21,
+    sumE5_21, setSumE5_21,
+    sumF5_21, setSumF5_21,
+    sumG5_21, setSumG5_21,
+    sumH5_21, setSumH5_21,
+    sumI5_21, setSumI5_21,
+       
+    sumB5_22, setSumB5_22,
+    sumC5_22, setSumC5_22,
+    sumD5_22, setSumD5_22,
+    sumE5_22, setSumE5_22,
+    sumF5_22, setSumF5_22,
+    sumG5_22, setSumG5_22,
+    sumH5_22, setSumH5_22,
+    sumI5_22, setSumI5_22,
+
+    sumB5_15, setSumB5_15,
+    sumC5_15, setSumC5_15,
+    sumD5_15, setSumD5_15,
+    sumE5_15, setSumE5_15,
+    sumF5_15, setSumF5_15,
+    sumG5_15, setSumG5_15,
+    sumH5_15, setSumH5_15,
+    sumI5_15, setSumI5_15,
+
+    sumB5_40, setSumB5_40,
+    sumC5_40, setSumC5_40,
+    sumD5_40, setSumD5_40,
+    sumE5_40, setSumE5_40,
+    sumF5_40, setSumF5_40,
+    sumG5_40, setSumG5_40,
+    sumH5_40, setSumH5_40,
+    sumI5_40, setSumI5_40,
+
+    sumB5_16, setSumB5_16,
+    sumC5_16, setSumC5_16,
+    sumD5_16, setSumD5_16,
+    sumE5_16, setSumE5_16,
+    sumF5_16, setSumF5_16,
+    sumG5_16, setSumG5_16,
+    sumH5_16, setSumH5_16,
+    sumI5_16, setSumI5_16,
+
+
+    sumB5_10, setSumB5_10,
+    sumC5_10, setSumC5_10,
+    sumD5_10, setSumD5_10,
+    sumE5_10, setSumE5_10,
+    sumF5_10, setSumF5_10,
+    sumG5_10, setSumG5_10,
+    sumH5_10, setSumH5_10,
+    sumI5_10, setSumI5_10,
+
+    sumB5_11, setSumB5_11,
+    sumC5_11, setSumC5_11,
+    sumD5_11, setSumD5_11,
+    sumE5_11, setSumE5_11,
+    sumF5_11, setSumF5_11,
+    sumG5_11, setSumG5_11,
+    sumH5_11, setSumH5_11,
+    sumI5_11, setSumI5_11,
+     
 
    } = useContext(AppContext);
 
@@ -71,23 +145,7 @@ function Opstmt() {
    const [sumH5_9, setSumH5_9] = useState(0);
    const [sumI5_9, setSumI5_9] = useState(0);
 
-   const [sumB5_10, setSumB5_10] = useState(0);
-   const [sumC5_10, setSumC5_10] = useState(0);
-   const [sumD5_10, setSumD5_10] = useState(0);
-   const [sumE5_10, setSumE5_10] = useState(0);
-   const [sumF5_10, setSumF5_10] = useState(0);
-   const [sumG5_10, setSumG5_10] = useState(0);
-   const [sumH5_10, setSumH5_10] = useState(0);
-   const [sumI5_10, setSumI5_10] = useState(0);
 
-   const [sumB5_11, setSumB5_11] = useState(0);
-   const [sumC5_11, setSumC5_11] = useState(0);
-   const [sumD5_11, setSumD5_11] = useState(0);
-   const [sumE5_11, setSumE5_11] = useState(0);
-   const [sumF5_11, setSumF5_11] = useState(0);
-   const [sumG5_11, setSumG5_11] = useState(0);
-   const [sumH5_11, setSumH5_11] = useState(0);
-   const [sumI5_11, setSumI5_11] = useState(0);
 
    const [sumB5_12, setSumB5_12] = useState(0);
    const [sumC5_12, setSumC5_12] = useState(0);
@@ -116,23 +174,9 @@ function Opstmt() {
    const [sumH5_14, setSumH5_14] = useState(0);
    const [sumI5_14, setSumI5_14] = useState(0);
 
-   const [sumB5_15, setSumB5_15] = useState(0);
-   const [sumC5_15, setSumC5_15] = useState(0);
-   const [sumD5_15, setSumD5_15] = useState(0);
-   const [sumE5_15, setSumE5_15] = useState(0);
-   const [sumF5_15, setSumF5_15] = useState(0);
-   const [sumG5_15, setSumG5_15] = useState(0);
-   const [sumH5_15, setSumH5_15] = useState(0);
-   const [sumI5_15, setSumI5_15] = useState(0);
+  
 
-   const [sumB5_16, setSumB5_16] = useState(0);
-   const [sumC5_16, setSumC5_16] = useState(0);
-   const [sumD5_16, setSumD5_16] = useState(0);
-   const [sumE5_16, setSumE5_16] = useState(0);
-   const [sumF5_16, setSumF5_16] = useState(0);
-   const [sumG5_16, setSumG5_16] = useState(0);
-   const [sumH5_16, setSumH5_16] = useState(0);
-   const [sumI5_16, setSumI5_16] = useState(0);
+  
 
    const [sumB5_17, setSumB5_17] = useState(0);
    const [sumC5_17, setSumC5_17] = useState(0);
@@ -152,23 +196,7 @@ function Opstmt() {
    const [sumH5_18, setSumH5_18] = useState(0);
    const [sumI5_18, setSumI5_18] = useState(0);
 
-   const [sumB5_21, setSumB5_21] = useState(0);
-   const [sumC5_21, setSumC5_21] = useState(0);
-   const [sumD5_21, setSumD5_21] = useState(0);
-   const [sumE5_21, setSumE5_21] = useState(0);
-   const [sumF5_21, setSumF5_21] = useState(0);
-   const [sumG5_21, setSumG5_21] = useState(0);
-   const [sumH5_21, setSumH5_21] = useState(0);
-   const [sumI5_21, setSumI5_21] = useState(0);
 
-   const [sumB5_22, setSumB5_22] = useState(0);
-   const [sumC5_22, setSumC5_22] = useState(0);
-   const [sumD5_22, setSumD5_22] = useState(0);
-   const [sumE5_22, setSumE5_22] = useState(0);
-   const [sumF5_22, setSumF5_22] = useState(0);
-   const [sumG5_22, setSumG5_22] = useState(0);
-   const [sumH5_22, setSumH5_22] = useState(0);
-   const [sumI5_22, setSumI5_22] = useState(0);
 
    const [sumB5_23, setSumB5_23] = useState(0);
    const [sumC5_23, setSumC5_23] = useState(0);
@@ -206,14 +234,7 @@ function Opstmt() {
    const [sumH5_27, setSumH5_27] = useState(0);
    const [sumI5_27, setSumI5_27] = useState(0);
    
-   const [sumB5_28, setSumB5_28] = useState(0);
-   const [sumC5_28, setSumC5_28] = useState(0);
-   const [sumD5_28, setSumD5_28] = useState(0);
-   const [sumE5_28, setSumE5_28] = useState(0);
-   const [sumF5_28, setSumF5_28] = useState(0);
-   const [sumG5_28, setSumG5_28] = useState(0);
-   const [sumH5_28, setSumH5_28] = useState(0);
-   const [sumI5_28, setSumI5_28] = useState(0);
+  
 
    const [sumB5_29, setSumB5_29] = useState(0);
    const [sumC5_29, setSumC5_29] = useState(0);
@@ -277,15 +298,6 @@ function Opstmt() {
    const [sumG5_39, setSumG5_39] = useState(0);
    const [sumH5_39, setSumH5_39] = useState(0);
    const [sumI5_39, setSumI5_39] = useState(0);
-
-   const [sumB5_40, setSumB5_40] = useState(0);
-   const [sumC5_40, setSumC5_40] = useState(0);
-   const [sumD5_40, setSumD5_40] = useState(0);
-   const [sumE5_40, setSumE5_40] = useState(0);
-   const [sumF5_40, setSumF5_40] = useState(0);
-   const [sumG5_40, setSumG5_40] = useState(0);
-   const [sumH5_40, setSumH5_40] = useState(0);
-   const [sumI5_40, setSumI5_40] = useState(0);
 
    const [sumB5_41, setSumB5_41] = useState(0);
    const [sumC5_41, setSumC5_41] = useState(0);
