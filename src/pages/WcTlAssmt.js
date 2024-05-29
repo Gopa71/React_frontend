@@ -31,6 +31,15 @@ function Opstmt() {
     sumI21, setSumI21,
     Cost42,
 
+    sumB5_14, setSumB5_14,
+    sumC5_14, setSumC5_14,
+    sumD5_14, setSumD5_14,
+    sumE5_14, setSumE5_14,
+    sumF5_14, setSumF5_14,
+    sumG5_14, setSumG5_14,
+    sumH5_14, setSumH5_14,
+    sumI5_14, setSumI5_14,
+
     sumB5_28, setSumB5_28,
     sumC5_28, setSumC5_28,
     sumD5_28, setSumD5_28,
@@ -164,18 +173,6 @@ function Opstmt() {
    const [sumG5_13, setSumG5_13] = useState(0);
    const [sumH5_13, setSumH5_13] = useState(0);
    const [sumI5_13, setSumI5_13] = useState(0);
-
-   const [sumB5_14, setSumB5_14] = useState(0);
-   const [sumC5_14, setSumC5_14] = useState(0);
-   const [sumD5_14, setSumD5_14] = useState(0);
-   const [sumE5_14, setSumE5_14] = useState(0);
-   const [sumF5_14, setSumF5_14] = useState(0);
-   const [sumG5_14, setSumG5_14] = useState(0);
-   const [sumH5_14, setSumH5_14] = useState(0);
-   const [sumI5_14, setSumI5_14] = useState(0);
-
-  
-
   
 
    const [sumB5_17, setSumB5_17] = useState(0);

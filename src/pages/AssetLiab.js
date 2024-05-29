@@ -101,6 +101,15 @@ sumF31, setSumF31,
 sumG31, setSumG31,
 sumH31, setSumH31,
 sumI31, setSumI31,
+
+sumB43, setSumB43,
+sumC43, setSumC43,
+sumD43, setSumD43,
+sumE43, setSumE43,
+sumF43, setSumF43,
+sumG43, setSumG43,
+sumH43, setSumH43,
+sumI43, setSumI43,
  
 
   } = useContext(AppContext);
@@ -129,14 +138,7 @@ sumI31, setSumI31,
 
  
 
-  const [sumB43, setSumB43] = useState(0);
-  const [sumC43, setSumC43] = useState(0);
-  const [sumD43, setSumD43] = useState(0);
-  const [sumE43, setSumE43] = useState(0);
-  const [sumF43, setSumF43] = useState(0);
-  const [sumG43, setSumG43] = useState(0);
-  const [sumH43, setSumH43] = useState(0);
-  const [sumI43, setSumI43] = useState(0);
+
 
 
 

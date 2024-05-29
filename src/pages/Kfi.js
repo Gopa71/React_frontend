@@ -14,6 +14,15 @@ function Opstmt() {
     sumH5_16, setSumH5_16,
     sumI5_16, setSumI5_16,
 
+    sumB5_14, setSumB5_14,
+    sumC5_14, setSumC5_14,
+    sumD5_14, setSumD5_14,
+    sumE5_14, setSumE5_14,
+    sumF5_14, setSumF5_14,
+    sumG5_14, setSumG5_14,
+    sumH5_14, setSumH5_14,
+    sumI5_14, setSumI5_14,
+
     sumB5_28, setSumB5_28,
     sumC5_28, setSumC5_28,
     sumD5_28, setSumD5_28,
@@ -304,6 +313,15 @@ function Opstmt() {
     sumG4_6, setSumG4_6,
     sumH4_6, setSumH4_6,
     sumI4_6, setSumI4_6,
+
+    sumB7_66, setSumB7_66,
+    sumC7_66, setSumC7_66,
+    sumD7_66, setSumD7_66,
+    sumE7_66, setSumE7_66,
+    sumF7_66, setSumF7_66,
+    sumG7_66, setSumG7_66,
+    sumH7_66, setSumH7_66,
+    sumI7_66, setSumI7_66,
 
    } = useContext(AppContext);
 
@@ -749,14 +767,7 @@ function Opstmt() {
   const [sumH7_65, setSumH7_65] = useState(0);
   const [sumI7_65, setSumI7_65] = useState(0);
   
-  const [sumB7_66, setSumB7_66] = useState(0);
-  const [sumC7_66, setSumC7_66] = useState(0);
-  const [sumD7_66, setSumD7_66] = useState(0);
-  const [sumE7_66, setSumE7_66] = useState(0);
-  const [sumF7_66, setSumF7_66] = useState(0);
-  const [sumG7_66, setSumG7_66] = useState(0);
-  const [sumH7_66, setSumH7_66] = useState(0);
-  const [sumI7_66, setSumI7_66] = useState(0);
+ 
 
 
 
@@ -2303,6 +2314,407 @@ useEffect(() => {
     uploadSumB7_54();
   }
 }, [ sumB7_54,sumC7_54, sumD7_54, sumE7_54, sumF7_54, sumG7_54, sumH7_54, sumI7_54]);
+
+
+
+
+
+//------------------------------------------------- TOTAL OF 57 -------------------------------------------------------
+
+
+const uploadSumB7_57 = () => {
+  setSumB7_57(parseFloat(sumB5_14 || 0 ) );
+  setSumC7_57(parseFloat(sumC5_14 || 0 ) );
+  setSumD7_57(parseFloat(sumD5_14 || 0 ) );
+  setSumE7_57(parseFloat(sumE5_14 || 0 ) );
+  setSumF7_57(parseFloat(sumF5_14 || 0 ) );
+  setSumG7_57(parseFloat(sumG5_14 || 0 ) );
+  setSumH7_57(parseFloat(sumH5_14 || 0 ) );
+  setSumI7_57(parseFloat(sumI5_14 || 0 ) );
+};
+
+useEffect(() => {
+  uploadSumB7_57();
+}, [sumB5_14,sumC5_14, sumD5_14, sumE5_14, sumF5_14, sumG5_14, sumH5_14, sumI5_14]);
+
+useEffect(() => {
+  const uploadSumB7_57 = async () => {
+    await uploadData("B7_57", sumB7_57.toString());
+    await uploadData("C7_57", sumC7_57.toString());
+    await uploadData("D7_57", sumD7_57.toString());
+    await uploadData("E7_57", sumE7_57.toString());
+    await uploadData("F7_57", sumF7_57.toString());
+    await uploadData("G7_57", sumG7_57.toString());
+    await uploadData("H7_57", sumH7_57.toString());
+    await uploadData("I7_57", sumI7_57.toString());
+  };
+  if ( sumB7_57 || sumC7_57 || sumD7_57 || sumE7_57 || sumF7_57 || sumG7_57 || sumH7_57 || sumI7_57) {
+    uploadSumB7_57();
+  }
+}, [ sumB7_57,sumC7_57, sumD7_57, sumE7_57, sumF7_57, sumG7_57, sumH7_57, sumI7_57]);
+
+
+
+
+
+//------------------------------------------------- TOTAL OF 58 -------------------------------------------------------
+
+
+const uploadSumB7_58 = () => {
+  setSumB7_58( parseFloat(sumB5_21 || 0  ));
+  setSumC7_58( parseFloat(sumC5_21 || 0  ));
+  setSumD7_58( parseFloat(sumD5_21 || 0  ));
+  setSumE7_58( parseFloat(sumE5_21 || 0  ));
+  setSumF7_58( parseFloat(sumF5_21 || 0  ));
+  setSumG7_58( parseFloat(sumG5_21 || 0  ));
+  setSumH7_58( parseFloat(sumH5_21 || 0  ));
+  setSumI7_58( parseFloat(sumI5_21 || 0  ));
+};
+
+useEffect(() => {
+  uploadSumB7_58();
+}, [sumB5_21,sumC5_21, sumD5_21, sumE5_21, sumF5_21, sumG5_21, sumH5_21, sumI5_21]);
+
+useEffect(() => {
+  const uploadSumB7_58 = async () => {
+    await uploadData("B7_58", sumB7_58.toString());
+    await uploadData("C7_58", sumC7_58.toString());
+    await uploadData("D7_58", sumD7_58.toString());
+    await uploadData("E7_58", sumE7_58.toString());
+    await uploadData("F7_58", sumF7_58.toString());
+    await uploadData("G7_58", sumG7_58.toString());
+    await uploadData("H7_58", sumH7_58.toString());
+    await uploadData("I7_58", sumI7_58.toString());
+  };
+  if ( sumB7_58 || sumC7_58 || sumD7_58 || sumE7_58 || sumF7_58 || sumG7_58 || sumH7_58 || sumI7_58) {
+    uploadSumB7_58();
+  }
+}, [ sumB7_58,sumC7_58, sumD7_58, sumE7_58, sumF7_58, sumG7_58, sumH7_58, sumI7_58,sumB7_57,sumC7_57, sumD7_57, sumE7_57, sumF7_57, sumG7_57, sumH7_57, sumI7_57]);
+
+
+
+//------------------------------------------------- TOTAL OF 59 -------------------------------------------------------
+
+
+const uploadSumB7_59 = () => {
+  setSumB7_54(parseFloat(sumB7_57 || 0) - parseFloat ( sumB7_58 || 0 ));
+  setSumC7_54(parseFloat(sumC7_57 || 0) - parseFloat ( sumC7_58 || 0 ));
+  setSumD7_54(parseFloat(sumD7_57 || 0) - parseFloat ( sumD7_58 || 0 ));
+  setSumE7_54(parseFloat(sumE7_57 || 0) - parseFloat ( sumE7_58 || 0 ));
+  setSumF7_54(parseFloat(sumF7_57 || 0) - parseFloat ( sumF7_58 || 0 ));
+  setSumG7_54(parseFloat(sumG7_57 || 0) - parseFloat ( sumG7_58 || 0 ));
+  setSumH7_54(parseFloat(sumH7_57 || 0) - parseFloat ( sumH7_58 || 0 ));
+  setSumI7_54(parseFloat(sumI7_57 || 0) - parseFloat ( sumI7_58 || 0 ));
+};
+
+useEffect(() => {
+  uploadSumB7_59();
+}, [sumB7_58,sumC7_58, sumD7_58, sumE7_58, sumF7_58, sumG7_58, sumH7_58, sumI7_58,sumB7_57,sumC7_57, sumD7_57, sumE7_57, sumF7_57, sumG7_57, sumH7_57, sumI7_57]);
+useEffect(() => {
+  const uploadSumB7_59 = async () => {
+    await uploadData("B7_59", sumB7_59.toString());
+    await uploadData("C7_59", sumC7_59.toString());
+    await uploadData("D7_59", sumD7_59.toString());
+    await uploadData("E7_59", sumE7_59.toString());
+    await uploadData("F7_59", sumF7_59.toString());
+    await uploadData("G7_59", sumG7_59.toString());
+    await uploadData("H7_59", sumH7_59.toString());
+    await uploadData("I7_59", sumI7_59.toString());
+  };
+  if ( sumB7_59 || sumC7_59 || sumD7_59 || sumE7_59 || sumF7_59 || sumG7_59 || sumH7_59 || sumI7_59) {
+    uploadSumB7_59();
+  }
+}, [ sumB7_59,sumC7_59, sumD7_59, sumE7_59, sumF7_59, sumG7_59, sumH7_59, sumI7_59]);
+
+
+
+//------------------------------------------------- TOTAL OF 60 -------------------------------------------------------
+
+
+const uploadSumB7_60 = () => {
+  setSumB7_60((sumB7_59 * 0.25 || 0 ));
+  setSumC7_60((sumC7_59 * 0.25 || 0 ));
+  setSumD7_60((sumD7_59 * 0.25 || 0 ));
+  setSumE7_60((sumE7_59 * 0.25 || 0 ));
+  setSumF7_60((sumF7_59 * 0.25 || 0 ));
+  setSumG7_60((sumG7_59 * 0.25 || 0 ));
+  setSumH7_60((sumH7_59 * 0.25 || 0 ));
+  setSumI7_60((sumI7_59 * 0.25 || 0 ));
+};
+
+useEffect(() => {
+  uploadSumB7_60();
+}, [sumB7_59,sumC7_59, sumD7_59, sumE7_59, sumF7_59, sumG7_59, sumH7_59, sumI7_59]);
+
+useEffect(() => {
+  const uploadSumB7_60 = async () => {
+    await uploadData("B7_60", sumB7_60.toString());
+    await uploadData("C7_60", sumC7_60.toString());
+    await uploadData("D7_60", sumD7_60.toString());
+    await uploadData("E7_60", sumE7_60.toString());
+    await uploadData("F7_60", sumF7_60.toString());
+    await uploadData("G7_60", sumG7_60.toString());
+    await uploadData("H7_60", sumH7_60.toString());
+    await uploadData("I7_60", sumI7_60.toString());
+  };
+  if ( sumB7_60 || sumC7_60 || sumD7_60 || sumE7_60 || sumF7_60 || sumG7_60 || sumH7_60 || sumI7_60) {
+    uploadSumB7_60();
+  }
+}, [ sumB7_60,sumC7_60, sumD7_60, sumE7_60, sumF7_60, sumG7_60, sumH7_60, sumI7_60]);
+
+
+
+
+
+//------------------------------------------------- TOTAL OF 61 -------------------------------------------------------
+
+
+const uploadSumB7_61 = () => {
+  const calculateSum = (sum59, sum60) => {
+    const result =  parseFloat(sum59 || 0) - parseFloat(sum60 || 0);
+    return result < 1 ?   result : null;
+  };
+
+  const newSumC7_61 = calculateSum(sumC7_59, sumC7_60);
+  const newSumD7_61 = calculateSum(sumD7_59, sumD7_60);
+  const newSumE7_61 = calculateSum(sumE7_59, sumE7_60);
+  const newSumF7_61 = calculateSum(sumF7_59, sumF7_60);
+  const newSumG7_61 = calculateSum(sumG7_59, sumG7_60);
+  const newSumH7_61 = calculateSum(sumH7_59, sumH7_60);
+  const newSumI7_61 = calculateSum(sumI7_59, sumI7_60);
+
+  if (newSumC7_61 !== null) setSumC7_61(newSumC7_61);
+  if (newSumD7_61 !== null) setSumD7_61(newSumD7_61);
+  if (newSumE7_61 !== null) setSumE7_61(newSumE7_61);
+  if (newSumF7_61 !== null) setSumF7_61(newSumF7_61);
+  if (newSumG7_61 !== null) setSumG7_61(newSumG7_61);
+  if (newSumH7_61 !== null) setSumH7_61(newSumH7_61);
+  if (newSumI7_61 !== null) setSumI7_61(newSumI7_61);
+};
+
+useEffect(() => {
+  uploadSumB7_61();
+}, [
+  sumB7_60,sumC7_60, sumD7_60, sumE7_60, sumF7_60, sumG7_60, sumH7_60, sumI7_60,sumB7_59,sumC7_59, sumD7_59, sumE7_59, sumF7_59, sumG7_59, sumH7_59, sumI7_59
+]);
+
+useEffect(() => {
+  const uploadSumB7_61 = async () => {
+    if (sumC7_61 !== null) await uploadData("C7_61", sumC7_61.toString());
+    if (sumD7_61 !== null) await uploadData("D7_61", sumD7_61.toString());
+    if (sumE7_61 !== null) await uploadData("E7_61", sumE7_61.toString());
+    if (sumF7_61 !== null) await uploadData("F7_61", sumF7_61.toString());
+    if (sumG7_61 !== null) await uploadData("G7_61", sumG7_61.toString());
+    if (sumH7_61 !== null) await uploadData("H7_61", sumH7_61.toString());
+    if (sumI7_61 !== null) await uploadData("I7_61", sumI7_61.toString());
+  };
+
+  if (
+    sumC7_61 !== null || sumD7_61 !== null || sumE7_61 !== null || 
+    sumF7_61 !== null || sumG7_61 !== null || sumH7_61 !== null || 
+    sumI7_61 !== null
+  ) {
+    uploadSumB7_61();
+  }
+}, [sumB7_61, sumC7_61, sumD7_61, sumE7_61, sumF7_61, sumG7_61, sumH7_61, sumI7_61]);
+
+
+
+//------------------------------------------------- TOTAL OF 62 -------------------------------------------------------
+
+
+const uploadSumB7_62 = () => {
+  setSumB7_62((sumB5_15   || 0 ));
+  setSumC7_62((sumC5_15   || 0 ));
+  setSumD7_62((sumD5_15   || 0 ));
+  setSumE7_62((sumE5_15   || 0 ));
+  setSumF7_62((sumF5_15   || 0 ));
+  setSumG7_62((sumG5_15   || 0 ));
+  setSumH7_62((sumH5_15   || 0 ));
+  setSumI7_62((sumI5_15   || 0 ));
+};
+
+useEffect(() => {
+  uploadSumB7_62();
+}, [sumB5_15,sumC5_15, sumD5_15, sumE5_15, sumF5_15, sumG5_15, sumH5_15, sumI5_15]);
+
+useEffect(() => {
+  const uploadSumB7_62 = async () => {
+    await uploadData("B7_62", sumB7_62.toString());
+    await uploadData("C7_62", sumC7_62.toString());
+    await uploadData("D7_62", sumD7_62.toString());
+    await uploadData("E7_62", sumE7_62.toString());
+    await uploadData("F7_62", sumF7_62.toString());
+    await uploadData("G7_62", sumG7_62.toString());
+    await uploadData("H7_62", sumH7_62.toString());
+    await uploadData("I7_62", sumI7_62.toString());
+  };
+  if ( sumB7_62 || sumC7_62 || sumD7_62 || sumE7_62 || sumF7_62 || sumG7_62 || sumH7_62 || sumI7_62) {
+    uploadSumB7_62();
+  }
+}, [ sumB7_62,sumC7_62, sumD7_62, sumE7_62, sumF7_62, sumG7_62, sumH7_62, sumI7_62]);
+
+
+//------------------------------------------------- TOTAL OF 63 -------------------------------------------------------
+
+
+const uploadSumB7_63 = () => {
+  setSumB7_63((sumB5_15  * 0.5 || 0 ));
+  setSumC7_63((sumC5_15  * 0.5 || 0 ));
+  setSumD7_63((sumD5_15  * 0.5 || 0 ));
+  setSumE7_63((sumE5_15  * 0.5 || 0 ));
+  setSumF7_63((sumF5_15  * 0.5 || 0 ));
+  setSumG7_63((sumG5_15  * 0.5 || 0 ));
+  setSumH7_63((sumH5_15  * 0.5 || 0 ));
+  setSumI7_63((sumI5_15  * 0.5 || 0 ));
+};
+
+useEffect(() => {
+  uploadSumB7_63();
+}, [sumB5_15,sumC5_15, sumD5_15, sumE5_15, sumF5_15, sumG5_15, sumH5_15, sumI5_15]);
+
+useEffect(() => {
+  const uploadSumB7_63 = async () => {
+    await uploadData("B7_63", sumB7_63.toString());
+    await uploadData("C7_63", sumC7_63.toString());
+    await uploadData("D7_63", sumD7_63.toString());
+    await uploadData("E7_63", sumE7_63.toString());
+    await uploadData("F7_63", sumF7_63.toString());
+    await uploadData("G7_63", sumG7_63.toString());
+    await uploadData("H7_63", sumH7_63.toString());
+    await uploadData("I7_63", sumI7_63.toString());
+  };
+  if ( sumB7_63 || sumC7_63 || sumD7_63 || sumE7_63 || sumF7_63 || sumG7_63 || sumH7_63 || sumI7_63) {
+    uploadSumB7_63();
+  }
+}, [ sumB7_63,sumC7_63, sumD7_63, sumE7_63, sumF7_63, sumG7_63, sumH7_63, sumI7_63]);
+
+
+
+//------------------------------------------------- TOTAL OF 64 -------------------------------------------------------
+
+
+const uploadSumB7_64 = () => {
+  const calculateSum = (sum62, sum63) => {
+    const result =  parseFloat(sum62 || 0) - parseFloat(sum63 || 0);
+    return result < 1 ?   result : null;
+  };
+
+  const newSumC7_64 = calculateSum(sumC7_62, sumC7_63);
+  const newSumD7_64 = calculateSum(sumD7_62, sumD7_63);
+  const newSumE7_64 = calculateSum(sumE7_62, sumE7_63);
+  const newSumF7_64 = calculateSum(sumF7_62, sumF7_63);
+  const newSumG7_64 = calculateSum(sumG7_62, sumG7_63);
+  const newSumH7_64 = calculateSum(sumH7_62, sumH7_63);
+  const newSumI7_64 = calculateSum(sumI7_62, sumI7_63);
+
+  if (newSumC7_64 !== null) setSumC7_64(newSumC7_64);
+  if (newSumD7_64 !== null) setSumD7_64(newSumD7_64);
+  if (newSumE7_64 !== null) setSumE7_64(newSumE7_64);
+  if (newSumF7_64 !== null) setSumF7_64(newSumF7_64);
+  if (newSumG7_64 !== null) setSumG7_64(newSumG7_64);
+  if (newSumH7_64 !== null) setSumH7_64(newSumH7_64);
+  if (newSumI7_64 !== null) setSumI7_64(newSumI7_64);
+};
+
+useEffect(() => {
+  uploadSumB7_64();
+}, [
+  sumB7_62,sumC7_62, sumD7_62, sumE7_62, sumF7_62, sumG7_62, sumH7_62, sumI7_62,sumB7_63,sumC7_63, sumD7_63, sumE7_63, sumF7_63, sumG7_63, sumH7_63, sumI7_63
+]);
+
+useEffect(() => {
+  const uploadSumB7_64 = async () => {
+    if (sumC7_64 !== null) await uploadData("C7_64", sumC7_64.toString());
+    if (sumD7_64 !== null) await uploadData("D7_64", sumD7_64.toString());
+    if (sumE7_64 !== null) await uploadData("E7_64", sumE7_64.toString());
+    if (sumF7_64 !== null) await uploadData("F7_64", sumF7_64.toString());
+    if (sumG7_64 !== null) await uploadData("G7_64", sumG7_64.toString());
+    if (sumH7_64 !== null) await uploadData("H7_64", sumH7_64.toString());
+    if (sumI7_64 !== null) await uploadData("I7_64", sumI7_64.toString());
+  };
+
+  if (
+    sumC7_64 !== null || sumD7_64 !== null || sumE7_64 !== null || 
+    sumF7_64 !== null || sumG7_64 !== null || sumH7_64 !== null || 
+    sumI7_64 !== null
+  ) {
+    uploadSumB7_64();
+  }
+}, [sumB7_64, sumC7_64, sumD7_64, sumE7_64, sumF7_64, sumG7_64, sumH7_64, sumI7_64]);
+
+
+
+//------------------------------------------------- TOTAL OF 65 -------------------------------------------------------
+
+
+const uploadSumB7_65 = () => {
+  setSumB7_65( + parseFloat(sumB7_61 || 0) + parseFloat ( sumB7_64 || 0 ));
+  setSumC7_65( + parseFloat(sumC7_61 || 0) + parseFloat ( sumC7_64 || 0 ));
+  setSumD7_65( + parseFloat(sumD7_61 || 0) + parseFloat ( sumD7_64 || 0 ));
+  setSumE7_65( + parseFloat(sumE7_61 || 0) + parseFloat ( sumE7_64 || 0 ));
+  setSumF7_65( + parseFloat(sumF7_61 || 0) + parseFloat ( sumF7_64 || 0 ));
+  setSumG7_65( + parseFloat(sumG7_61 || 0) + parseFloat ( sumG7_64 || 0 ));
+  setSumH7_65( + parseFloat(sumH7_61 || 0) + parseFloat ( sumH7_64 || 0 ));
+  setSumI7_65( + parseFloat(sumI7_61 || 0) + parseFloat ( sumI7_64 || 0 ));
+};
+
+useEffect(() => {
+  uploadSumB7_65();
+}, [sumB7_64, sumC7_64, sumD7_64, sumE7_64, sumF7_64, sumG7_64, sumH7_64, sumI7_64 ,sumB7_61, sumC7_61, sumD7_61, sumE7_61, sumF7_61, sumG7_61, sumH7_61, sumI7_61]);
+useEffect(() => {
+  const uploadSumB7_65 = async () => {
+    await uploadData("B7_65", sumB7_65.toString());
+    await uploadData("C7_65", sumC7_65.toString());
+    await uploadData("D7_65", sumD7_65.toString());
+    await uploadData("E7_65", sumE7_65.toString());
+    await uploadData("F7_65", sumF7_65.toString());
+    await uploadData("G7_65", sumG7_65.toString());
+    await uploadData("H7_65", sumH7_65.toString());
+    await uploadData("I7_65", sumI7_65.toString());
+  };
+  if ( sumB7_65 || sumC7_65 || sumD7_65 || sumE7_65 || sumF7_65 || sumG7_65 || sumH7_65 || sumI7_65) {
+    uploadSumB7_65();
+  }
+}, [ sumB7_65,sumC7_65, sumD7_65, sumE7_65, sumF7_65, sumG7_65, sumH7_65, sumI7_65]);
+
+
+
+
+
+
+//------------------------------------------------- TOTAL OF 66 -------------------------------------------------------
+
+
+const uploadSumB7_66 = () => {
+  setSumB7_66(  parseFloat(inputValues["B2_34"] || 0) + parseFloat ( inputValues["B2_35"] || 0 ));
+  setSumC7_66(  parseFloat(inputValues["C2_34"] || 0) + parseFloat ( inputValues["C2_35"] || 0 ));
+  setSumD7_66(  parseFloat(inputValues["D2_34"] || 0) + parseFloat ( inputValues["D2_35"] || 0 ));
+  setSumE7_66(  parseFloat(inputValues["E2_34"] || 0) + parseFloat ( inputValues["E2_35"] || 0 ));
+  setSumF7_66(  parseFloat(inputValues["F2_34"] || 0) + parseFloat ( inputValues["F2_35"] || 0 ));
+  setSumG7_66(  parseFloat(inputValues["G2_34"] || 0) + parseFloat ( inputValues["G2_35"] || 0 ));
+  setSumH7_66(  parseFloat(inputValues["H2_34"] || 0) + parseFloat ( inputValues["H2_35"] || 0 ));
+  setSumI7_66(  parseFloat(inputValues["I2_34"] || 0) + parseFloat ( inputValues["I2_35"] || 0 ));
+};
+
+useEffect(() => {
+  uploadSumB7_66();
+}, [ inputValues]);
+useEffect(() => {
+  const uploadSumB7_66 = async () => {
+    await uploadData("B7_66", sumB7_66.toString());
+    await uploadData("C7_66", sumC7_66.toString());
+    await uploadData("D7_66", sumD7_66.toString());
+    await uploadData("E7_66", sumE7_66.toString());
+    await uploadData("F7_66", sumF7_66.toString());
+    await uploadData("G7_66", sumG7_66.toString());
+    await uploadData("H7_66", sumH7_66.toString());
+    await uploadData("I7_66", sumI7_66.toString());
+  };
+  if ( sumB7_66 || sumC7_66 || sumD7_66 || sumE7_66 || sumF7_66 || sumG7_66 || sumH7_66 || sumI7_66) {
+    uploadSumB7_66();
+  }
+}, [ sumB7_66,sumC7_66, sumD7_66, sumE7_66, sumF7_66, sumG7_66, sumH7_66, sumI7_66]);
 
 
 

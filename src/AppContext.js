@@ -341,6 +341,33 @@ export const AppProvider = ({ children }) => {
   const [sumH5_28, setSumH5_28] = useState(0);
   const [sumI5_28, setSumI5_28] = useState(0);
 
+  const [sumB5_14, setSumB5_14] = useState(0);
+  const [sumC5_14, setSumC5_14] = useState(0);
+  const [sumD5_14, setSumD5_14] = useState(0);
+  const [sumE5_14, setSumE5_14] = useState(0);
+  const [sumF5_14, setSumF5_14] = useState(0);
+  const [sumG5_14, setSumG5_14] = useState(0);
+  const [sumH5_14, setSumH5_14] = useState(0);
+  const [sumI5_14, setSumI5_14] = useState(0);
+
+  const [sumB43, setSumB43] = useState(0);
+  const [sumC43, setSumC43] = useState(0);
+  const [sumD43, setSumD43] = useState(0);
+  const [sumE43, setSumE43] = useState(0);
+  const [sumF43, setSumF43] = useState(0);
+  const [sumG43, setSumG43] = useState(0);
+  const [sumH43, setSumH43] = useState(0);
+  const [sumI43, setSumI43] = useState(0);
+
+  const [sumB7_66, setSumB7_66] = useState(0);
+  const [sumC7_66, setSumC7_66] = useState(0);
+  const [sumD7_66, setSumD7_66] = useState(0);
+  const [sumE7_66, setSumE7_66] = useState(0);
+  const [sumF7_66, setSumF7_66] = useState(0);
+  const [sumG7_66, setSumG7_66] = useState(0);
+  const [sumH7_66, setSumH7_66] = useState(0);
+  const [sumI7_66, setSumI7_66] = useState(0);
+
   return (
     <AppContext.Provider value={{
       inputValues,
@@ -443,6 +470,16 @@ export const AppProvider = ({ children }) => {
      sumG37, setSumG37,
      sumH37, setSumH37,
      sumI37, setSumI37,
+
+     sumB43, setSumB43,
+     sumC43, setSumC43,
+     sumD43, setSumD43,
+     sumE43, setSumE43,
+     sumF43, setSumF43,
+     sumG43, setSumG43,
+     sumH43, setSumH43,
+     sumI43, setSumI43,
+
      sumB4_25, setSumB4_25,
      sumC4_25, setSumC4_25,
      sumD4_25, setSumD4_25,
@@ -664,6 +701,25 @@ export const AppProvider = ({ children }) => {
      sumG5_28, setSumG5_28,
      sumH5_28, setSumH5_28,
      sumI5_28, setSumI5_28,
+
+     sumB5_14, setSumB5_14,
+     sumC5_14, setSumC5_14,
+     sumD5_14, setSumD5_14,
+     sumE5_14, setSumE5_14,
+     sumF5_14, setSumF5_14,
+     sumG5_14, setSumG5_14,
+     sumH5_14, setSumH5_14,
+     sumI5_14, setSumI5_14,
+
+     sumB7_66, setSumB7_66,
+     sumC7_66, setSumC7_66,
+     sumD7_66, setSumD7_66,
+     sumE7_66, setSumE7_66,
+     sumF7_66, setSumF7_66,
+     sumG7_66, setSumG7_66,
+     sumH7_66, setSumH7_66,
+     sumI7_66, setSumI7_66,
+      
       
       
       
