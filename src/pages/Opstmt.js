@@ -230,7 +230,7 @@ function Opstmt() {
 
     // Calculate the value to upload
     const sum28 = (
-      (parseFloat(tot2020[namePrefix + "_10"] || 0)) + (parseFloat(inputValues[namePrefix + "_23"] || 0))+ (parseFloat(Cost27[namePrefix + "_27"] || 0)));
+      (parseFloat(tot2020[namePrefix + "_10"] || 0)) + (parseFloat(inputValues[namePrefix + "_23"] || 0)) - (parseFloat(Cost27[namePrefix + "_27"] || 0)));
 
     // Only upload if the value is not 0
     if (sum28 !== 0) {
@@ -543,7 +543,7 @@ const uploadSum42 = async (data) => {
     const total10 = parseFloat(tot2020[prefix + "_10"]) || 0;
     const total23 = parseFloat(inputValues[prefix + "_23"]) || 0;
     const cost27 = parseFloat(Cost27[prefix + "_27"]) || 0;
-    const total28 = (total10 + total23) + (cost27);
+    const total28 = (total10 + total23) - (cost27);
     console.log("//////////////////////////",total28)
 
     setCost28(total28);
@@ -552,7 +552,7 @@ const uploadSum42 = async (data) => {
       [[prefix + "_28"]]: total28.toString()
     });
     uploadSum28({ name: prefix + "_28", namePrefix: prefix });
-  }, [prefix, inputValues,Cost27]);
+  }, [prefix, inputValues,Cost27,tot2020]);
 
   // ------------------------------------------------GROSS PROFIT / LOSS ( END2 ) ----------------------------------------
 
@@ -1328,7 +1328,7 @@ useEffect(() => {
                         className="form-control"
                         aria-label="First name"
                         name="C1_13"
-                        value={inputValues.C1_13 && inputValues.B1_23   }
+                        value={ inputValues.B1_23   }
                         onChange={changeData}
                     />
               </div>
@@ -1343,7 +1343,7 @@ useEffect(() => {
   
                 aria-label="First name" 
                 name="D1_13"  
-                value={ inputValues.D1_13 &&  inputValues.C1_23}
+                value= { inputValues.C1_23}
                 onChange={changeData}  
                 />
 
@@ -1358,7 +1358,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="E1_13"  
-                value={inputValues.E1_13 && inputValues.D1_23 }
+                value={ inputValues.D1_23 }
                 onChange={changeData}  
                 />
 
@@ -1388,7 +1388,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="G1_13" 
-                value={inputValues.G1_13 && inputValues.F1_23}
+                value={ inputValues.F1_23}
                 onChange={changeData} />
 
               </div>
@@ -1402,7 +1402,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="H1_13"  
-                value={inputValues.H1_13 && inputValues.G1_23}
+                value={ inputValues.G1_23}
                 onChange={changeData} 
                 />
 
@@ -1417,7 +1417,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="I1_13"  
-                value={inputValues.I1_13 && inputValues.H1_23}
+                value={ inputValues.H1_23}
                 onChange={changeData} 
                 />
 
@@ -1457,7 +1457,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="C1_14"
-                value={  inputValues.C1_14 && inputValues.B1_24}
+                value= { inputValues.B1_24}
                 onChange={changeData}  />
 
               </div>
@@ -1471,7 +1471,7 @@ useEffect(() => {
                 
                 aria-label="First name" 
                 name="D1_14"  
-                value={ inputValues.D1_14 && inputValues.C1_24}
+                value={ inputValues.C1_24}
                 onChange={changeData} 
                 />
 
@@ -1486,7 +1486,7 @@ useEffect(() => {
                 
                 aria-label="First name" 
                 name="E1_14"  
-                value={inputValues.E1_14 && inputValues.D1_24}
+                value={ inputValues.D1_24}
                 onChange={changeData}  
                 />
 
@@ -1501,7 +1501,7 @@ useEffect(() => {
                 
                 aria-label="First name" 
                 name="F1_14" 
-                value={inputValues.F1_14 && inputValues.E1_24}
+                value={inputValues.E1_24}
                 onChange={changeData} 
                 />
 
@@ -1516,7 +1516,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="G1_14"  
-                value={inputValues.G1_14 && inputValues.F1_24}
+                value={ inputValues.F1_24}
                 onChange={changeData} 
                 />
 
@@ -1531,7 +1531,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="H1_14"  
-                value={inputValues.H1_14 && inputValues.G1_24}
+                value={inputValues.G1_24}
                 onChange={changeData} 
                 />
 
@@ -1546,7 +1546,7 @@ useEffect(() => {
                 
                 aria-label="First name" 
                 name="I1_14"  
-                value={inputValues.I1_14 && inputValues.H1_24}
+                value={ inputValues.H1_24}
                 onChange={changeData} 
                 />
 
@@ -1585,7 +1585,7 @@ useEffect(() => {
                 
                 aria-label="First name" 
                 name="C1_15"  
-                value={ inputValues.C1_15 && inputValues.B1_25 }
+                value={ inputValues.B1_25 }
                 onChange={changeData}
                 />
 
@@ -1599,7 +1599,7 @@ useEffect(() => {
                 className="form-control" 
                aria-label="First name" 
                 name="D1_15"  
-                value={inputValues.D1_15 && inputValues.C1_25}
+                value={ inputValues.C1_25}
                 onChange={changeData}
                 />
 
@@ -1614,7 +1614,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="E1_15"  
-                value={inputValues.E1_15 && inputValues.D1_25}
+                value={ inputValues.D1_25}
                 onChange={changeData} 
                 />
 
@@ -1629,7 +1629,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="F1_15" 
-                value={inputValues.F1_15 && inputValues.E1_25}
+                value={ inputValues.E1_25}
                 onChange={changeData}
 
                 />
@@ -1645,7 +1645,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="G1_15"  
-                value={inputValues.G1_15 && inputValues.F1_25}
+                value={ inputValues.F1_25}
                 onChange={changeData} 
                 />
 
@@ -1660,7 +1660,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="H1_15"  
-                value={inputValues.H1_15 && inputValues.G1_25}
+                value={ inputValues.G1_25}
                 onChange={changeData} 
                 />
               </div>
@@ -1674,7 +1674,7 @@ useEffect(() => {
                
                 aria-label="First name" 
                 name="I1_15"  
-                value={inputValues.I1_15 && inputValues.H1_25}
+                value={ inputValues.H1_25}
                 onChange={changeData} 
                 />
               </div>

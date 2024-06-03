@@ -2397,14 +2397,14 @@ useEffect(() => {
 
 
 const uploadSumB7_59 = () => {
-  setSumB7_54(parseFloat(sumB7_57 || 0) - parseFloat ( sumB7_58 || 0 ));
-  setSumC7_54(parseFloat(sumC7_57 || 0) - parseFloat ( sumC7_58 || 0 ));
-  setSumD7_54(parseFloat(sumD7_57 || 0) - parseFloat ( sumD7_58 || 0 ));
-  setSumE7_54(parseFloat(sumE7_57 || 0) - parseFloat ( sumE7_58 || 0 ));
-  setSumF7_54(parseFloat(sumF7_57 || 0) - parseFloat ( sumF7_58 || 0 ));
-  setSumG7_54(parseFloat(sumG7_57 || 0) - parseFloat ( sumG7_58 || 0 ));
-  setSumH7_54(parseFloat(sumH7_57 || 0) - parseFloat ( sumH7_58 || 0 ));
-  setSumI7_54(parseFloat(sumI7_57 || 0) - parseFloat ( sumI7_58 || 0 ));
+  setSumB7_59(parseFloat(sumB7_57 || 0) - parseFloat ( sumB7_58 || 0 ));
+  setSumC7_59(parseFloat(sumC7_57 || 0) - parseFloat ( sumC7_58 || 0 ));
+  setSumD7_59(parseFloat(sumD7_57 || 0) - parseFloat ( sumD7_58 || 0 ));
+  setSumE7_59(parseFloat(sumE7_57 || 0) - parseFloat ( sumE7_58 || 0 ));
+  setSumF7_59(parseFloat(sumF7_57 || 0) - parseFloat ( sumF7_58 || 0 ));
+  setSumG7_59(parseFloat(sumG7_57 || 0) - parseFloat ( sumG7_58 || 0 ));
+  setSumH7_59(parseFloat(sumH7_57 || 0) - parseFloat ( sumH7_58 || 0 ));
+  setSumI7_59(parseFloat(sumI7_57 || 0) - parseFloat ( sumI7_58 || 0 ));
 };
 
 useEffect(() => {
@@ -2474,7 +2474,7 @@ const uploadSumB7_61 = () => {
     const result =  parseFloat(sum59 || 0) - parseFloat(sum60 || 0);
     return result < 1 ?   result : null;
   };
-
+  const newSumB7_61 = calculateSum(sumB7_59, sumB7_60);
   const newSumC7_61 = calculateSum(sumC7_59, sumC7_60);
   const newSumD7_61 = calculateSum(sumD7_59, sumD7_60);
   const newSumE7_61 = calculateSum(sumE7_59, sumE7_60);
@@ -2483,6 +2483,7 @@ const uploadSumB7_61 = () => {
   const newSumH7_61 = calculateSum(sumH7_59, sumH7_60);
   const newSumI7_61 = calculateSum(sumI7_59, sumI7_60);
 
+  if (newSumB7_61 !== null) setSumB7_61(newSumB7_61);
   if (newSumC7_61 !== null) setSumC7_61(newSumC7_61);
   if (newSumD7_61 !== null) setSumD7_61(newSumD7_61);
   if (newSumE7_61 !== null) setSumE7_61(newSumE7_61);
@@ -2500,6 +2501,7 @@ useEffect(() => {
 
 useEffect(() => {
   const uploadSumB7_61 = async () => {
+    if (sumB7_61 !== null) await uploadData("B7_61", sumB7_61.toString());
     if (sumC7_61 !== null) await uploadData("C7_61", sumC7_61.toString());
     if (sumD7_61 !== null) await uploadData("D7_61", sumD7_61.toString());
     if (sumE7_61 !== null) await uploadData("E7_61", sumE7_61.toString());
@@ -2512,7 +2514,7 @@ useEffect(() => {
   if (
     sumC7_61 !== null || sumD7_61 !== null || sumE7_61 !== null || 
     sumF7_61 !== null || sumG7_61 !== null || sumH7_61 !== null || 
-    sumI7_61 !== null
+    sumI7_61 !== null || sumB7_61 !== null 
   ) {
     uploadSumB7_61();
   }
@@ -2600,6 +2602,7 @@ const uploadSumB7_64 = () => {
     return result < 1 ?   result : null;
   };
 
+  const newSumB7_64 = calculateSum(sumB7_62, sumB7_63);
   const newSumC7_64 = calculateSum(sumC7_62, sumC7_63);
   const newSumD7_64 = calculateSum(sumD7_62, sumD7_63);
   const newSumE7_64 = calculateSum(sumE7_62, sumE7_63);
@@ -2608,6 +2611,7 @@ const uploadSumB7_64 = () => {
   const newSumH7_64 = calculateSum(sumH7_62, sumH7_63);
   const newSumI7_64 = calculateSum(sumI7_62, sumI7_63);
 
+  if (newSumB7_64 !== null) setSumB7_64(newSumB7_64);
   if (newSumC7_64 !== null) setSumC7_64(newSumC7_64);
   if (newSumD7_64 !== null) setSumD7_64(newSumD7_64);
   if (newSumE7_64 !== null) setSumE7_64(newSumE7_64);
@@ -2625,6 +2629,7 @@ useEffect(() => {
 
 useEffect(() => {
   const uploadSumB7_64 = async () => {
+    if (sumB7_64 !== null) await uploadData("B7_64", sumB7_64.toString());
     if (sumC7_64 !== null) await uploadData("C7_64", sumC7_64.toString());
     if (sumD7_64 !== null) await uploadData("D7_64", sumD7_64.toString());
     if (sumE7_64 !== null) await uploadData("E7_64", sumE7_64.toString());
@@ -2637,7 +2642,7 @@ useEffect(() => {
   if (
     sumC7_64 !== null || sumD7_64 !== null || sumE7_64 !== null || 
     sumF7_64 !== null || sumG7_64 !== null || sumH7_64 !== null || 
-    sumI7_64 !== null
+    sumI7_64 !== null || sumB7_64 !== null
   ) {
     uploadSumB7_64();
   }

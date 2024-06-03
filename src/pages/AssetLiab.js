@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../AppContext';
+import jwtDecode from 'jwt-decode'
 
 function Assets() {
   const { inputValues, setInputValues, tot15, tot23, tot31,tot37,sumB50, setSumB50,sumC50, setSumC50,sumD50, setSumD50,sumE50, setSumE50,
@@ -110,6 +111,9 @@ sumF43, setSumF43,
 sumG43, setSumG43,
 sumH43, setSumH43,
 sumI43, setSumI43,
+
+
+
  
 
   } = useContext(AppContext);
@@ -147,7 +151,16 @@ sumI43, setSumI43,
   // const [Cost19, setCost19] = useState({});
 
 
+  const token = localStorage.getItem("authTokens")
 
+  if (token){
+    const decode = jwtDecode(token)
+    var user_id = decode.user_id
+    var username = decode.username
+    var full_name = decode.full_name
+    var image = decode.image
+  
+  }
 
 
 
@@ -813,7 +826,7 @@ useEffect(() => {
   return (
 <div style={{ marginTop: 25 }}>
       <div className="container-fluid border d-flex justify-content-center div_1">
-        <h2 className="navbar-brand">Astral India Ltd</h2>
+        <h2 className="navbar-brand">{username}</h2>
       </div>
 
       <div className="container-fluid border mt-3">

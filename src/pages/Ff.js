@@ -606,6 +606,7 @@ function Opstmt() {
   const [sumH6_68, setSumH6_68] = useState(0);
   const [sumI6_68, setSumI6_68] = useState(0);
 
+  const [sumB6_69, setSumB6_69] = useState(0);
   const [sumC6_69, setSumC6_69] = useState(0);
   const [sumD6_69, setSumD6_69] = useState(0);
   const [sumE6_69, setSumE6_69] = useState(0);
@@ -1266,6 +1267,7 @@ useEffect(() => {
 
 
 const uploadSumB6_19 = () => {
+  setSumB6_19( parseFloat(sumB6_69 || 0) );
   setSumC6_19( parseFloat(sumC6_69 || 0) );
   setSumD6_19( parseFloat(sumD6_69 || 0) );
   setSumE6_19( parseFloat(sumE6_69 || 0) );
@@ -1277,10 +1279,11 @@ const uploadSumB6_19 = () => {
 
 useEffect(() => {
   uploadSumB6_19();
-}, [inputValues,sumC6_69, sumD6_69, sumE6_69, sumF6_69, sumG6_69, sumH6_69, sumI6_69]);
+}, [inputValues,sumB6_69,sumC6_69, sumD6_69, sumE6_69, sumF6_69, sumG6_69, sumH6_69, sumI6_69]);
 
 useEffect(() => {
   const uploadSumB6_19 = async () => {
+    await uploadData("B6_19", sumB6_19.toString());
     await uploadData("C6_19", sumC6_19.toString());
     await uploadData("D6_19", sumD6_19.toString());
     await uploadData("E6_19", sumE6_19.toString());
@@ -1289,10 +1292,10 @@ useEffect(() => {
     await uploadData("H6_19", sumH6_19.toString());
     await uploadData("I6_19", sumI6_19.toString());
   };
-  if ( sumC6_19 || sumD6_19 || sumE6_19 || sumF6_19 || sumG6_19 || sumH6_19 || sumI6_19) {
+  if ( sumB6_19 || sumC6_19 || sumD6_19 || sumE6_19 || sumF6_19 || sumG6_19 || sumH6_19 || sumI6_19) {
     uploadSumB6_19();
   }
-}, [ sumC6_19, sumD6_19, sumE6_19, sumF6_19, sumG6_19, sumH6_19, sumI6_19]);
+}, [ sumB6_19,sumC6_19, sumD6_19, sumE6_19, sumF6_19, sumG6_19, sumH6_19, sumI6_19]);
 
 
  //------------------------------------------------- TOTAL OF 20 -------------------------------------------------------
@@ -2803,6 +2806,7 @@ useEffect(() => {
 
 
   const uploadSumB6_67 = () => {
+    setSumB6_67 ( parseFloat(inputValues["B2_40"] || 0) + parseFloat(inputValues["B2_41"] || 0 ) +  parseFloat(inputValues["B2_42"] || 0));
     setSumC6_67 ( parseFloat(inputValues["C2_40"] || 0) + parseFloat(inputValues["C2_41"] || 0 ) +  parseFloat(inputValues["C2_42"] || 0));
     setSumD6_67 ( parseFloat(inputValues["D2_40"] || 0) + parseFloat(inputValues["D2_41"] || 0 ) +  parseFloat(inputValues["D2_42"] || 0));
     setSumE6_67 ( parseFloat(inputValues["E2_40"] || 0) + parseFloat(inputValues["E2_41"] || 0 ) +  parseFloat(inputValues["E2_42"] || 0));
@@ -2818,6 +2822,7 @@ useEffect(() => {
   
   useEffect(() => {
     const uploadSumB6_67 = async () => {
+      await uploadData("B6_67", sumB6_67.toString());
       await uploadData("C6_67", sumC6_67.toString());
       await uploadData("D6_67", sumD6_67.toString());
       await uploadData("E6_67", sumE6_67.toString());
@@ -2826,10 +2831,10 @@ useEffect(() => {
       await uploadData("H6_67", sumH6_67.toString());
       await uploadData("I6_67", sumI6_67.toString());
     };
-    if ( sumC6_67 || sumD6_67 || sumE6_67 || sumF6_67 || sumG6_67 || sumH6_67 || sumI6_67) {
+    if ( sumB6_67,sumC6_67 || sumD6_67 || sumE6_67 || sumF6_67 || sumG6_67 || sumH6_67 || sumI6_67) {
       uploadSumB6_67();
     }
-  }, [ sumC6_67, sumD6_67, sumE6_67, sumF6_67, sumG6_67, sumH6_67, sumI6_67]);
+  }, [ sumB6_67,sumC6_67, sumD6_67, sumE6_67, sumF6_67, sumG6_67, sumH6_67, sumI6_67]);
   
 
 
@@ -2888,7 +2893,7 @@ useEffect(() => {
     const result = numerator - denominator
     return result < 0 ? -1 * result : 0;
   };
-
+  setSumB6_69(calculateValue69(sumC6_67, sumB6_67));
   setSumC6_69(calculateValue69(sumD6_67, sumC6_67));
   setSumD6_69(calculateValue69(sumE6_67, sumD6_67));
   setSumE6_69(calculateValue69(sumF6_67, sumE6_67));
@@ -2900,7 +2905,7 @@ useEffect(() => {
 
 useEffect(() => {
   updateB6_69();
-}, [sumC6_67, sumD6_67, sumE6_67, sumF6_67, sumG6_67, sumH6_67, sumI6_67]);  
+}, [sumB6_67,sumC6_67, sumD6_67, sumE6_67, sumF6_67, sumG6_67, sumH6_67, sumI6_67]);  
 
 useEffect(() => {
   const uploadB6_69 = async () => {
@@ -9703,7 +9708,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="B6_67"
-                value={inputValues.B6_67}
+                value={sumB6_67}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -9963,7 +9968,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="B6_69"
-                value={inputValues.B6_69}
+                value={sumB6_69}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}

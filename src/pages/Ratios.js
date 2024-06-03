@@ -709,20 +709,20 @@ if (sumB4_10 || sumC4_10 || sumD4_10 || sumE4_10 || sumF4_10 || sumG4_10 || sumH
  //------------------------------------------------------ CODE FOR 11  ---------------------------------------------
 
  const updateB4_11 = () => {
-  const calculateValue11 = (sum8, sum9, sum10, inputValue1, inputValue2) => {
-    const numerator = parseFloat(sum8 || 0) - parseFloat(sum9 || 0);
+  const calculateValue11 = (sum8, sum39, sum10, inputValue1, inputValue2) => {
+    const numerator = parseFloat(sum8 || 0) - parseFloat(sum39 || 0);
     const denominator = parseFloat(sum10 || 0) + parseFloat(inputValue1 || 0) - parseFloat(inputValue2 || 0);
     return denominator !== 0 ? (numerator / denominator) * 100 : 0;
   };
 
-  setSumB4_11(calculateValue11(sumB4_8, sumB4_9, sumB4_10, inputValues["B1_23"], inputValues["B1_13"]));
-  setSumC4_11(calculateValue11(sumC4_8, sumC4_9, sumC4_10, inputValues["C1_23"], inputValues["B1_23"]));
-  setSumD4_11(calculateValue11(sumD4_8, sumD4_9, sumD4_10, inputValues["D1_23"], inputValues["C1_23"]));
-  setSumE4_11(calculateValue11(sumE4_8, sumE4_9, sumE4_10, inputValues["E1_23"], inputValues["D1_23"]));
-  setSumF4_11(calculateValue11(sumF4_8, sumF4_9, sumF4_10, inputValues["F1_23"], inputValues["E1_23"]));
-  setSumG4_11(calculateValue11(sumG4_8, sumG4_9, sumG4_10, inputValues["G1_23"], inputValues["F1_23"]));
-  setSumH4_11(calculateValue11(sumH4_8, sumH4_9, sumH4_10, inputValues["H1_23"], inputValues["G1_23"]));
-  setSumI4_11(calculateValue11(sumI4_8, sumI4_9, sumI4_10, inputValues["I1_23"], inputValues["H1_23"]));
+  setSumB4_11(calculateValue11(sumB4_8, sumB4_39, sumB4_10, inputValues["B1_23"], inputValues["B1_13"]));
+  setSumC4_11(calculateValue11(sumC4_8, sumC4_39, sumC4_10, inputValues["C1_23"], inputValues["B1_23"]));
+  setSumD4_11(calculateValue11(sumD4_8, sumD4_39, sumD4_10, inputValues["D1_23"], inputValues["C1_23"]));
+  setSumE4_11(calculateValue11(sumE4_8, sumE4_39, sumE4_10, inputValues["E1_23"], inputValues["D1_23"]));
+  setSumF4_11(calculateValue11(sumF4_8, sumF4_39, sumF4_10, inputValues["F1_23"], inputValues["E1_23"]));
+  setSumG4_11(calculateValue11(sumG4_8, sumG4_39, sumG4_10, inputValues["G1_23"], inputValues["F1_23"]));
+  setSumH4_11(calculateValue11(sumH4_8, sumH4_39, sumH4_10, inputValues["H1_23"], inputValues["G1_23"]));
+  setSumI4_11(calculateValue11(sumI4_8, sumI4_39, sumI4_10, inputValues["I1_23"], inputValues["H1_23"]));
 };
 
 useEffect(() => {
@@ -1981,7 +1981,7 @@ useEffect(() => {
 
 const updateB5_45 = () => {
   const calculateValue45 = (numerator, denominator) => {
-    return denominator !== 0 ? (numerator / denominator) *100  : 0;
+    return denominator !== 0 ? (numerator / denominator)   : 0;
   };
 
   setSumB4_45(calculateValue45(sumB4_34, sumB4_21 )); 
@@ -2106,6 +2106,164 @@ useEffect(() => {
     uploadB4_49();
   }
 }, [ sumC4_49, sumD4_49, sumE4_49, sumF4_49, sumG4_49, sumH4_49, sumI4_49]);
+
+
+
+
+
+
+//------------------------------------------------ SAVE FOR 50 TO DATABASE ---------------------------------------------
+
+
+
+const updateB5_50 = () => {
+  const calculateValue50 = (numerator, denominator) => {
+    return denominator !== 0 ? (numerator / denominator)  : 0;
+  };
+
+  setSumB4_50(calculateValue50(sumB4_48, sumB2 )); 
+  setSumC4_50(calculateValue50(sumC4_48, sumC2 )); 
+  setSumD4_50(calculateValue50(sumD4_48, sumD2 )); 
+  setSumE4_50(calculateValue50(sumE4_48, sumE2 ));  
+  setSumF4_50(calculateValue50(sumF4_48, sumF2 )); 
+  setSumG4_50(calculateValue50(sumG4_48, sumG2 )); 
+  setSumH4_50(calculateValue50(sumH4_48, sumH2 )); 
+  setSumI4_50(calculateValue50(sumI4_48, sumI2 ));
+};
+
+useEffect(() => {
+  updateB5_50();
+}, [sumB4_48, sumC4_48, sumD4_48, sumE4_48, sumF4_48, sumG4_48, sumH4_48, sumI4_48,sumB2,sumC2,sumD2,sumE2,sumF2,sumG2,sumH2,sumI2]);
+
+useEffect(() => {
+  const uploadSumB4_50 = async () => {
+    const dataToUpload = [
+      { id: "B4_50", value: sumB4_50 },
+      { id: "C4_50", value: sumC4_50 },
+      { id: "D4_50", value: sumD4_50 },
+      { id: "E4_50", value: sumE4_50 },
+      { id: "F4_50", value: sumF4_50 },
+      { id: "G4_50", value: sumG4_50 },
+      { id: "H4_50", value: sumH4_50 },
+      { id: "I4_50", value: sumI4_50 }
+    ];
+
+    for (const { id, value } of dataToUpload) {
+      await uploadData(id, value.toString());
+    }
+  }
+
+  if ( sumB4_50 || sumC4_50 || sumD4_50 || sumE4_50 || sumF4_50 || sumG4_50 || sumH4_50 || sumI4_50) {
+    uploadSumB4_50();
+  }
+}, [ sumB4_50,sumC4_50, sumD4_50, sumE4_50, sumF4_50, sumG4_50, sumH4_50, sumI4_50]);
+
+
+
+//------------------------------------------------- TOTAL OF 51 -------------------------------------------------------
+const updateB4_51 = () => {
+  const calculateValue51 = (input25,input24,input23,input10,input11,sum6) => {
+    const numerator = parseFloat(input25 || 0)+ parseFloat(input24 || 0) + parseFloat(input23 || 0) + parseFloat(input10 || 0)+ parseFloat(input11 || 0);
+    const denominator = parseFloat(sum6 || 0);
+    return denominator !== 0 ? numerator * (365 / denominator) : 0;
+  };
+
+  setSumB4_51(calculateValue51(inputValues["B1_25"], inputValues["B1_24"], inputValues["B1_23"], inputValues["B2_10"], inputValues["B2_11"], sumB4_6) );
+  setSumC4_51(calculateValue51(inputValues["C1_25"], inputValues["C1_24"], inputValues["C1_23"], inputValues["C2_10"], inputValues["C2_11"], sumC4_6) );
+  setSumD4_51(calculateValue51(inputValues["D1_25"], inputValues["D1_24"], inputValues["D1_23"], inputValues["D2_10"], inputValues["D2_11"], sumD4_6) );
+  setSumE4_51(calculateValue51(inputValues["E1_25"], inputValues["E1_24"], inputValues["E1_23"], inputValues["E2_10"], inputValues["E2_11"], sumE4_6) );
+  setSumF4_51(calculateValue51(inputValues["F1_25"], inputValues["F1_24"], inputValues["F1_23"], inputValues["F2_10"], inputValues["F2_11"], sumF4_6) );
+  setSumG4_51(calculateValue51(inputValues["G1_25"], inputValues["G1_24"], inputValues["G1_23"], inputValues["G2_10"], inputValues["G2_11"], sumG4_6) );
+  setSumH4_51(calculateValue51(inputValues["H1_25"], inputValues["H1_24"], inputValues["H1_23"], inputValues["H2_10"], inputValues["H2_11"], sumH4_6) );
+  setSumI4_51(calculateValue51(inputValues["I1_25"], inputValues["I1_24"], inputValues["I1_23"], inputValues["I2_10"], inputValues["I2_11"], sumI4_6) );
+};
+
+useEffect(() => {
+  updateB4_51();
+}, [inputValues, sumB4_6, sumC4_6, sumD4_6, sumE4_6, sumF4_6, sumG4_6, sumH4_6, sumI4_6]);
+
+useEffect(() => {
+  const uploadB4_51 = async () => {
+    const dataToUpload = [
+      { id: "B4_51", value: sumB4_51 },
+      { id: "C4_51", value: sumC4_51 },
+      { id: "D4_51", value: sumD4_51 },
+      { id: "E4_51", value: sumE4_51 },
+      { id: "F4_51", value: sumF4_51 },
+      { id: "G4_51", value: sumG4_51 },
+      { id: "H4_51", value: sumH4_51 },
+      { id: "I4_51", value: sumI4_51 }
+    ];
+
+    for (const { id, value } of dataToUpload) {
+      await uploadData(id, value.toString());
+    }
+  };
+
+  if (sumB4_51 || sumC4_51 || sumD4_51 || sumE4_51 || sumF4_51 || sumG4_51 || sumH4_51 || sumI4_51) {
+    uploadB4_51();
+  }
+}, [sumB4_51, sumC4_51, sumD4_51, sumE4_51, sumF4_51, sumG4_51, sumH4_51, sumI4_51]);
+
+
+
+//------------------------------------------------ SAVE FOR 52 TO DATABASE ---------------------------------------------
+
+
+
+const updateB5_52 = () => {
+  const calculateValue52 = (numerator, input30) => {
+    const denominator = parseFloat(input30 || 0)
+    return denominator !== 0 ? (numerator / denominator)  : 0;
+  };
+
+  setSumB4_52(calculateValue52(sumB4_37, inputValues["B1_30"] )); 
+  setSumC4_52(calculateValue52(sumC4_37, inputValues["C1_30"] )); 
+  setSumD4_52(calculateValue52(sumD4_37, inputValues["D1_30"] )); 
+  setSumE4_52(calculateValue52(sumE4_37, inputValues["E1_30"] ));  
+  setSumF4_52(calculateValue52(sumF4_37, inputValues["F1_30"] )); 
+  setSumG4_52(calculateValue52(sumG4_37, inputValues["G1_30"] )); 
+  setSumH4_52(calculateValue52(sumH4_37, inputValues["H1_30"] )); 
+  setSumI4_52(calculateValue52(sumI4_37, inputValues["I1_30"] ));
+};
+
+useEffect(() => {
+  updateB5_52();
+}, [sumB4_37, sumC4_37, sumD4_37, sumE4_37, sumF4_37, sumG4_37, sumH4_37, sumI4_37]);
+
+useEffect(() => {
+  const uploadSumB4_52 = async () => {
+    const dataToUpload = [
+      { id: "B4_52", value: sumB4_52 },
+      { id: "C4_52", value: sumC4_52 },
+      { id: "D4_52", value: sumD4_52 },
+      { id: "E4_52", value: sumE4_52 },
+      { id: "F4_52", value: sumF4_52 },
+      { id: "G4_52", value: sumG4_52 },
+      { id: "H4_52", value: sumH4_52 },
+      { id: "I4_52", value: sumI4_52 }
+    ];
+
+    for (const { id, value } of dataToUpload) {
+      await uploadData(id, value.toString());
+    }
+  }
+
+  if ( sumB4_52 || sumC4_52 || sumD4_52 || sumE4_52 || sumF4_52 || sumG4_52 || sumH4_52 || sumI4_52) {
+    uploadSumB4_52();
+  }
+}, [ sumB4_52,sumC4_52, sumD4_52, sumE4_52, sumF4_52, sumG4_52, sumH4_52, sumI4_52]);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4024,7 +4182,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="I4_21"  
-                value={sumB4_21}
+                value={sumI4_21}
                 onChange={changeData} 
                 />
 

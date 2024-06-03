@@ -6,13 +6,16 @@ import { AppContext } from '../AppContext';
 function Opstmt() {
   
   const { inputValues, setInputValues,tot2020,Cost37, setCost37,Cost31, setCost31,tot37,Cost27, setCost27,Cost26, setCost26,tot15, setTot15,tot31,sumB25, setSumB25,
-    sumC25, setSumC25,
-    sumD25, setSumD25,
-    sumE25, setSumE25,
-    sumF25, setSumF25,
-    sumG25, setSumG25,
-    sumH25, setSumH25,
-    sumI25, setSumI25,
+    sumB4_25, setSumB4_25,
+    sumC4_25, setSumC4_25,
+    sumD4_25, setSumD4_25,
+    sumE4_25, setSumE4_25,
+    sumF4_25, setSumF4_25,
+    sumG4_25, setSumG4_25,
+    sumH4_25, setSumH4_25,
+    sumI4_25, setSumI4_25,
+
+
     sumB19, setSumB19,
     sumC19, setSumC19,
     sumD19, setSumD19,
@@ -368,6 +371,14 @@ function Opstmt() {
    const [sumH5_48, setSumH5_48] = useState(0);
    const [sumI5_48, setSumI5_48] = useState(0);
   
+   const [sumB5_49, setSumB5_49] = useState(0);
+   const [sumC5_49, setSumC5_49] = useState(0);
+   const [sumD5_49, setSumD5_49] = useState(0);
+   const [sumE5_49, setSumE5_49] = useState(0);
+   const [sumF5_49, setSumF5_49] = useState(0);
+   const [sumG5_49, setSumG5_49] = useState(0);
+   const [sumH5_49, setSumH5_49] = useState(0);
+   const [sumI5_49, setSumI5_49] = useState(0);
 
 
 
@@ -1240,19 +1251,19 @@ useEffect(() => {
 
 
 const updateB5_28 = () => {
-  setSumB5_28(calculateTotal([0]) + (parseFloat(sumB25 || 0)));
-  setSumC5_28(calculateTotal([0]) + (parseFloat(sumC25 || 0)));
-  setSumD5_28(calculateTotal([0]) + (parseFloat(sumD25 || 0)));
-  setSumE5_28(calculateTotal([0]) + (parseFloat(sumE25 || 0)));
-  setSumF5_28(calculateTotal([0]) + (parseFloat(sumF25 || 0)));
-  setSumG5_28(calculateTotal([0]) + (parseFloat(sumG25 || 0)));
-  setSumH5_28(calculateTotal([0]) + (parseFloat(sumH25 || 0)));
-  setSumI5_28(calculateTotal([0]) + (parseFloat(sumI25 || 0)));
+  setSumB5_28(calculateTotal([0]) + (parseFloat(sumB4_25 || 0)));
+  setSumC5_28(calculateTotal([0]) + (parseFloat(sumC4_25 || 0)));
+  setSumD5_28(calculateTotal([0]) + (parseFloat(sumD4_25 || 0)));
+  setSumE5_28(calculateTotal([0]) + (parseFloat(sumE4_25 || 0)));
+  setSumF5_28(calculateTotal([0]) + (parseFloat(sumF4_25 || 0)));
+  setSumG5_28(calculateTotal([0]) + (parseFloat(sumG4_25 || 0)));
+  setSumH5_28(calculateTotal([0]) + (parseFloat(sumH4_25 || 0)));
+  setSumI5_28(calculateTotal([0]) + (parseFloat(sumI4_25 || 0)));
 };
 
 useEffect(() => {
   updateB5_28();
-}, [inputValues]);
+}, [inputValues,sumB4_25, sumC4_25, sumD4_25, sumE4_25, sumF4_25, sumG4_25, sumH4_25, sumI4_25]);
 
 useEffect(() => {
   const uploadB5_28 = async () => {
@@ -1377,6 +1388,41 @@ useEffect(() => {
     uploadSumB5_31();
   }
 }, [sumB5_31, sumC5_31, sumD5_31, sumE5_31, sumF5_31, sumG5_31, sumH5_31, sumI5_31]);
+
+
+// /------------------------------------------------- TOTAL OF 33 ------------------------------------------------------
+
+const uploadSumB5_33 = () => {
+  setSumB5_33(Math.min(parseFloat(sumB5_28) - parseFloat(sumB5_27)), 0 );
+  setSumC5_33(Math.min(parseFloat(sumC5_28) - parseFloat(sumC5_27)), 0 );
+  setSumD5_33(Math.min(parseFloat(sumD5_28) - parseFloat(sumD5_27)), 0 );
+  setSumE5_33(Math.min(parseFloat(sumE5_28) - parseFloat(sumE5_27)), 0 );
+  setSumF5_33(Math.min(parseFloat(sumF5_28) - parseFloat(sumF5_27)), 0 );
+  setSumG5_33(Math.min(parseFloat(sumG5_28) - parseFloat(sumG5_27)), 0 );
+  setSumH5_33(Math.min(parseFloat(sumH5_28) - parseFloat(sumH5_27)), 0 );
+  setSumI5_33(Math.min(parseFloat(sumI5_28) - parseFloat(sumI5_27)), 0 );
+};
+
+useEffect(() => {
+  uploadSumB5_33();
+}, [inputValues, sumB5_28, sumC5_28, sumD5_28, sumE5_28, sumF5_28, sumG5_28, sumH5_28, sumI5_28, sumB5_27, sumC5_27, sumD5_27, sumE5_27, sumF5_27, sumG5_27, sumH5_27, sumI5_27]);
+
+useEffect(() => {
+  const uploadSumB5_33 = async () => {
+    await uploadData("B5_33", sumB5_33.toString());
+    await uploadData("C5_33", sumC5_33.toString());
+    await uploadData("D5_33", sumD5_33.toString());
+    await uploadData("E5_33", sumE5_33.toString());
+    await uploadData("F5_33", sumF5_33.toString());
+    await uploadData("G5_33", sumG5_33.toString());
+    await uploadData("H5_33", sumH5_33.toString());
+    await uploadData("I5_33", sumI5_33.toString());
+  };
+  if (sumB5_33 || sumC5_33 || sumD5_33 || sumE5_33 || sumF5_33 || sumG5_33 || sumH5_33 || sumI5_33) {
+    uploadSumB5_33();
+  }
+}, [sumB5_33, sumC5_33, sumD5_33, sumE5_33, sumF5_33, sumG5_33, sumH5_33, sumI5_33]);
+
 
 
 
@@ -1577,6 +1623,53 @@ useEffect(() => {
 }, [sumB5_41, sumC5_41, sumD5_41, sumE5_41, sumF5_41, sumG5_41, sumH5_41, sumI5_41]);
 
 
+// /------------------------------------------------- TOTAL OF 42 ------------------------------------------------------
+
+
+const updateB5_42 = () => {
+  const calculateValue42 = (numerator, denominator) => {
+    return denominator !== 0 && numerator < 1 ? (numerator / denominator) * 100 : 0;
+  };
+
+  setSumB5_42(calculateValue42(sumB5_41, sumB5_38 )); 
+  setSumC5_42(calculateValue42(sumC5_41, sumC5_38 )); 
+  setSumD5_42(calculateValue42(sumD5_41, sumD5_38 )); 
+  setSumE5_42(calculateValue42(sumE5_41, sumE5_38 ));  
+  setSumF5_42(calculateValue42(sumF5_41, sumF5_38 )); 
+  setSumG5_42(calculateValue42(sumG5_41, sumG5_38 )); 
+  setSumH5_42(calculateValue42(sumH5_41, sumH5_38 )); 
+  setSumI5_42(calculateValue42(sumI5_41, sumI5_38 ));
+};
+
+useEffect(() => {
+  updateB5_42();
+}, [sumB5_38,sumC5_38, sumD5_38, sumE5_38, sumF5_38, sumG5_38, sumH5_38, sumI5_38,sumB5_41, sumC5_41, sumD5_41, sumE5_41, sumF5_41, sumG5_41, sumH5_41, sumI5_41]);
+
+useEffect(() => {
+  const uploadSumB5_42 = async () => {
+    const dataToUpload = [
+      { id: "B5_42", value: sumB5_42 },
+      { id: "C5_42", value: sumC5_42 },
+      { id: "D5_42", value: sumD5_42 },
+      { id: "E5_42", value: sumE5_42 },
+      { id: "F5_42", value: sumF5_42 },
+      { id: "G5_42", value: sumG5_42 },
+      { id: "H5_42", value: sumH5_42 },
+      { id: "I5_42", value: sumI5_42 }
+    ];
+
+    for (const { id, value } of dataToUpload) {
+      await uploadData(id, value.toString());
+    }
+  };
+
+  if ( sumB5_42 || sumC5_42 || sumD5_42 || sumE5_42 || sumF5_42 || sumG5_42 || sumH5_42 || sumI5_42) {
+    uploadSumB5_42();
+  }
+}, [ sumB5_42,sumC5_42, sumD5_42, sumE5_42, sumF5_42, sumG5_42, sumH5_42, sumI5_42]);
+
+
+
 // /------------------------------------------------- TOTAL OF 44 ------------------------------------------------------
 
 
@@ -1635,58 +1728,58 @@ useEffect(() => {
 useEffect(() => {
   setInputValues((prevValues) => ({
     ...prevValues,
-    B5_46: sumB5_48 > 0 ? "yes" : "No",
+    B5_46: sumB5_49 > 0 ? "Yes" : "No",
   }));
-}, [sumB5_48]);
+}, [sumB5_49]);
 
 useEffect(() => {
   setInputValues((prevValues) => ({
     ...prevValues,
-    C5_46: sumC5_48 > 0 ? "yes" : "No",
+    C5_46: sumC5_49 > 0 ? "Yes" : "No",
   }));
-}, [sumC5_48]);
+}, [sumC5_49]);
 
 useEffect(() => {
   setInputValues((prevValues) => ({
     ...prevValues,
-    D5_46: sumD5_48 > 0 ? "yes" : "No",
+    D5_46: sumD5_49 > 0 ? "yes" : "No",
   }));
-}, [sumD5_48]);
+}, [sumD5_49]);
 
 useEffect(() => {
   setInputValues((prevValues) => ({
     ...prevValues,
-    E5_46: sumE5_48 > 0 ? "yes" : "No",
+    E5_46: sumE5_49 > 0 ? "Yes" : "No",
   }));
-}, [sumE5_48]);
+}, [sumE5_49]);
 
 useEffect(() => {
   setInputValues((prevValues) => ({
     ...prevValues,
-    F5_46: sumF5_48 > 0 ? "yes" : "No",
+    F5_46: sumF5_49 > 0 ? "Yes" : "No",
   }));
-}, [sumF5_48]);
+}, [sumF5_49]);
 
 useEffect(() => {
   setInputValues((prevValues) => ({
     ...prevValues,
-    G5_46: sumG5_48 > 0 ? "yes" : "No",
+    G5_46: sumG5_49 > 0 ? "Yes" : "No",
   }));
-}, [sumG5_48]);
+}, [sumG5_49]);
 
 useEffect(() => {
   setInputValues((prevValues) => ({
     ...prevValues,
-    H5_46: sumH5_48 > 0 ? "yes" : "No",
+    H5_46: sumH5_49 > 0 ? "Yes" : "No",
   }));
-}, [sumH5_48]);
+}, [sumH5_49]);
 
 useEffect(() => {
   setInputValues((prevValues) => ({
     ...prevValues,
-    I5_46: sumI5_48 > 0 ? "yes" : "No",
+    I5_46: sumI5_49 > 0 ? "Yes" : "No",
   }));
-}, [sumI5_48]);
+}, [sumI5_49]);
 
 
 //------------------------------------------------ SAVE FOR 47 TO DATABASE ---------------------------------------------
@@ -1770,6 +1863,42 @@ useEffect(() => {
   }
 }, [sumB5_48, sumC5_48, sumD5_48, sumE5_48, sumF5_48, sumG5_48, sumH5_48, sumI5_48]);
 
+
+//------------------------------------------------ SAVE FOR 48 TO DATABASE ---------------------------------------------
+
+
+
+
+const updateB5_49 = () => {
+  setSumB5_49(  Math.round(parseFloat(sumB5_47 || 0) - parseFloat(sumB5_48 || 0)));
+  setSumC5_49(  Math.round(parseFloat(sumC5_47 || 0) - parseFloat(sumC5_48 || 0)));
+  setSumD5_49(  Math.round(parseFloat(sumD5_47 || 0) - parseFloat(sumD5_48 || 0)));
+  setSumE5_49(  Math.round(parseFloat(sumE5_47 || 0) - parseFloat(sumE5_48 || 0)));
+  setSumF5_49(  Math.round(parseFloat(sumF5_47 || 0) - parseFloat(sumF5_48 || 0)));
+  setSumG5_49(  Math.round(parseFloat(sumG5_47 || 0) - parseFloat(sumG5_48 || 0)));
+  setSumH5_49(  Math.round(parseFloat(sumH5_47 || 0) - parseFloat(sumH5_48 || 0)));
+  setSumI5_49(  Math.round(parseFloat(sumI5_47 || 0) - parseFloat(sumI5_48 || 0)));
+};
+
+useEffect(() => {
+  updateB5_49();
+}, [sumB5_48, sumC5_48, sumD5_48, sumE5_48, sumF5_48, sumG5_48, sumH5_48, sumI5_48,sumB5_47, sumC5_47, sumD5_47, sumE5_47, sumF5_47, sumG5_47, sumH5_47, sumI5_47]);
+
+useEffect(() => {
+  const uploadB5_49 = async () => {
+    await uploadData("B5_49", sumB5_49.toString());
+    await uploadData("C5_49", sumC5_49.toString());
+    await uploadData("D5_49", sumD5_49.toString());
+    await uploadData("E5_49", sumE5_49.toString());
+    await uploadData("F5_49", sumF5_49.toString());
+    await uploadData("G5_49", sumG5_49.toString());
+    await uploadData("H5_49", sumH5_49.toString());
+    await uploadData("I5_49", sumI5_49.toString());
+  };
+  if (sumB5_49 || sumC5_49 || sumD5_49 || sumE5_49 || sumF5_49 || sumG5_49 || sumH5_49 || sumI5_49) {
+    uploadB5_49();
+  }
+}, [sumB5_49, sumC5_49, sumD5_49, sumE5_49, sumF5_49, sumG5_49, sumH5_49, sumI5_49]);
 
 
 
@@ -4947,7 +5076,7 @@ useEffect(() => {
                         
                         aria-label="First name"
                         name="B5_33"
-                        value={inputValues.B5_33}
+                        value={sumB5_33}
                         onChange={changeData}
                     />
     
@@ -4964,7 +5093,7 @@ useEffect(() => {
                         className="form-control"
                         aria-label="First name"
                         name="C5_33"
-                        value={inputValues.C5_33}
+                        value={sumC5_33}
                         onChange={changeData}
                     />
               </div>
@@ -4979,7 +5108,7 @@ useEffect(() => {
                 
                 aria-label="First name" 
                 name="D5_33"  
-                value={inputValues.D5_33}
+                value={sumD5_33}
                 onChange={changeData}  
                 />
 
@@ -4994,7 +5123,7 @@ useEffect(() => {
                   
                 aria-label="First name" 
                 name="E5_33"  
-                value={inputValues.E5_33}
+                value={sumE5_33}
                 onChange={changeData}  
                 />
 
@@ -5009,7 +5138,7 @@ useEffect(() => {
                   
                 aria-label="First name" 
                 name="F5_33"  
-                value={inputValues.F5_33}
+                value={sumF5_33}
                 onChange={changeData} 
                 />
 
@@ -5024,7 +5153,7 @@ useEffect(() => {
                   
                 aria-label="First name" 
                 name="G5_33" 
-                value={inputValues.G5_33}
+                value={sumG5_33}
                 onChange={changeData} />
 
               </div>
@@ -5038,7 +5167,7 @@ useEffect(() => {
                   
                 aria-label="First name" 
                 name="H5_33"  
-                value={inputValues.H5_33}
+                value={sumH5_33}
                 onChange={changeData} 
                 />
 
@@ -5053,7 +5182,7 @@ useEffect(() => {
                   
                 aria-label="First name" 
                 name="I5_33"  
-                value={inputValues.I5_33}
+                value={sumI5_33}
                 onChange={changeData} 
                 />
 
@@ -5736,7 +5865,7 @@ useEffect(() => {
            
           aria-label="First name" 
           name="B5_42"
-          value={inputValues.B5_42}
+          value={sumB5_42}
           onChange={changeData}  
           />
           {/* <!--//AAAAAAAA --> */}
@@ -5751,7 +5880,7 @@ useEffect(() => {
            
           aria-label="First name" 
           name="C5_42"  
-          value={inputValues.C5_42}
+          value={sumC5_42}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -5765,7 +5894,7 @@ useEffect(() => {
           className="form-control" 
            aria-label="First name" 
           name="D5_42"  
-          value={inputValues.D5_42}
+          value={sumD5_42}
           onChange={changeData}
           />
           {/* <!--//AAAAAAAA --> */}
@@ -5780,7 +5909,7 @@ useEffect(() => {
            
           aria-label="First name" 
           name="E5_42"  
-          value={inputValues.E5_42}
+          value={sumE5_42}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -5795,7 +5924,7 @@ useEffect(() => {
            
           aria-label="First name" 
           name="F5_42" 
-          value={inputValues.F5_42}
+          value={sumF5_42}
           onChange={changeData}
 
           />
@@ -5811,7 +5940,7 @@ useEffect(() => {
            
           aria-label="First name" 
           name="G5_42"  
-          value={inputValues.G5_42}
+          value={sumG5_42}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -5826,7 +5955,7 @@ useEffect(() => {
            
           aria-label="First name" 
           name="H5_42"  
-          value={inputValues.H5_42}
+          value={sumH5_42}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -5841,7 +5970,7 @@ useEffect(() => {
            
           aria-label="First name" 
           name="I5_42"  
-          value={inputValues.I5_42}
+          value={sumI5_42}
           onChange={changeData} 
           />
           {/* <!--//AAAAAAAA --> */}
@@ -6516,7 +6645,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="B5_49"  
-                value={inputValues.B5_49}
+                value={sumB5_49}
                 onChange={changeData}
                 />
                 
@@ -6532,7 +6661,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="C5_49"
-                value={inputValues.C5_49}
+                value={sumC5_49}
                 onChange={changeData}  />
                 {/* <!--//AAAAAAAA --> */}
               </div>
@@ -6546,7 +6675,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="D5_49"  
-                value={inputValues.D5_49}
+                value={sumD5_49}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -6561,7 +6690,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="E5_49"  
-                value={inputValues.E5_49}
+                value={sumE5_49}
                 onChange={changeData}  
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -6576,7 +6705,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="F5_49" 
-                value={inputValues.F5_49}
+                value={sumF5_49}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -6591,7 +6720,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="G5_49"  
-                value={inputValues.G5_49}
+                value={sumG5_49}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -6606,7 +6735,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="H5_49"  
-                value={inputValues.H5_49}
+                value={sumH5_49}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
@@ -6621,7 +6750,7 @@ useEffect(() => {
                  
                 aria-label="First name" 
                 name="I5_49"  
-                value={inputValues.I5_49}
+                value={sumI5_49}
                 onChange={changeData} 
                 />
                 {/* <!--//AAAAAAAA --> */}
